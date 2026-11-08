@@ -24,12 +24,23 @@ Output validation:
 
 `tools/audits/step03_renderer_check.py`
 
-## `Current STEP-04 work`
+## `STEP-04 audio implementation`
 
-- probe installed Piper CLI and canonical voice
-- freeze deterministic synthesis invocation
-- implement narration integration
-- implement background music and narration mix
+Completed components:
+- `app/generate_narration.py`
+- `app/mix_audio.py`
+- Piper narration generation
+- background music mix
+- final AAC mux
+- final media validation
+
+## `Current STEP-05 work`
+
+- YouTube Data API v3 integration
+- OAuth authorization outside Git
+- authenticated channel verification
+- PRIVATE first upload
+- publication journal and idempotence
 
 ## `Planned modules`
 
