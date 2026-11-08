@@ -2,13 +2,30 @@
 
 Automated YouTube Shorts pipeline for **Mini-Kuzai / THE KUZ NETWORK**.
 
-The project converts a validated Mini-Kuzai development step into a short vertical video with a fixed visual identity, dynamic step information, Piper narration, background music and controlled YouTube publication.
+The project converts Mini-Kuzai development information into short vertical videos with a fixed visual identity, Piper narration, background music and controlled YouTube publication.
 
 ## Target YouTube channel
 
 - Channel --> [THE KUZ NETWORK](https://www.youtube.com/channel/UC9MDfq5s-6j_twe4xJH_XXA)
 - Channel ID --> `UC9MDfq5s-6j_twe4xJH_XXA`
 - Usage --> canonical publication target for Mini-Kuzai Shorts
+
+## Editorial order
+
+The **first video is a channel introduction**, not a DEV-FLOW step video.
+
+Video 001 will present:
+- THE KUZ NETWORK
+- Mini-Kuzai
+- the "LLM From Scratch" objective
+- the purpose of the channel
+- the fact that future videos will document validated development steps
+
+Video 001 has **no Vxx reference**.
+
+Only later videos use the automatic DEV-FLOW format with `Vxx`, step title, metric/result and `DEV FLOW #xxx`.
+
+The currently active Mini-Kuzai V80 work is therefore **not** the first YouTube video.
 
 ## Current status
 
@@ -26,13 +43,12 @@ Completed:
 - ffprobe installed and verified --> `/usr/bin/ffprobe`
 - FFmpeg/ffprobe version --> `6.1.1-3ubuntu5`
 - renderer font selected --> `Ubuntu Sans Bold`
-- 837 GiB free on the target filesystem
+- master background stored at `assets/backgrounds/mini-kuzai-short-master.png`
 - canonical YouTube channel registered
 - target 1080 x 1920 Short format frozen
-- fixed Mini-Kuzai background master validated
 
 Current:
-- register/copy the master background asset
+- verify the master background on fhc2
 - select/document background music
 - freeze overlay safe zones and coordinates
 
@@ -41,30 +57,37 @@ No YouTube API credentials, OAuth tokens or publication automation are configure
 ## Target pipeline
 
 ```text
-Mini-Kuzai validated step
-        |
-        v
-structured short brief
-        |
-        +--> fixed 1080x1920 background
-        +--> dynamic Vxx / title / metric overlays
-        +--> Piper narration
-        +--> background music
-        |
-        v
-Python + FFmpeg renderer
-        |
-        v
+VIDEO 001
+channel introduction
+      |
+      v
+fixed background + intro overlays
++ Piper narration + music
+      |
+      v
 validated MP4
-        |
-        v
-YouTube upload
-        |
-        v
-Short URL + publication receipt
-```
+      |
+      v
+PRIVATE YouTube pilot
 
-The first pilot will use **V79**. The long-term target is to integrate Short generation after a verified Mini-Kuzai FINAL-DEV-FLOW without making YouTube publication a scientific dependency.
+THEN
+
+validated Mini-Kuzai FINAL step
+      |
+      v
+structured short brief
+      |
+      +--> fixed 1080x1920 background
+      +--> dynamic Vxx / title / metric overlays
+      +--> Piper narration
+      +--> background music
+      |
+      v
+validated MP4
+      |
+      v
+controlled YouTube publication
+```
 
 ## Navigation
 
@@ -88,7 +111,7 @@ The first pilot will use **V79**. The long-term target is to integrate Short gen
 | STEP-03 | Python / FFmpeg renderer | Planned |
 | STEP-04 | Piper narration and audio mix | Planned |
 | STEP-05 | YouTube Data API and OAuth | Planned |
-| STEP-06 | V79 private pilot Short | Planned |
+| STEP-06 | Channel introduction private pilot | Planned |
 | STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | Planned |
 
 ## Operating principles
