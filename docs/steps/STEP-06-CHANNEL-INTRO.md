@@ -14,6 +14,8 @@ It must **not** be presented as V80, V79 or any other Vxx step.
 
 Internal reference --> `VIDEO-001-CHANNEL-INTRO`
 
+Duration --> **60 seconds exactly**
+
 No `Vxx` badge.
 No `DEV FLOW #xxx` reference.
 
@@ -28,6 +30,7 @@ The video should explain, in concise public-facing language:
 
 The pilot must use the same production stack planned for later step videos:
 - canonical 1080 x 1920 background
+- fixed 60-second timeline
 - Ubuntu Sans Bold overlays
 - Piper narration
 - approved background music
@@ -48,10 +51,13 @@ Only after VIDEO-001 is accepted will the DEV-FLOW series begin using:
 - metric/result
 - DEV FLOW #xxx
 
+All later videos also use the same fixed **60-second duration**.
+
 The first DEV-FLOW video will use the appropriate validated step available at that time; it is not hard-coded to V80.
 
 ## Exit criteria
 
+- VIDEO-001 duration --> exactly 60 seconds
 - VIDEO-001 rendered successfully
 - narration and music reviewed
 - overlays reviewed
