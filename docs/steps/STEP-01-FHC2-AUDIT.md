@@ -1,47 +1,47 @@
 # STEP-01 - fhc2 environment audit
 
-Status --> **IN PROGRESS**
+Status --> **COMPLETED**
 
 ## Objective
 
 Perform a read-only inventory of the existing fhc2 environment before installing anything.
 
-## Audit implementation
-
-Reviewed producer:
-
-`tools/audits/step01_fhc2_audit.py`
-
-The audit reports only sanitized environment facts needed by the Short pipeline:
-- operating system and kernel
-- Python and Pillow presence
-- FFmpeg / ffprobe
-- Git / GitHub CLI
-- Piper binary discovery
-- Piper voice discovery
-- available filesystem space
-- fontconfig inventory
-- Mini-Kuzai and YouTube repository presence
-
-The audit does not inspect or publish tokens, credentials, environment secrets, cookies or private data.
-
-## Execution
-
-From the synchronized repository:
-
-```bash
-cd /root/GitHub-Mini-Kuzai/Mini-Kuzai_YOUTUBE && ( set -euo pipefail; git pull --ff-only origin main >/dev/null; mkdir -p work; python3 tools/audits/step01_fhc2_audit.py > work/step-01-results.txt; python3 tools/gogit_publish.py --step STEP-01-FHC2-AUDIT-001 --input work/step-01-results.txt )
-```
-
-A successful run publishes the immutable GOGIT report to:
+## Immutable GOGIT report
 
 `reports/assistant-results/history/STEP-01-FHC2-AUDIT-001.json`
 
-No package installation or configuration change is authorized by this step.
+Source commit --> `6c18fe601f830c8734576936c0f5351327e1d7c7`
 
-## Exit criteria
+## Verified results
 
-- GOGIT publication --> READY
-- audit report reviewed from GitHub
-- missing runtime dependencies identified
-- STEP-02 prepared only after this review
+- host --> `fhc2`
+- OS --> Ubuntu 24.04.5 LTS
+- kernel --> `7.0.0-38-generic`
+- architecture --> `x86_64`
+- Python --> 3.12.3 at `/usr/bin/python3`
+- Pillow --> present
+- Git --> 2.43.0
+- GitHub CLI --> present and authenticated
+- Piper --> present at `/opt/kuzai-tts/piper/venv/bin/piper`
+- Piper voice --> `/opt/kuzai-tts/piper/models/en_US-lessac-high.onnx`
+- fontconfig --> present
+- detected fonts --> 496
+- free filesystem space --> 837 GiB
+- Mini-Kuzai repository --> present
+- Mini-Kuzai YouTube repository --> present
+- FFmpeg --> **not present**
+- ffprobe --> **not present**
+
+## Conclusion
+
+The existing fhc2 environment already provides Python, Pillow, Piper, the target English Piper voice, Git/GitHub integration and sufficient storage.
+
+The only runtime dependency required before video rendering is FFmpeg, including ffprobe.
+
+No package installation or configuration change occurred during STEP-01.
+
+## Closure
+
+STEP-01 --> PASS
+
+Next --> [STEP-02 - Assets](STEP-02-ASSETS.md)
