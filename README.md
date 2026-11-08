@@ -79,7 +79,7 @@ Completed:
 
 VIDEO-001 pilot:
 
-- Video ID --> `pexXCUznWRk`
+- Video ID --> `lWo3DobOLqQ`
 - title --> `THE KUZ NETWORK // MINI-KUZAI - LLM FROM SCRATCH`
 - target channel --> verified
 - private upload --> PASS
@@ -87,7 +87,7 @@ VIDEO-001 pilot:
 
 VIDEO-001 final state:
 
-- Video ID --> `pexXCUznWRk`
+- Video ID --> `lWo3DobOLqQ`
 - visibility --> `public`
 - public state verified through YouTube Data API --> PASS
 

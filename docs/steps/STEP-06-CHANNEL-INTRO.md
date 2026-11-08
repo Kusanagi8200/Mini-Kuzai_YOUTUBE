@@ -1,6 +1,6 @@
 # `STEP-06 - Channel introduction pilot`
 
-Status --> **IN PROGRESS - V8 SAFE-ZONE REPLACEMENT**
+Status --> **COMPLETED - V8 CANONICAL**
 
 ## `Objective`
 
@@ -14,7 +14,7 @@ It is not presented as V80, V79 or any other Vxx step.
 
 Internal reference --> `VIDEO-001-CHANNEL-INTRO`
 
-YouTube Video ID --> `pexXCUznWRk`
+YouTube Video ID --> `lWo3DobOLqQ`
 
 Title --> `THE KUZ NETWORK // MINI-KUZAI - LLM FROM SCRATCH`
 
@@ -73,17 +73,18 @@ Descriptions for VIDEO-001 and future Shorts:
 
 ## `Public publication`
 
-The private pilot was manually reviewed and accepted in YouTube Studio.
+The corrected V8 video was uploaded privately, reviewed and then changed manually to `Public` in YouTube Studio without broadening the OAuth scopes.
 
-The visibility was changed manually from `Private` to `Public` without broadening the OAuth scopes.
+Final YouTube Data API verification:
 
-YouTube Data API verification after the change:
-
-- video lookup --> PASS
-- Video ID --> `pexXCUznWRk`
+- replacement Video ID --> `lWo3DobOLqQ`
+- replacement video lookup --> PASS
 - target channel match --> PASS
 - API visibility --> `public`
 - public confirmation --> PASS
+- previous Video ID --> `pexXCUznWRk`
+- previous video lookup --> absent
+- previous video removed --> PASS
 
 
 ## `V8 corrective replacement`
@@ -101,17 +102,15 @@ Corrective V8 layout:
 
 V8 technical media validation --> PASS.
 
-The original public VIDEO-001 remains online until the corrected V8 replacement is uploaded privately and verified.
+Corrective replacement completed:
 
-Replacement sequence:
-
-1. upload corrected V8 as private
-2. verify target channel and private status
-3. delete the original public VIDEO-001 manually in YouTube Studio
-4. set corrected V8 to public
-5. verify original video is absent
-6. verify replacement is public
-7. close STEP-06 again
+1. corrected V8 uploaded as private --> PASS
+2. target channel and private state verified --> PASS
+3. corrected V8 changed to public --> PASS
+4. corrected V8 public state verified --> PASS
+5. previous Video ID `pexXCUznWRk` deleted --> PASS
+6. previous video absence verified through API --> PASS
+7. canonical replacement Video ID `lWo3DobOLqQ` --> PASS
 
 ## `Later videos`
 
@@ -123,7 +122,7 @@ Only after VIDEO-001 is accepted and public will the DEV-FLOW series begin using
 - metric/result
 - DEV FLOW #xxx
 
-All later videos use the same fixed 60-second duration and canonical V6 presentation constraints.
+All later videos use the same fixed 60-second duration and canonical V8 presentation constraints.
 
 ## `Exit criteria`
 
@@ -139,11 +138,15 @@ Completed:
 
 Completed:
 
+- canonical layout --> V8
+- canonical Video ID --> `lWo3DobOLqQ`
 - VIDEO-001 visibility --> public
 - public state verification --> PASS
+- previous Video ID `pexXCUznWRk` --> removed
+- previous video absence verification --> PASS
+- YouTube Shorts safe-zone validation --> PASS
 - final STEP-06 documentation --> updated
-
-Final GOGIT closure is the remaining evidence publication action.
+- STEP-06 --> CLOSED
 
 ---
 
