@@ -57,10 +57,10 @@ Completed:
 - target 1080 x 1920 Short format frozen
 - fixed duration --> 60 seconds
 - canonical background music validated --> 60.000-second WAV, 48 kHz stereo
+- overlay layout frozen and verified --> PASS
 
 Current:
 - document exact Suno public-use license entitlement
-- freeze overlay safe zones and coordinates
 
 No YouTube API credentials, OAuth tokens or publication automation are configured yet.
 
