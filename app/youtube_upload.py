@@ -7,6 +7,8 @@ Safety rules:
 - uploads are forced to PRIVATE
 - duplicate media SHA256 values are blocked by a local journal
 - default mode is preflight only; --execute is required to upload
+- YouTube Short descriptions reject URLs and angle brackets
+- colons in descriptions are normalized to a Unicode arrow
 """
 
 from __future__ import annotations
@@ -15,6 +17,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -40,6 +43,8 @@ SCOPES = [
     "https://www.googleapis.com/auth/youtube.readonly",
 ]
 
+URL_RE = re.compile(r"(?i)(?:https?://|www\.)")
+
 
 def sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
@@ -58,6 +63,35 @@ def ensure_private_file(path: Path, label: str) -> None:
         raise RuntimeError(
             f"{label} must have mode 600, got {mode:03o}: {path}"
         )
+
+
+def validate_title(title: str) -> str:
+    title = title.strip()
+    if not title:
+        raise RuntimeError("Title is empty")
+    if "<" in title or ">" in title:
+        raise RuntimeError("YouTube titles must not contain angle brackets")
+    return title
+
+
+def normalize_description(description: str) -> str:
+    if "<" in description or ">" in description:
+        raise RuntimeError(
+            "YouTube descriptions must not contain angle brackets"
+        )
+
+    if URL_RE.search(description):
+        raise RuntimeError(
+            "Project policy forbids http, https and www URLs in Shorts descriptions"
+        )
+
+    description = description.replace(":", " → ")
+
+    normalized_lines = []
+    for line in description.splitlines():
+        normalized_lines.append(re.sub(r"[ \t]+", " ", line).strip())
+
+    return "\n".join(normalized_lines).strip()
 
 
 def load_credentials() -> Credentials:
@@ -231,12 +265,16 @@ def main() -> int:
     journal = load_journal()
     duplicate = duplicate_for_sha(journal, media_sha256)
 
+    title = validate_title(args.title) if args.title else ""
+    description = normalize_description(args.description)
+
     print("##### SECTION RESULTS FOR ASSISTANT ######")
     print("PREFLIGHT=PASS")
     print(f"TARGET_CHANNEL_MATCH={int(channel_id == TARGET_CHANNEL_ID)}")
     print(f"CHANNEL_ID={channel_id}")
     print(f"CHANNEL_TITLE={channel_title}")
     print("PRIVACY_POLICY=PRIVATE_ONLY")
+    print("DESCRIPTION_POLICY=PASS")
     print(f"VIDEO_PRESENT={int(video.is_file())}")
     print(f"VIDEO_SIZE_BYTES={video.stat().st_size}")
     print(f"VIDEO_SHA256={media_sha256}")
@@ -252,14 +290,14 @@ def main() -> int:
         print("UPLOAD_PERFORMED=0")
         return 0
 
-    if not args.title or not args.title.strip():
+    if not title:
         raise RuntimeError("--title is required with --execute")
 
     video_id = upload_private(
         youtube=youtube,
         video=video,
-        title=args.title.strip(),
-        description=args.description,
+        title=title,
+        description=description,
         tags=args.tag,
     )
 
