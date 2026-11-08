@@ -1,12 +1,12 @@
-# STEP-02 - Assets
+# `STEP-02 - Assets`
 
 Status --> **IN PROGRESS**
 
-## Objective
+## `Objective`
 
 Install and validate the fixed Short assets and freeze the visual layout before renderer implementation.
 
-## Master background
+## `Master background`
 
 Canonical repository asset:
 
@@ -31,7 +31,7 @@ Visual specification:
 - no embedded Vxx number
 - no embedded step-specific metric or conclusion
 
-## Fixed video duration
+## `Fixed video duration`
 
 All videos are exactly **60 seconds**.
 
@@ -41,7 +41,7 @@ This applies to:
 
 Narration, overlays and audio mixing must fit inside this fixed 60-second timeline.
 
-## Video 001 overlays
+## `Video 001 overlays`
 
 The first video is a **channel introduction** and does not display a Vxx reference.
 
@@ -56,7 +56,7 @@ Its overlays will introduce:
 - project/channel objective
 - future development-flow video series
 
-## Later DEV-FLOW overlays
+## `Later DEV-FLOW overlays`
 
 Step-specific videos will add automatically:
 - `Vxx`
@@ -68,7 +68,7 @@ Step-specific videos will add automatically:
 
 Coordinates and safe zones still need to be frozen.
 
-## Music
+## `Music`
 
 Selected style:
 - dark cyberpunk industrial ambient
@@ -92,7 +92,7 @@ Requirements:
 - 60-second usable timeline
 - suitable for low-volume mixing below Piper narration
 
-## Font
+## `Font`
 
 GOGIT report `STEP-02-FONT-SELECTION-001` --> **PASS**
 
@@ -104,7 +104,7 @@ Selected renderer font:
 
 No additional font package is required.
 
-## Runtime prerequisite
+## `Runtime prerequisite`
 
 GOGIT report `STEP-02-FFMPEG-INSTALL-001` --> **PASS**
 
@@ -114,7 +114,7 @@ Verified:
 - FFmpeg version --> `6.1.1-3ubuntu5`
 - ffprobe version --> `6.1.1-3ubuntu5`
 
-## Exit criteria
+## `Exit criteria`
 
 - master background present and verified --> **DONE**
 - font selected and validated --> **DONE**
@@ -122,3 +122,7 @@ Verified:
 - safe zones / overlay coordinates frozen
 - fixed duration --> **60 seconds**
 - FFmpeg and ffprobe available --> **DONE**
+
+---
+
+**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

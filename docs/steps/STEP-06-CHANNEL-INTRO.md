@@ -1,8 +1,8 @@
-# STEP-06 - Channel introduction private pilot
+# `STEP-06 - Channel introduction private pilot`
 
 Status --> Planned
 
-## Objective
+## `Objective`
 
 Generate and upload the **first video of the channel** as a general presentation of THE KUZ NETWORK and Mini-Kuzai.
 
@@ -10,7 +10,7 @@ This video is deliberately independent from the currently active Mini-Kuzai deve
 
 It must **not** be presented as V80, V79 or any other Vxx step.
 
-## Video identity
+## `Video identity`
 
 Internal reference --> `VIDEO-001-CHANNEL-INTRO`
 
@@ -26,7 +26,7 @@ The video should explain, in concise public-facing language:
 - why the project is being documented
 - that future Shorts will follow validated development milestones
 
-## Production
+## `Production`
 
 The pilot must use the same production stack planned for later step videos:
 - canonical 1080 x 1920 background
@@ -38,11 +38,11 @@ The pilot must use the same production stack planned for later step videos:
 - automatic media validation
 - YouTube metadata generation
 
-## YouTube publication
+## `YouTube publication`
 
 The first API upload remains **PRIVATE** until manually reviewed.
 
-## Later videos
+## `Later videos`
 
 Only after VIDEO-001 is accepted will the DEV-FLOW series begin using:
 - Vxx
@@ -55,7 +55,7 @@ All later videos also use the same fixed **60-second duration**.
 
 The first DEV-FLOW video will use the appropriate validated step available at that time; it is not hard-coded to V80.
 
-## Exit criteria
+## `Exit criteria`
 
 - VIDEO-001 duration --> exactly 60 seconds
 - VIDEO-001 rendered successfully
@@ -64,3 +64,7 @@ The first DEV-FLOW video will use the appropriate validated step available at th
 - technical media validation PASS
 - private YouTube upload reaches the canonical channel
 - operator manually accepts the first video before public automation
+
+---
+
+**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

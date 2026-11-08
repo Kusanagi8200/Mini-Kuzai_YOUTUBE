@@ -1,6 +1,6 @@
-# GOGIT - fhc2 command result publication
+# `GOGIT - fhc2 command result publication`
 
-## Purpose
+## `Purpose`
 
 GOGIT lets fhc2 publish sanitized command results to this GitHub repository so ChatGPT can read them directly without successful terminal output being copied manually.
 
@@ -14,7 +14,7 @@ reviewed command on fhc2
   -> ChatGPT reads GitHub
 ```
 
-## Result format
+## `Result format`
 
 The input file must contain:
 
@@ -29,7 +29,7 @@ WORKTREE=CLEAN
 
 Only `KEY=VALUE` records after the marker are published.
 
-## Security rules
+## `Security rules`
 
 The repository is public.
 
@@ -39,7 +39,7 @@ Values are restricted to a conservative printable character set and length.
 
 This is a guardrail, not a substitute for operator discipline. Commands must never write secrets into the GOGIT input file.
 
-## Publication
+## `Publication`
 
 After the repository is cloned:
 
@@ -51,10 +51,10 @@ The script requires clean synchronized `main`, validates the report, backs up mu
 
 After success, request `GOGIT` in ChatGPT.
 
-## Failure rule
+## `Failure rule`
 
 If GOGIT fails before publishing evidence, return the real local error for diagnosis. Do not invent a successful report and do not reuse an already published STEP_ID.
 
 ---
 
-**THE KUZ NETWORK - KUSANAGI8200 - @2026**
+**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

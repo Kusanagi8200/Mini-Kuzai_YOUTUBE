@@ -1,8 +1,8 @@
-# STEP-07 - Mini-Kuzai DEV-FLOW integration
+# `STEP-07 - Mini-Kuzai DEV-FLOW integration`
 
 Status --> Planned
 
-## Objective
+## `Objective`
 
 Trigger Short generation from verified Mini-Kuzai FINAL-DEV-FLOW evidence.
 
@@ -12,6 +12,10 @@ YouTube remains an independent communication sink:
 - YouTube failure does not invalidate scientific completion
 - duplicate Short publication is blocked by journal state
 
-## Exit criteria
+## `Exit criteria`
 
 A later Vxx step can generate and publish exactly one verified Short through the controlled pipeline.
+
+---
+
+**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

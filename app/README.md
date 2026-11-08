@@ -1,4 +1,4 @@
-# Application code
+# `Application code`
 
 Runtime code for the automated Short pipeline will be added here during STEP-03 and later.
 
@@ -14,3 +14,7 @@ Planned modules:
 No production application code is implemented yet.
 
 [Back to project README](../README.md)
+
+---
+
+**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

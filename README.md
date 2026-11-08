@@ -1,16 +1,16 @@
-# Mini-Kuzai - YOUTUBE
+# `Mini-Kuzai - YOUTUBE`
 
 Automated YouTube Shorts pipeline for **Mini-Kuzai / THE KUZ NETWORK**.
 
 The project converts Mini-Kuzai development information into short vertical videos with a fixed visual identity, Piper narration, background music and controlled YouTube publication.
 
-## Target YouTube channel
+## `Target YouTube channel`
 
 - Channel --> [THE KUZ NETWORK](https://www.youtube.com/channel/UC9MDfq5s-6j_twe4xJH_XXA)
 - Channel ID --> `UC9MDfq5s-6j_twe4xJH_XXA`
 - Usage --> canonical publication target for Mini-Kuzai Shorts
 
-## Editorial order
+## `Editorial order`
 
 The **first video is a channel introduction**, not a DEV-FLOW step video.
 
@@ -27,7 +27,7 @@ Only later videos use the automatic DEV-FLOW format with `Vxx`, step title, metr
 
 The currently active Mini-Kuzai V80 work is therefore **not** the first YouTube video.
 
-## Video format
+## `Video format`
 
 All generated videos use the same fixed format:
 - resolution --> 1080 x 1920
@@ -36,7 +36,7 @@ All generated videos use the same fixed format:
 - narration and overlays must fit inside this fixed duration
 - background music is trimmed or looped/faded to the same 60-second timeline
 
-## Current status
+## `Current status`
 
 **IN PROGRESS --> STEP-02 ASSETS**
 
@@ -63,7 +63,7 @@ Current:
 
 No YouTube API credentials, OAuth tokens or publication automation are configured yet.
 
-## Target pipeline
+## `Target pipeline`
 
 ```text
 VIDEO 001
@@ -98,7 +98,7 @@ structured short brief
 controlled YouTube publication
 ```
 
-## Navigation
+## `Navigation`
 
 | Area | Link |
 | --- | --- |
@@ -110,7 +110,7 @@ controlled YouTube publication
 | Application code | [app/README.md](app/README.md) |
 | Assistant reports | [reports/assistant-results/README.md](reports/assistant-results/README.md) |
 
-## Installation roadmap
+## `Installation roadmap`
 
 | Step | Scope | Status |
 | --- | --- | --- |
@@ -123,7 +123,7 @@ controlled YouTube publication
 | STEP-06 | Channel introduction private pilot | Planned |
 | STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | Planned |
 
-## Operating principles
+## `Operating principles`
 
 - Work step by step and verify each change.
 - Back up an existing file before modifying it.
@@ -136,4 +136,4 @@ controlled YouTube publication
 
 ---
 
-**THE KUZ NETWORK - KUSANAGI8200 - @2026**
+**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

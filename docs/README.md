@@ -1,14 +1,14 @@
-# Documentation
+# `Documentation`
 
 This directory contains project documentation independently from the source code.
 
-## Main documents
+## `Main documents`
 
 - [Workflow policy](WORKFLOW.md)
 - [Installation and development step index](steps/README.md)
 - [GOGIT operating model](../tools/GOGIT.md)
 
-## Documentation rule
+## `Documentation rule`
 
 Each completed project step must update:
 1. its dedicated page under `docs/steps/`
@@ -20,4 +20,4 @@ Documentation must describe the verified state only. Planned work must remain ex
 
 ---
 
-**THE KUZ NETWORK - KUSANAGI8200 - @2026**
+**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

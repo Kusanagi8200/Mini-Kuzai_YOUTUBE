@@ -1,6 +1,6 @@
-# Background assets
+# `Background assets`
 
-## Canonical master
+## `Canonical master`
 
 `mini-kuzai-short-master.png`
 
@@ -16,3 +16,7 @@ This file is the fixed visual background for:
 - later Mini-Kuzai DEV-FLOW Shorts
 
 Step-specific text is rendered dynamically and must not be baked into this asset.
+
+---
+
+**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

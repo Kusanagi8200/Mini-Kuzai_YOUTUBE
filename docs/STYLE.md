@@ -22,7 +22,6 @@ Headings inside fenced code blocks are never modified.
 
 Every active documentation page must end with:
 
-**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
 
 The inline-code formatting provides the required gray highlight on GitHub.
 

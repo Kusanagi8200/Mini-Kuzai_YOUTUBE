@@ -1,8 +1,8 @@
-# STEP-03 - Renderer
+# `STEP-03 - Renderer`
 
 Status --> Planned
 
-## Objective
+## `Objective`
 
 Implement the deterministic Python + FFmpeg vertical video renderer.
 
@@ -15,6 +15,10 @@ The renderer will combine:
 
 Generated videos remain outside Git.
 
-## Exit criteria
+## `Exit criteria`
 
 A local test MP4 passes ffprobe validation.
+
+---
+
+**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

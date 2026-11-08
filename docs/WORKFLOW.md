@@ -1,10 +1,10 @@
-# Project workflow policy
+# `Project workflow policy`
 
-## Objective
+## `Objective`
 
 Keep the Mini-Kuzai YouTube pipeline reproducible, auditable and fast to operate while minimizing manual terminal relay.
 
-## Execution model
+## `Execution model`
 
 ```text
 review scope
@@ -18,7 +18,7 @@ review scope
   -> close the step
 ```
 
-## Loop policy
+## `Loop policy`
 
 Commands and tests should be looped automatically when:
 - the next action is deterministic
@@ -34,13 +34,13 @@ Stop and request operator feedback when:
 - credentials or external account configuration are involved
 - a public YouTube publication is about to be enabled for the first time
 
-## Backup policy
+## `Backup policy`
 
 Before modifying an existing tracked file, create a timestamped backup either in Git when public-safe or outside Git for runtime configuration and secrets.
 
 Never commit secret-bearing backups.
 
-## GOGIT policy
+## `GOGIT policy`
 
 Successful command results intended for ChatGPT review should be published as structured reports through `tools/gogit_publish.py`.
 
@@ -48,7 +48,7 @@ Public GOGIT reports must never contain passwords, tokens, API keys, OAuth token
 
 A local failure that prevents GOGIT publication may be pasted manually for diagnosis.
 
-## Git policy
+## `Git policy`
 
 - branch --> `main`
 - no force push
@@ -56,10 +56,10 @@ A local failure that prevents GOGIT publication may be pasted manually for diagn
 - one unique STEP_ID per immutable GOGIT history report
 - documentation update at the end of every completed step
 
-## Scientific boundary
+## `Scientific boundary`
 
 This repository publishes communication assets. It does not authorize Mini-Kuzai training, BLIND access, checkpoint changes or scientific experiments.
 
 ---
 
-**THE KUZ NETWORK - KUSANAGI8200 - @2026**
+**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

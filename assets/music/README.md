@@ -1,4 +1,4 @@
-# Music assets
+# `Music assets`
 
 Canonical background music for Mini-Kuzai YouTube videos is stored in this directory.
 
@@ -19,3 +19,7 @@ Requirements:
 - mixed below Piper narration
 - YouTube-compatible usage rights
 - source/license documented
+
+---
+
+**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

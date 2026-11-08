@@ -1,8 +1,8 @@
-# STEP-04 - Piper narration and audio
+# `STEP-04 - Piper narration and audio`
 
 Status --> Planned
 
-## Objective
+## `Objective`
 
 Reuse the existing fhc2 Piper installation where possible and generate narration from a validated structured short brief.
 
@@ -14,6 +14,10 @@ Audio processing will include:
 - controlled music level under speech
 - final AAC audio stream
 
-## Exit criteria
+## `Exit criteria`
 
 A deterministic narration and audio mix pass automated checks.
+
+---
+
+**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**

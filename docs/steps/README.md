@@ -1,4 +1,4 @@
-# Step index
+# `Step index`
 
 | Step | Document | Status |
 | --- | --- | --- |
@@ -14,3 +14,7 @@
 Each page is updated when its step is executed and verified.
 
 [Back to main README](../../README.md)
+
+---
+
+**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
