@@ -38,7 +38,7 @@ All generated videos use the same fixed format:
 
 ## `Current status`
 
-**IN PROGRESS --> STEP-05 YOUTUBE API + OAUTH**
+**IN PROGRESS --> STEP-04 V2 PRESENTATION CORRECTION**
 
 Completed:
 - STEP-00 repository bootstrap
@@ -65,8 +65,11 @@ Completed:
 - STEP-04 final media mux --> PASS (H.264 + AAC stereo 48 kHz, 60.000 s)
 
 Current:
-- configure YouTube Data API v3 and OAuth outside Git
-- verify the authenticated channel before any upload
+- validate footer-centered overlays without frame
+- validate background music at 20%
+- validate voice-over window from 10.000 s to 50.000 s
+
+STEP-05 OAuth work is paused until this V2 media is accepted.
 
 No YouTube API credentials, OAuth tokens or publication automation are configured yet.
 
@@ -125,8 +128,8 @@ controlled YouTube publication
 | STEP-01 | fhc2 read-only environment audit | **COMPLETED** |
 | STEP-02 | Background, fonts and music assets | **COMPLETED** |
 | STEP-03 | Python / FFmpeg renderer | **COMPLETED** |
-| STEP-04 | Piper narration and audio mix | **COMPLETED** |
-| STEP-05 | YouTube Data API and OAuth | **IN PROGRESS** |
+| STEP-04 | Piper narration and audio mix | **IN PROGRESS - V2** |
+| STEP-05 | YouTube Data API and OAuth | **PAUSED** |
 | STEP-06 | Channel introduction private pilot | Planned |
 | STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | Planned |
 
