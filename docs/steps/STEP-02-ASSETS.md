@@ -12,23 +12,32 @@ Canonical repository asset:
 
 `assets/backgrounds/mini-kuzai-short-master.png`
 
-Git blob SHA --> `6b40e546b3d0d68840c23c8f30d0faf9fba04076`
+GOGIT report `STEP-02-BACKGROUND-VERIFY-001` --> **PASS**
 
-Expected visual specification:
+Verified on fhc2:
 - format --> PNG
 - resolution --> 1080 x 1920
 - aspect ratio --> 9:16
+- mode --> RGB
+- file size --> 2,445,180 bytes
+- SHA-256 --> `05ad423e88d17d4ff655d61dd7659594242546b2280ebcdf7a172a86ccc6f13d`
+- Git blob --> `6b40e546b3d0d68840c23c8f30d0faf9fba04076`
+- Git blob match --> PASS
+
+Visual specification:
 - fixed THE KUZ NETWORK logo
 - fixed Mini-Kuzai character
 - fixed Mini-KuzAI From Scratch branding
 - no embedded Vxx number
 - no embedded step-specific metric or conclusion
 
-The asset is now stored at the canonical repository path. Its actual local SHA-256, dimensions and image mode will be reverified on fhc2 after pull.
-
 ## Video 001 overlays
 
 The first video is a **channel introduction** and does not display a Vxx reference.
+
+Internal reference:
+
+`VIDEO-001-CHANNEL-INTRO`
 
 Its overlays will introduce:
 - THE KUZ NETWORK
@@ -47,7 +56,7 @@ Step-specific videos will add automatically:
 - short conclusion
 - `DEV FLOW #xxx`
 
-Coordinates and safe zones will be frozen after local master-background verification.
+Coordinates and safe zones still need to be frozen.
 
 ## Music
 
@@ -86,8 +95,7 @@ Verified:
 
 ## Exit criteria
 
-- master background present --> **DONE**
-- local background dimensions/mode/SHA-256 reverified
+- master background present and verified --> **DONE**
 - font selected and validated --> **DONE**
 - music asset selected and license/source recorded
 - safe zones / overlay coordinates frozen
