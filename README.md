@@ -38,7 +38,7 @@ All generated videos use the same fixed format:
 
 ## `Current status`
 
-**IN PROGRESS --> STEP-02 ASSETS**
+**IN PROGRESS --> STEP-03 RENDERER**
 
 Completed:
 - STEP-00 repository bootstrap
@@ -58,9 +58,11 @@ Completed:
 - fixed duration --> 60 seconds
 - canonical background music validated --> 60.000-second WAV, 48 kHz stereo
 - overlay layout frozen and verified --> PASS
+- STEP-02 assets --> COMPLETED
+- background music usage --> NON-COMMERCIAL
 
 Current:
-- document exact Suno public-use license entitlement
+- implement and validate the STEP-03 Python / FFmpeg renderer
 
 No YouTube API credentials, OAuth tokens or publication automation are configured yet.
 
@@ -117,8 +119,8 @@ controlled YouTube publication
 | --- | --- | --- |
 | STEP-00 | Repository bootstrap and operating rules | **COMPLETED** |
 | STEP-01 | fhc2 read-only environment audit | **COMPLETED** |
-| STEP-02 | Background, fonts and music assets | **IN PROGRESS** |
-| STEP-03 | Python / FFmpeg renderer | Planned |
+| STEP-02 | Background, fonts and music assets | **COMPLETED** |
+| STEP-03 | Python / FFmpeg renderer | **IN PROGRESS** |
 | STEP-04 | Piper narration and audio mix | Planned |
 | STEP-05 | YouTube Data API and OAuth | Planned |
 | STEP-06 | Channel introduction private pilot | Planned |
