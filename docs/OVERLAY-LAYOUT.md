@@ -2,53 +2,57 @@
 
 ## `Purpose`
 
-Freeze the dynamic text geometry for the 1080 x 1920 Mini-Kuzai YouTube master background.
+Freeze the text layout rules for Mini-Kuzai YouTube Shorts.
 
-## `Design principle V2`
-
-Dynamic text is displayed sequentially in the **footer area**, horizontally centered.
-
-The renderer uses:
-- no surrounding frame
-- no panel background
-- white text
-- black text stroke for contrast
-- centered alignment
-
-This rule applies to:
+These rules now apply to:
 - VIDEO-001 channel introduction
 - all future Mini-Kuzai DEV-FLOW videos
 
-## `Canvas`
+## `Global style constraints`
 
-- width --> 1080 px
-- height --> 1920 px
-- origin --> top-left
-- coordinates --> pixels
+- all text blocks are horizontally centered
+- all text blocks use square-corner backgrounds
+- title block --> black text on white background
+- dynamic text blocks --> white text on black background
+- GitHub footer --> white text on black background
+- padding --> 2 px horizontal on each side
+- typography --> prefer `ANTA` when available
+- fallback typography --> `Ubuntu Sans Bold`
 
-## `Dynamic footer zones`
+## `Text blocks order`
 
-| Zone | X | Y | Width | Height |
-| --- | ---: | ---: | ---: | ---: |
-| Footer working area | 70 | 1510 | 940 | 270 |
-| Badge / Vxx | 120 | 1515 | 840 | 45 |
-| Headline | 80 | 1570 | 920 | 90 |
-| Body / metric | 80 | 1665 | 920 | 80 |
+From top to bottom in the footer zone:
+- static title --> `THE KUZ NETWORK`
+- optional badge --> usually `Vxx` or status
+- dynamic headline
+- dynamic body
+- static GitHub footer --> `GITHUB.COM/KUSANAGI8200`
 
-## `Typography`
+## `Permanent top-right branding`
 
-- family --> `Ubuntu Sans`
-- style --> `Bold`
-- badge --> 34 px
-- headline --> 58 px
-- body --> 40 px
-- alignment --> center
-- stroke --> 4 px black
-- frame --> none
+Mandatory for VIDEO-001 and all future Mini-Kuzai videos:
+
+- `THE KUZ NETWORK` --> white text on black square-corner background
+- `KUZAI.ORG` --> white text on black square-corner background
+- `KUZAI.ORG` is displayed directly below `THE KUZ NETWORK`
+- both blocks are right-aligned in the top-right corner
+- background width follows text width with 1 px horizontal padding on each side
+- branding must remain outside the central step-information area
+- central space is reserved for current and future development-step information
+- font preference --> `Anta`
+- fallback --> `Ubuntu Sans Bold`
 
 ## `Canonical configuration`
 
-`config/overlay-layout.json`
+Renderer configuration:
+- `config/overlay-layout.json`
+
+Renderer code:
+- `app/render_short.py`
+
+If `assets/fonts/Anta-Regular.ttf` exists, it is used first.
+If not, the renderer tries system fontconfig match for `Anta`.
+If `Anta` is unavailable, the renderer falls back to `Ubuntu Sans Bold`.
 
 ---
 

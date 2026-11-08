@@ -33,12 +33,35 @@ def run(args: list[str]) -> str:
     return result.stdout.strip()
 
 
-def resolve_font() -> Path:
-    output = run(["fc-match", "-f", "%{file}", "Ubuntu Sans:style=Bold"])
-    font = Path(output)
-    if not font.is_file():
-        raise RuntimeError(f"Ubuntu Sans Bold font not found: {font}")
-    return font
+def resolve_font(layout: dict) -> tuple[Path, str]:
+    preferences = layout.get("font_preferences", [])
+    for item in preferences:
+        candidate = ROOT / item
+        if candidate.is_file():
+            return candidate, str(candidate)
+
+        try:
+            family = run(["fc-match", "-f", "%{family}", item])
+            path = Path(run(["fc-match", "-f", "%{file}", item]))
+        except Exception:
+            continue
+
+        if path.is_file():
+            families = [x.strip().lower() for x in family.split(",")]
+            wanted = item.lower()
+            if (
+                "anta" in wanted and any("anta" in f for f in families)
+            ) or (
+                "ubuntu sans" in wanted and any("ubuntu sans" in f for f in families)
+            ) or (
+                ":" not in item and any(wanted in f for f in families)
+            ):
+                return path, item
+
+    fallback = Path(run(["fc-match", "-f", "%{file}", "Ubuntu Sans:style=Bold"]))
+    if not fallback.is_file():
+        raise RuntimeError("No usable font found")
+    return fallback, "Ubuntu Sans:style=Bold"
 
 
 def load_json(path: Path) -> dict:
@@ -72,51 +95,79 @@ def fit_font(
     max_width: int,
     max_height: int,
     stroke_width: int,
-    min_size: int = 20,
+    min_size: int = 18,
 ) -> ImageFont.FreeTypeFont:
     for size in range(start_size, min_size - 1, -2):
         font = ImageFont.truetype(str(font_path), size=size)
         box = draw.textbbox((0, 0), text, font=font, stroke_width=stroke_width)
-        if box[2] - box[0] <= max_width and box[3] - box[1] <= max_height:
+        width = box[2] - box[0]
+        height = box[3] - box[1]
+        if width <= max_width and height <= max_height:
             return font
     return ImageFont.truetype(str(font_path), size=min_size)
 
 
-def draw_center_text(
+def draw_boxed_center_text(
     draw: ImageDraw.ImageDraw,
-    zone: dict,
+    center_x: int | None,
+    top_y: int,
     text: str,
     font_path: Path,
-    start_size: int,
-    fill: tuple[int, int, int, int],
-    stroke_fill: tuple[int, int, int, int],
+    font_px: int,
+    max_text_width: int,
+    max_text_height: int,
+    text_color: tuple[int, int, int, int],
+    background_color: tuple[int, int, int, int],
+    stroke_color: tuple[int, int, int, int],
     stroke_width: int,
+    padding_x: int,
+    padding_y: int,
+    right_x: int | None = None,
 ) -> None:
     if not text:
         return
 
     font = fit_font(
-        draw,
-        text,
-        font_path,
-        start_size,
-        zone["width"],
-        zone["height"],
-        stroke_width,
+        draw=draw,
+        text=text,
+        font_path=font_path,
+        start_size=font_px,
+        max_width=max_text_width,
+        max_height=max_text_height,
+        stroke_width=stroke_width,
     )
+
     box = draw.textbbox((0, 0), text, font=font, stroke_width=stroke_width)
-    width = box[2] - box[0]
-    height = box[3] - box[1]
-    x = zone["x"] + (zone["width"] - width) / 2 - box[0]
-    y = zone["y"] + (zone["height"] - height) / 2 - box[1]
+    text_w = box[2] - box[0]
+    text_h = box[3] - box[1]
+
+    rect_w = text_w + (padding_x * 2)
+    rect_h = text_h + (padding_y * 2)
+
+    if right_x is not None:
+        rect_x1 = int(right_x)
+        rect_x0 = rect_x1 - rect_w
+    else:
+        if center_x is None:
+            raise ValueError("center_x or right_x is required")
+        rect_x0 = round(center_x - (rect_w / 2))
+        rect_x1 = rect_x0 + rect_w
+
+    rect_y0 = top_y
+    rect_y1 = rect_y0 + rect_h
+
+    draw.rectangle((rect_x0, rect_y0, rect_x1, rect_y1), fill=background_color)
+
+    text_x = rect_x0 + padding_x - box[0]
+    text_y = rect_y0 + padding_y - box[1]
 
     draw.text(
-        (x, y),
+        (text_x, text_y),
         text,
         font=font,
-        fill=fill,
+        fill=text_color,
         stroke_width=stroke_width,
-        stroke_fill=stroke_fill,
+        stroke_fill=stroke_color,
     )
 
 
@@ -131,44 +182,49 @@ def render_frame(
     overlay = Image.new("RGBA", frame.size, (0, 0, 0, 0))
     draw = ImageDraw.Draw(overlay)
 
-    zones = layout["dynamic_zones"]
-    typography = layout["typography"]
-    text_style = layout["text_style"]
+    elements = layout["elements"]
 
-    text_color = hex_rgba(text_style["text"])
-    stroke_color = hex_rgba(text_style["stroke"])
-    stroke_width = int(typography["stroke_px"])
+    render_order = [
+        ("static_title", elements["static_title"].get("text", "")),
+        ("static_site", elements["static_site"].get("text", "")),
+        ("dynamic_badge", segment.get(elements["dynamic_badge"].get("field", ""), "")),
+        ("dynamic_headline", segment.get(elements["dynamic_headline"].get("field", ""), "")),
+        ("dynamic_body", segment.get(elements["dynamic_body"].get("field", ""), "")),
+        ("github_footer", elements["github_footer"].get("text", "")),
+    ]
 
-    draw_center_text(
-        draw,
-        zones["badge"],
-        segment.get("badge", ""),
-        font_path,
-        int(typography["badge_px"]),
-        text_color,
-        stroke_color,
-        stroke_width,
-    )
-    draw_center_text(
-        draw,
-        zones["headline"],
-        segment.get("headline", ""),
-        font_path,
-        int(typography["headline_px"]),
-        text_color,
-        stroke_color,
-        stroke_width,
-    )
-    draw_center_text(
-        draw,
-        zones["body"],
-        segment.get("body", ""),
-        font_path,
-        int(typography["body_px"]),
-        text_color,
-        stroke_color,
-        stroke_width,
-    )
+    for key, text in render_order:
+        config = elements[key]
+        if not config.get("enabled", False):
+            continue
+        if not text:
+            continue
+
+        draw_boxed_center_text(
+            draw=draw,
+            center_x=(
+                int(config["center_x"])
+                if "center_x" in config
+                else None
+            ),
+            top_y=int(config["top_y"]),
+            text=text,
+            font_path=font_path,
+            font_px=int(config["font_px"]),
+            max_text_width=int(config["max_text_width"]),
+            max_text_height=int(config["max_text_height"]),
+            text_color=hex_rgba(config["text_color"]),
+            background_color=hex_rgba(config["background_color"]),
+            stroke_color=hex_rgba(config["stroke_color"]),
+            stroke_width=int(config["stroke_px"]),
+            padding_x=int(config["padding_x"]),
+            padding_y=int(config["padding_y"]),
+            right_x=(
+                int(config["right_x"])
+                if "right_x" in config
+                else None
+            ),
+        )
 
     Image.alpha_composite(frame, overlay).convert("RGB").save(output, "PNG")
 
@@ -226,7 +282,8 @@ def main() -> int:
             f"{canvas['width']}x{canvas['height']}"
         )
 
-    font_path = resolve_font()
+    font_path, font_label = resolve_font(layout)
+
     args.output.parent.mkdir(parents=True, exist_ok=True)
 
     temp_root = ROOT / "work"
@@ -247,6 +304,8 @@ def main() -> int:
     print(f"OUTPUT={args.output}")
     print(f"DURATION_SECONDS={TARGET_DURATION:.0f}")
     print(f"FPS={FPS}")
+    print(f"FONT_USED={font_label}")
+    print(f"FONT_PATH={font_path}")
     return 0
 
 

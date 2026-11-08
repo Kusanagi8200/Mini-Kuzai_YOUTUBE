@@ -1,0 +1,78 @@
+{
+  "schema_version": 2,
+  "canvas": {
+    "width": 1080,
+    "height": 1920
+  },
+  "policy": {
+    "coordinate_origin": "top-left",
+    "units": "pixels",
+    "dynamic_text_policy": "footer-centered-sequential-text",
+    "text_frame": false
+  },
+  "reserved_zones": {
+    "fixed_logo": {
+      "x": 40,
+      "y": 60,
+      "width": 260,
+      "height": 280
+    },
+    "character_protection": {
+      "x": 220,
+      "y": 340,
+      "width": 620,
+      "height": 900
+    },
+    "fixed_branding": {
+      "x": 120,
+      "y": 1260,
+      "width": 840,
+      "height": 240
+    },
+    "shorts_right_ui_conservative": {
+      "x": 900,
+      "y": 300,
+      "width": 180,
+      "height": 1200
+    }
+  },
+  "dynamic_zones": {
+    "footer": {
+      "x": 70,
+      "y": 1510,
+      "width": 940,
+      "height": 270
+    },
+    "badge": {
+      "x": 120,
+      "y": 1515,
+      "width": 840,
+      "height": 45
+    },
+    "headline": {
+      "x": 80,
+      "y": 1570,
+      "width": 920,
+      "height": 90
+    },
+    "body": {
+      "x": 80,
+      "y": 1665,
+      "width": 920,
+      "height": 80
+    }
+  },
+  "typography": {
+    "family": "Ubuntu Sans",
+    "style": "Bold",
+    "badge_px": 34,
+    "headline_px": 58,
+    "body_px": 40,
+    "stroke_px": 4,
+    "text_alignment": "center"
+  },
+  "text_style": {
+    "text": "#F2F2F2",
+    "stroke": "#000000"
+  }
+}

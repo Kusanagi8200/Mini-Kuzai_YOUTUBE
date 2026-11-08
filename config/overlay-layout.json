@@ -1,78 +1,104 @@
 {
-  "schema_version": 2,
+  "schema_version": 4,
   "canvas": {
     "width": 1080,
     "height": 1920
   },
-  "policy": {
-    "coordinate_origin": "top-left",
-    "units": "pixels",
-    "dynamic_text_policy": "footer-centered-sequential-text",
-    "text_frame": false
-  },
-  "reserved_zones": {
-    "fixed_logo": {
-      "x": 40,
-      "y": 60,
-      "width": 260,
-      "height": 280
+  "font_preferences": [
+    "assets/fonts/Anta-Regular.ttf",
+    "Anta",
+    "Ubuntu Sans:style=Bold"
+  ],
+  "elements": {
+    "static_title": {
+      "enabled": true,
+      "text": "THE KUZ NETWORK",
+      "right_x": 1030,
+      "top_y": 70,
+      "max_text_width": 500,
+      "max_text_height": 42,
+      "font_px": 34,
+      "text_color": "#FFFFFF",
+      "background_color": "#000000",
+      "stroke_color": "#FFFFFF",
+      "stroke_px": 0,
+      "padding_x": 1,
+      "padding_y": 5
     },
-    "character_protection": {
-      "x": 220,
-      "y": 340,
-      "width": 620,
-      "height": 900
+    "dynamic_badge": {
+      "enabled": true,
+      "field": "badge",
+      "center_x": 540,
+      "top_y": 1570,
+      "max_text_width": 860,
+      "max_text_height": 36,
+      "font_px": 28,
+      "text_color": "#FFFFFF",
+      "background_color": "#000000",
+      "stroke_color": "#FFFFFF",
+      "stroke_px": 0,
+      "padding_x": 2,
+      "padding_y": 4
     },
-    "fixed_branding": {
-      "x": 120,
-      "y": 1260,
-      "width": 840,
-      "height": 240
+    "dynamic_headline": {
+      "enabled": true,
+      "field": "headline",
+      "center_x": 540,
+      "top_y": 1615,
+      "max_text_width": 920,
+      "max_text_height": 62,
+      "font_px": 56,
+      "text_color": "#FFFFFF",
+      "background_color": "#000000",
+      "stroke_color": "#FFFFFF",
+      "stroke_px": 0,
+      "padding_x": 2,
+      "padding_y": 6
     },
-    "shorts_right_ui_conservative": {
-      "x": 900,
-      "y": 300,
-      "width": 180,
-      "height": 1200
+    "dynamic_body": {
+      "enabled": true,
+      "field": "body",
+      "center_x": 540,
+      "top_y": 1690,
+      "max_text_width": 920,
+      "max_text_height": 46,
+      "font_px": 38,
+      "text_color": "#FFFFFF",
+      "background_color": "#000000",
+      "stroke_color": "#FFFFFF",
+      "stroke_px": 0,
+      "padding_x": 2,
+      "padding_y": 6
+    },
+    "github_footer": {
+      "enabled": true,
+      "text": "GITHUB.COM/KUSANAGI8200",
+      "center_x": 540,
+      "top_y": 1775,
+      "max_text_width": 820,
+      "max_text_height": 32,
+      "font_px": 28,
+      "text_color": "#FFFFFF",
+      "background_color": "#000000",
+      "stroke_color": "#FFFFFF",
+      "stroke_px": 0,
+      "padding_x": 2,
+      "padding_y": 6
+    },
+    "static_site": {
+      "enabled": true,
+      "text": "KUZAI.ORG",
+      "right_x": 1030,
+      "top_y": 125,
+      "max_text_width": 320,
+      "max_text_height": 34,
+      "font_px": 28,
+      "text_color": "#FFFFFF",
+      "background_color": "#000000",
+      "stroke_color": "#FFFFFF",
+      "stroke_px": 0,
+      "padding_x": 1,
+      "padding_y": 5
     }
-  },
-  "dynamic_zones": {
-    "footer": {
-      "x": 70,
-      "y": 1510,
-      "width": 940,
-      "height": 270
-    },
-    "badge": {
-      "x": 120,
-      "y": 1515,
-      "width": 840,
-      "height": 45
-    },
-    "headline": {
-      "x": 80,
-      "y": 1570,
-      "width": 920,
-      "height": 90
-    },
-    "body": {
-      "x": 80,
-      "y": 1665,
-      "width": 920,
-      "height": 80
-    }
-  },
-  "typography": {
-    "family": "Ubuntu Sans",
-    "style": "Bold",
-    "badge_px": 34,
-    "headline_px": 58,
-    "body_px": 40,
-    "stroke_px": 4,
-    "text_alignment": "center"
-  },
-  "text_style": {
-    "text": "#F2F2F2",
-    "stroke": "#000000"
   }
 }
