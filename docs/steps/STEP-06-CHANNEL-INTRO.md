@@ -1,69 +1,113 @@
-# `STEP-06 - Channel introduction private pilot`
+# `STEP-06 - Channel introduction pilot`
 
-Status --> Planned
+Status --> **IN PROGRESS - PRIVATE PILOT VERIFIED**
 
 ## `Objective`
 
-Generate and upload the **first video of the channel** as a general presentation of THE KUZ NETWORK and Mini-Kuzai.
+Generate, review and publish the first channel video introducing THE KUZ NETWORK and Mini-Kuzai.
 
-This video is deliberately independent from the currently active Mini-Kuzai development step.
+This video is deliberately independent from the active Mini-Kuzai scientific development step.
 
-It must **not** be presented as V80, V79 or any other Vxx step.
+It is not presented as V80, V79 or any other Vxx step.
 
 ## `Video identity`
 
 Internal reference --> `VIDEO-001-CHANNEL-INTRO`
 
+YouTube Video ID --> `pexXCUznWRk`
+
+Title --> `THE KUZ NETWORK // MINI-KUZAI - LLM FROM SCRATCH`
+
 Duration --> **60 seconds exactly**
 
 No `Vxx` badge.
+
 No `DEV FLOW #xxx` reference.
 
-The video should explain, in concise public-facing language:
-- what THE KUZ NETWORK is
-- what Mini-Kuzai is
-- the "LLM From Scratch" objective
-- why the project is being documented
-- that future Shorts will follow validated development milestones
+## `Canonical presentation`
 
-## `Production`
+Verified V6 presentation:
 
-The pilot must use the same production stack planned for later step videos:
-- canonical 1080 x 1920 background
-- fixed 60-second timeline
-- Ubuntu Sans Bold overlays
-- Piper narration
-- approved background music
-- FFmpeg rendering
-- automatic media validation
-- YouTube metadata generation
+- 1080 x 1920
+- 60 seconds
+- Anta font
+- `THE KUZ NETWORK` top-right
+- `KUZAI.ORG` directly below
+- dynamic information area preserved
+- `GITHUB.COM/KUSANAGI8200` footer
+- Piper narration by sentence chunks
+- voice from 10 s to 50 s
+- music at 20 percent
+- scratch artifacts fixed
 
-## `YouTube publication`
+Operator visual/audio acceptance --> PASS
 
-The first API upload remains **PRIVATE** until manually reviewed.
+## `YouTube pilot`
+
+Verified:
+
+- YouTube Data API upload --> PASS
+- target channel --> `UC9MDfq5s-6j_twe4xJH_XXA`
+- target channel match --> PASS
+- private upload --> PASS
+- private status verified through API --> PASS
+- local journal --> PASS
+- idempotence --> PASS
+
+GOGIT evidence:
+
+- `STEP-05-PRIVATE-UPLOAD-001` --> PASS
+- `STEP-05-PRIVATE-VERIFY-001` --> PASS
+
+## `Metadata policy`
+
+Descriptions for VIDEO-001 and future Shorts:
+
+- no final colon character
+- `:` is converted to ` → `
+- no `<` or `>`
+- no `http://`
+- no `https://`
+- no `www.` URL
+- descriptive text only
+
+## `Current action`
+
+The private pilot has been manually reviewed in YouTube Studio.
+
+Next action --> change VIDEO-001 visibility from `Private` to `Public` in YouTube Studio, then verify the public state.
+
+The current minimal OAuth scopes are intentionally not broadened only to perform this transition.
 
 ## `Later videos`
 
-Only after VIDEO-001 is accepted will the DEV-FLOW series begin using:
+Only after VIDEO-001 is accepted and public will the DEV-FLOW series begin using:
+
 - Vxx
 - FLOW Vxx OK
 - step title
 - metric/result
 - DEV FLOW #xxx
 
-All later videos also use the same fixed **60-second duration**.
-
-The first DEV-FLOW video will use the appropriate validated step available at that time; it is not hard-coded to V80.
+All later videos use the same fixed 60-second duration and canonical V6 presentation constraints.
 
 ## `Exit criteria`
 
-- VIDEO-001 duration --> exactly 60 seconds
-- VIDEO-001 rendered successfully
-- narration and music reviewed
+Completed:
+
+- exact 60-second duration
+- render successful
+- narration/music reviewed
 - overlays reviewed
 - technical media validation PASS
-- private YouTube upload reaches the canonical channel
-- operator manually accepts the first video before public automation
+- private upload reached canonical channel
+- operator accepted video
+
+Remaining:
+
+- VIDEO-001 visibility --> public
+- public state verification
+- final STEP-06 documentation/GOGIT close
 
 ---
 
