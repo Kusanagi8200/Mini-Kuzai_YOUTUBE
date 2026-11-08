@@ -1,6 +1,6 @@
 # `STEP-05 - YouTube Data API`
 
-Status --> Planned
+Status --> **IN PROGRESS**
 
 ## `Objective`
 
@@ -22,6 +22,12 @@ Planned controls:
 - explicit target-channel verification
 - first upload forced to PRIVATE
 - publication journal / idempotence
+
+## `Current action`
+
+Verify the current official Google / YouTube requirements before implementing OAuth and upload code.
+
+No credential, client secret, refresh token or access token may be committed to Git.
 
 ## `Exit criteria`
 
