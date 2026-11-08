@@ -31,6 +31,16 @@ Visual specification:
 - no embedded Vxx number
 - no embedded step-specific metric or conclusion
 
+## Fixed video duration
+
+All videos are exactly **60 seconds**.
+
+This applies to:
+- `VIDEO-001-CHANNEL-INTRO`
+- all future Mini-Kuzai DEV-FLOW Shorts
+
+Narration, overlays and audio mixing must fit inside this fixed 60-second timeline.
+
 ## Video 001 overlays
 
 The first video is a **channel introduction** and does not display a Vxx reference.
@@ -60,16 +70,27 @@ Coordinates and safe zones still need to be frozen.
 
 ## Music
 
-Background music is not selected yet.
+Selected style:
+- dark cyberpunk industrial ambient
+- no drums or percussion
+- heavy bass pads and sub-bass drones
+- slow analog bass movement
+- electrical / machine / server-room textures
+- sparse enough to preserve spoken narration intelligibility
+
+Canonical filename:
+
+`assets/music/kuzai-dark-cyberpunk-background-60s.wav`
+
+If only MP3 is available from the source, use:
+
+`assets/music/kuzai-dark-cyberpunk-background-60s.mp3`
 
 Requirements:
 - YouTube-compatible usage rights
 - source/license documented
+- 60-second usable timeline
 - suitable for low-volume mixing below Piper narration
-
-Target repository path:
-
-`assets/music/`
 
 ## Font
 
@@ -97,6 +118,7 @@ Verified:
 
 - master background present and verified --> **DONE**
 - font selected and validated --> **DONE**
-- music asset selected and license/source recorded
+- music asset present and license/source recorded
 - safe zones / overlay coordinates frozen
+- fixed duration --> **60 seconds**
 - FFmpeg and ffprobe available --> **DONE**
