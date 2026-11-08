@@ -8,8 +8,8 @@
 | STEP-03 | [Renderer](STEP-03-RENDERER.md) | **COMPLETED** |
 | STEP-04 | [Piper and audio](STEP-04-PIPER-AUDIO.md) | **COMPLETED - V6 CANONICAL** |
 | STEP-05 | [YouTube API](STEP-05-YOUTUBE-API.md) | **COMPLETED** |
-| STEP-06 | [Channel introduction pilot](STEP-06-CHANNEL-INTRO.md) | **IN PROGRESS - PRIVATE VERIFIED** |
-| STEP-07 | [DEV-FLOW integration](STEP-07-DEV-FLOW-INTEGRATION.md) | Planned |
+| STEP-06 | [Channel introduction pilot](STEP-06-CHANNEL-INTRO.md) | **COMPLETED** |
+| STEP-07 | [DEV-FLOW integration](STEP-07-DEV-FLOW-INTEGRATION.md) | **NEXT** |
 
 Each page is updated when its step is executed and verified.
 
