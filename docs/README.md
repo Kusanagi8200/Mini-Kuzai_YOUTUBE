@@ -7,6 +7,8 @@ This directory contains project documentation independently from the source code
 - [Workflow policy](WORKFLOW.md)
 - [Installation and development step index](steps/README.md)
 - [GOGIT operating model](../tools/GOGIT.md)
+- [Overlay layout](OVERLAY-LAYOUT.md)
+- [Suno track usage policy](SUNO-RIGHTS.md)
 
 ## `Documentation rule`
 
