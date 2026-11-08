@@ -1,23 +1,25 @@
 {
-  "generated_at_utc": "2026-11-08T14:35:17.545821+00:00",
+  "generated_at_utc": "2026-11-08T14:48:26.935320+00:00",
   "results": {
     "ASSET_PRESENT": "1",
-    "BIT_RATE": "179259",
+    "BITS_PER_SAMPLE": "32",
+    "BIT_RATE": "3072041",
     "CHANNELS": "2",
-    "CHANNEL_LAYOUT": "stereo",
-    "CODEC": "mp3",
-    "DURATION_GE_60S": "0",
-    "DURATION_MS": "56016",
+    "CHANNEL_LAYOUT": "",
+    "CODEC": "pcm_s32le",
+    "DURATION_60S_VALID": "1",
+    "DURATION_DELTA_MS": "0",
+    "DURATION_MS": "60000",
     "FFPROBE_RC": "0",
-    "FILE_SIZE_BYTES": "1255174",
-    "FORMAT": "mp3",
-    "GIT_BLOB": "63e9a55e2c99fcc98576d1525ab82644bb9734db",
+    "FILE_SIZE_BYTES": "23040378",
+    "FORMAT": "wav",
+    "GIT_BLOB": "a756651fdae861cda8aeb247a7f81cbf84fa697f",
     "GIT_BLOB_MATCH": "1",
     "SAMPLE_RATE": "48000",
-    "SHA256": "f6ec37269feb95a5d06c164275e2f981d75dd319d3e39d70bf8ed640c24e1740",
-    "STEP_STATUS": "FAIL"
+    "SHA256": "e73c66f523290613cfe1ad513174803a1a6b07041a6211ddfbafe3a8e9d604bd",
+    "STEP_STATUS": "PASS"
   },
   "schema_version": 1,
-  "source_commit": "090461cbc02a078a33cfd16f44ccfcec9f168728",
-  "step_id": "STEP-02-MUSIC-VERIFY-001"
+  "source_commit": "5cd7555204b70c1cbcba16b7f30391f51a38eb5e",
+  "step_id": "STEP-02-MUSIC-WAV-VERIFY-001"
 }
