@@ -1,17 +1,39 @@
 # `Application code`
 
-Runtime code for the automated Short pipeline will be added here during STEP-03 and later.
+## `Current implementation`
 
-Planned modules:
-- structured Short brief builder
-- dynamic Vxx / title / metric overlay generation
+STEP-03 renderer:
+
+`app/render_short.py`
+
+The renderer:
+- reads the canonical 1080 x 1920 background
+- reads `config/overlay-layout.json`
+- reads a structured timeline JSON
+- resolves Ubuntu Sans Bold through fontconfig
+- renders dynamic overlay states with Pillow
+- assembles the states with FFmpeg
+- produces a deterministic 60-second H.264 / yuv420p MP4
+- intentionally produces no audio during STEP-03
+
+Renderer test timeline:
+
+`config/video001-intro-render-test.json`
+
+Output validation:
+
+`tools/audits/step03_renderer_check.py`
+
+## `Planned modules`
+
+- structured final Short brief builder
 - Piper narration integration
-- FFmpeg rendering
-- media validation
+- background music and narration mix
+- final media validation
 - YouTube uploader
 - publication journal and idempotence
 
-No production application code is implemented yet.
+Generated media remains under `work/` and outside Git.
 
 [Back to project README](../README.md)
 
