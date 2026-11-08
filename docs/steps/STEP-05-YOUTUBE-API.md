@@ -1,37 +1,106 @@
 # `STEP-05 - YouTube Data API`
 
-Status --> **IN PROGRESS**
+Status --> **COMPLETED**
 
 ## `Objective`
 
-Configure the THE KUZ NETWORK YouTube channel for controlled API upload.
+Configure THE KUZ NETWORK YouTube channel for controlled API upload with explicit channel verification, private pilot publication and local idempotence.
 
 ## `Canonical target`
 
 - Channel URL --> https://www.youtube.com/channel/UC9MDfq5s-6j_twe4xJH_XXA
 - Channel ID --> `UC9MDfq5s-6j_twe4xJH_XXA`
-- First automated test upload --> PRIVATE only
+- Channel title --> `THE KUZ NETWORK`
+- first automated upload --> PRIVATE only
 
-The uploader must verify that the authenticated YouTube identity resolves to this target channel before any publication is accepted.
+## `Verified Google configuration`
 
-Planned controls:
-- dedicated Google Cloud project
-- YouTube Data API v3
-- minimum OAuth scope for upload
-- credentials stored outside Git
-- explicit target-channel verification
-- first upload forced to PRIVATE
-- publication journal / idempotence
+- dedicated Google Cloud project --> `Mini-Kuzai-YouTube`
+- YouTube Data API v3 --> ENABLED
+- Google Auth Platform audience --> External
+- publishing status during pilot --> Testing
+- OAuth client type --> Desktop app
+- OAuth scopes --> `youtube.upload` + `youtube.readonly`
+- OAuth client and token files --> stored outside Git
+- credential file mode --> `600`
+- refresh token --> present
+- authenticated channel verification --> PASS
 
-## `Current action`
+The additional `youtube.readonly` scope is required by the implemented `channels.list(mine=true)` identity verification.
 
-Verify the current official Google / YouTube requirements before implementing OAuth and upload code.
+## `Verified uploader controls`
 
-No credential, client secret, refresh token or access token may be committed to Git.
+`app/youtube_upload.py` enforces:
+
+- target Channel ID match before upload
+- MP4 input
+- private credential file permissions
+- required OAuth scopes
+- media SHA256
+- duplicate-media blocking
+- local publication journal
+- default preflight without upload
+- explicit `--execute` requirement
+- `PRIVATE_ONLY` upload policy for the pilot
+- YouTube Short metadata policy
+
+## `Description policy`
+
+For all future Shorts:
+
+- no colon character in the final description
+- supplied colons are normalized to ` → `
+- no `<` or `>`
+- no `http://`
+- no `https://`
+- no `www.` URL
+- descriptive text only
+
+Permanent project references stay in the rendered video:
+
+- `KUZAI.ORG`
+- `GITHUB.COM/KUSANAGI8200`
+
+## `Private pilot result`
+
+VIDEO-001:
+
+- title --> `THE KUZ NETWORK // MINI-KUZAI - LLM FROM SCRATCH`
+- Video ID --> `pexXCUznWRk`
+- target channel --> PASS
+- API upload --> PASS
+- actual YouTube visibility --> `private`
+- journal match --> PASS
+- idempotence --> PASS
+
+GOGIT evidence:
+
+- `STEP-05-PRIVATE-UPLOAD-001` --> PASS
+- `STEP-05-PRIVATE-VERIFY-001` --> PASS
+
+## `Google process documentation`
+
+Complete setup and recovery procedure:
+
+[Google Cloud and YouTube OAuth setup](../GOOGLE-YOUTUBE-OAUTH-PROCESS.md)
+
+## `Known limitation`
+
+The OAuth application is currently External with publishing status `Testing`.
+
+Google documents that refresh tokens issued in this state expire after seven days when the requested scopes exceed basic identity scopes.
+
+This does not invalidate STEP-05, but unattended long-term STEP-07 automation requires a separate production-state review.
 
 ## `Exit criteria`
 
-A test video can be uploaded privately to the expected channel and verified without exposing credentials.
+Satisfied:
+
+- private test video uploaded
+- expected channel verified
+- actual private visibility verified through API
+- credentials remain outside Git
+- journal and idempotence verified
 
 ---
 
