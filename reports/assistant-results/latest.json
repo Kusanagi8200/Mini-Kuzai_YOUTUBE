@@ -1,19 +1,23 @@
 {
-  "generated_at_utc": "2026-11-08T13:22:12.870777+00:00",
+  "generated_at_utc": "2026-11-08T14:35:17.545821+00:00",
   "results": {
     "ASSET_PRESENT": "1",
-    "FILE_SIZE_BYTES": "2445180",
-    "GIT_BLOB": "6b40e546b3d0d68840c23c8f30d0faf9fba04076",
+    "BIT_RATE": "179259",
+    "CHANNELS": "2",
+    "CHANNEL_LAYOUT": "stereo",
+    "CODEC": "mp3",
+    "DURATION_GE_60S": "0",
+    "DURATION_MS": "56016",
+    "FFPROBE_RC": "0",
+    "FILE_SIZE_BYTES": "1255174",
+    "FORMAT": "mp3",
+    "GIT_BLOB": "63e9a55e2c99fcc98576d1525ab82644bb9734db",
     "GIT_BLOB_MATCH": "1",
-    "IMAGE_FORMAT": "PNG",
-    "IMAGE_HEIGHT": "1920",
-    "IMAGE_MODE": "RGB",
-    "IMAGE_VALID": "1",
-    "IMAGE_WIDTH": "1080",
-    "SHA256": "05ad423e88d17d4ff655d61dd7659594242546b2280ebcdf7a172a86ccc6f13d",
-    "STEP_STATUS": "PASS"
+    "SAMPLE_RATE": "48000",
+    "SHA256": "f6ec37269feb95a5d06c164275e2f981d75dd319d3e39d70bf8ed640c24e1740",
+    "STEP_STATUS": "FAIL"
   },
   "schema_version": 1,
-  "source_commit": "6989192c8857cfe650bde7da0a5acb56be110faf",
-  "step_id": "STEP-02-BACKGROUND-VERIFY-001"
+  "source_commit": "090461cbc02a078a33cfd16f44ccfcec9f168728",
+  "step_id": "STEP-02-MUSIC-VERIFY-001"
 }
