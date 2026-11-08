@@ -1,6 +1,6 @@
 # `STEP-04 - Piper narration and audio`
 
-Status --> **IN PROGRESS**
+Status --> **COMPLETED**
 
 ## `Objective`
 
@@ -44,9 +44,42 @@ After the probe is validated:
 
 Exact Piper invocation and mix parameters will be frozen only after real runtime verification.
 
-## `Exit criteria`
+## `Verified results`
 
-A deterministic narration and music mix passes automated ffprobe validation and is muxed with the verified STEP-03 visual stream.
+GOGIT report `STEP-04-PIPER-PROBE-001` --> **PASS**
+
+Verified runtime:
+- Piper binary present
+- voice model present
+- model JSON present
+- required synthesis flags present
+
+GOGIT report `STEP-04-NARRATION-VERIFY-001` --> **PASS**
+
+Verified narration:
+- format --> WAV
+- codec --> PCM 16-bit
+- channels --> mono
+- sample rate --> 22050 Hz
+- duration --> 40.920 s
+
+GOGIT report `STEP-04-FINAL-MEDIA-VERIFY-001` --> **PASS**
+
+Verified final test media:
+- video --> H.264
+- resolution --> 1080 x 1920
+- pixel format --> yuv420p
+- audio --> AAC
+- audio sample rate --> 48000 Hz
+- audio channels --> stereo
+- duration --> 60.000 s
+- ffprobe --> PASS
+
+## `Closure`
+
+STEP-04 --> **COMPLETED**
+
+Next --> [STEP-05 - YouTube Data API](STEP-05-YOUTUBE-API.md)
 
 ---
 
