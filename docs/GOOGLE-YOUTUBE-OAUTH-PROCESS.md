@@ -276,7 +276,23 @@ Official reference:
 
 https://developers.google.com/youtube/data/reference/rest/v3/videos/update
 
-## `15 - Testing-mode refresh-token limitation`
+## `15 - Verified public transition for VIDEO-001`
+
+The first pilot video was reviewed manually in YouTube Studio and changed from `Private` to `Public`.
+
+Verified result:
+
+- Video ID --> `pexXCUznWRk`
+- target channel --> `UC9MDfq5s-6j_twe4xJH_XXA`
+- target channel match --> PASS
+- API visibility after Studio change --> `public`
+- public confirmation --> PASS
+
+The transition was performed manually because the current OAuth scopes intentionally remain limited to `youtube.upload` and `youtube.readonly`.
+
+No broader write scope was added solely to change visibility.
+
+## `16 - Testing-mode refresh-token limitation`
 
 Google OAuth applications configured as External with publishing status `Testing` issue refresh tokens that expire after seven days when scopes exceed basic identity scopes.
 
