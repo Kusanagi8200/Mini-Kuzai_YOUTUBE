@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local work and generated media
+work/
+output/
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.tmp
+
+# GOGIT local backups
+.gogit-backups/
+
+# Local configuration / secrets
+.env
+.env.*
+config/*.local.*
+config/*secret*
+config/*token*
+config/*credential*
+client_secret*.json
+credentials*.json
+token*.json
+oauth*.json
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
