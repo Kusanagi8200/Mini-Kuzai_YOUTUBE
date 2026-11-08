@@ -4,6 +4,12 @@ Automated YouTube Shorts pipeline for **Mini-Kuzai / THE KUZ NETWORK**.
 
 The project converts a validated Mini-Kuzai development step into a short vertical video with a fixed visual identity, dynamic step information, Piper narration, background music and controlled YouTube publication.
 
+## Target YouTube channel
+
+- Channel --> [THE KUZ NETWORK](https://www.youtube.com/channel/UC9MDfq5s-6j_twe4xJH_XXA)
+- Channel ID --> `UC9MDfq5s-6j_twe4xJH_XXA`
+- Usage --> canonical publication target for Mini-Kuzai Shorts
+
 ## Current status
 
 **IN PROGRESS --> STEP-00 PROJECT BOOTSTRAP**
@@ -13,6 +19,7 @@ Completed:
 - project documentation structure defined
 - target 1080 x 1920 Short format frozen
 - fixed Mini-Kuzai background concept validated
+- canonical YouTube channel registered in project documentation
 
 Next:
 - finish the initial documentation and GOGIT bootstrap
