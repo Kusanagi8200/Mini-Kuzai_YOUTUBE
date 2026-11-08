@@ -8,27 +8,38 @@ Install and validate the fixed Short assets and freeze the visual layout before 
 
 ## Master background
 
-Validated source asset supplied in the ChatGPT project discussion:
+Canonical repository asset:
+
+`assets/backgrounds/mini-kuzai-short-master.png`
+
+Git blob SHA --> `6b40e546b3d0d68840c23c8f30d0faf9fba04076`
+
+Expected visual specification:
 - format --> PNG
 - resolution --> 1080 x 1920
 - aspect ratio --> 9:16
-- mode --> RGBA
-- SHA-256 --> `1e4fca73ca61d9c1de9908ffe1046e6c2e02de1e2e94a18af0c6b06563078316`
 - fixed THE KUZ NETWORK logo
 - fixed Mini-Kuzai character
 - fixed Mini-KuzAI From Scratch branding
 - no embedded Vxx number
 - no embedded step-specific metric or conclusion
 
-Target repository path:
+The asset is now stored at the canonical repository path. Its actual local SHA-256, dimensions and image mode will be reverified on fhc2 after pull.
 
-`assets/backgrounds/mini-kuzai-short-master.png`
+## Video 001 overlays
 
-The validated image still needs to be copied into the repository/fhc2 storage under this canonical filename.
+The first video is a **channel introduction** and does not display a Vxx reference.
 
-## Dynamic overlays
+Its overlays will introduce:
+- THE KUZ NETWORK
+- Mini-Kuzai
+- LLM FROM SCRATCH
+- project/channel objective
+- future development-flow video series
 
-The renderer will add these values automatically:
+## Later DEV-FLOW overlays
+
+Step-specific videos will add automatically:
 - `Vxx`
 - `FLOW Vxx OK`
 - step title
@@ -36,7 +47,7 @@ The renderer will add these values automatically:
 - short conclusion
 - `DEV FLOW #xxx`
 
-Coordinates and safe zones will be frozen after the master image is present locally.
+Coordinates and safe zones will be frozen after local master-background verification.
 
 ## Music
 
@@ -73,11 +84,10 @@ Verified:
 - FFmpeg version --> `6.1.1-3ubuntu5`
 - ffprobe version --> `6.1.1-3ubuntu5`
 
-The rendering prerequisite is satisfied.
-
 ## Exit criteria
 
-- master background present under the canonical filename and checksum reverified
+- master background present --> **DONE**
+- local background dimensions/mode/SHA-256 reverified
 - font selected and validated --> **DONE**
 - music asset selected and license/source recorded
 - safe zones / overlay coordinates frozen
