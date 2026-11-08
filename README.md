@@ -12,21 +12,29 @@ The project converts a validated Mini-Kuzai development step into a short vertic
 
 ## Current status
 
-**IN PROGRESS --> STEP-01 FHC2 ENVIRONMENT AUDIT**
+**IN PROGRESS --> STEP-02 ASSETS**
 
 Completed:
-- GitHub repository created and structured
-- repository cloned on `fhc2`
-- local and remote `main` verified synchronized
-- GOGIT Python syntax verified
-- GitHub CLI authentication verified
+- STEP-00 repository bootstrap
+- STEP-01 fhc2 environment audit
+- Python 3.12.3 detected
+- Pillow detected
+- Piper detected at `/opt/kuzai-tts/piper/venv/bin/piper`
+- Piper voice detected at `/opt/kuzai-tts/piper/models/en_US-lessac-high.onnx`
+- Git and GitHub CLI verified
+- 496 fonts detected through fontconfig
+- 837 GiB free on the target filesystem
+- canonical YouTube channel registered
 - target 1080 x 1920 Short format frozen
 - fixed Mini-Kuzai background concept validated
-- canonical YouTube channel registered
+
+Missing runtime dependency identified:
+- FFmpeg
+- ffprobe
 
 Current:
-- read-only fhc2 environment audit
-- first sanitized GOGIT publication for this project
+- STEP-02 asset validation and layout definition
+- prepare FFmpeg installation before renderer implementation
 
 No YouTube API credentials, OAuth tokens or publication automation are configured yet.
 
@@ -75,8 +83,8 @@ The first pilot will use **V79**. The long-term target is to integrate Short gen
 | Step | Scope | Status |
 | --- | --- | --- |
 | STEP-00 | Repository bootstrap and operating rules | **COMPLETED** |
-| STEP-01 | fhc2 read-only environment audit | **IN PROGRESS** |
-| STEP-02 | Background, fonts and music assets | Planned |
+| STEP-01 | fhc2 read-only environment audit | **COMPLETED** |
+| STEP-02 | Background, fonts and music assets | **IN PROGRESS** |
 | STEP-03 | Python / FFmpeg renderer | Planned |
 | STEP-04 | Piper narration and audio mix | Planned |
 | STEP-05 | YouTube Data API and OAuth | Planned |
