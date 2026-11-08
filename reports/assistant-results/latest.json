@@ -1,17 +1,15 @@
 {
-  "generated_at_utc": "2026-11-08T13:12:22.374529+00:00",
+  "generated_at_utc": "2026-11-08T13:15:48.304022+00:00",
   "results": {
-    "FFMPEG_PATH": "/usr/bin/ffmpeg",
-    "FFMPEG_PRESENT": "1",
-    "FFMPEG_RC": "0",
-    "FFMPEG_VERSION_LINE": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
-    "FFPROBE_PATH": "/usr/bin/ffprobe",
-    "FFPROBE_PRESENT": "1",
-    "FFPROBE_RC": "0",
-    "FFPROBE_VERSION_LINE": "ffprobe version 6.1.1-3ubuntu5 Copyright (c) 2007-2023 the FFmpeg developers",
+    "FC_MATCH_PRESENT": "1",
+    "FONT_FAMILY": "Ubuntu Sans",
+    "FONT_PATH": "/usr/share/fonts/truetype/ubuntu/UbuntuSans[wdth,wght].ttf",
+    "FONT_PATTERN": "Ubuntu Sans:style=Bold",
+    "FONT_SELECTED": "1",
+    "FONT_STYLE": "Bold",
     "STEP_STATUS": "PASS"
   },
   "schema_version": 1,
-  "source_commit": "831e3cbdf32812c5965a1916c2774d3d55bc023f",
-  "step_id": "STEP-02-FFMPEG-INSTALL-001"
+  "source_commit": "f9f9e4a2f7ca4d9972ab13f7f47f3291b6f8cc5e",
+  "step_id": "STEP-02-FONT-SELECTION-001"
 }

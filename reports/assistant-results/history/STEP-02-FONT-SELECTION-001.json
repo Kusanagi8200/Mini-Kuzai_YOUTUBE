@@ -1,0 +1,15 @@
+{
+  "generated_at_utc": "2026-11-08T13:15:48.304022+00:00",
+  "results": {
+    "FC_MATCH_PRESENT": "1",
+    "FONT_FAMILY": "Ubuntu Sans",
+    "FONT_PATH": "/usr/share/fonts/truetype/ubuntu/UbuntuSans[wdth,wght].ttf",
+    "FONT_PATTERN": "Ubuntu Sans:style=Bold",
+    "FONT_SELECTED": "1",
+    "FONT_STYLE": "Bold",
+    "STEP_STATUS": "PASS"
+  },
+  "schema_version": 1,
+  "source_commit": "f9f9e4a2f7ca4d9972ab13f7f47f3291b6f8cc5e",
+  "step_id": "STEP-02-FONT-SELECTION-001"
+}
