@@ -1,6 +1,6 @@
 # `STEP-06 - Channel introduction pilot`
 
-Status --> **IN PROGRESS - PRIVATE PILOT VERIFIED**
+Status --> **COMPLETED**
 
 ## `Objective`
 
@@ -71,13 +71,19 @@ Descriptions for VIDEO-001 and future Shorts:
 - no `www.` URL
 - descriptive text only
 
-## `Current action`
+## `Public publication`
 
-The private pilot has been manually reviewed in YouTube Studio.
+The private pilot was manually reviewed and accepted in YouTube Studio.
 
-Next action --> change VIDEO-001 visibility from `Private` to `Public` in YouTube Studio, then verify the public state.
+The visibility was changed manually from `Private` to `Public` without broadening the OAuth scopes.
 
-The current minimal OAuth scopes are intentionally not broadened only to perform this transition.
+YouTube Data API verification after the change:
+
+- video lookup --> PASS
+- Video ID --> `pexXCUznWRk`
+- target channel match --> PASS
+- API visibility --> `public`
+- public confirmation --> PASS
 
 ## `Later videos`
 
@@ -103,11 +109,13 @@ Completed:
 - private upload reached canonical channel
 - operator accepted video
 
-Remaining:
+Completed:
 
 - VIDEO-001 visibility --> public
-- public state verification
-- final STEP-06 documentation/GOGIT close
+- public state verification --> PASS
+- final STEP-06 documentation --> updated
+
+Final GOGIT closure is the remaining evidence publication action.
 
 ---
 
