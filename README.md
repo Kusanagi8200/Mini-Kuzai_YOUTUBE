@@ -12,20 +12,21 @@ The project converts a validated Mini-Kuzai development step into a short vertic
 
 ## Current status
 
-**IN PROGRESS --> STEP-00 PROJECT BOOTSTRAP**
+**IN PROGRESS --> STEP-01 FHC2 ENVIRONMENT AUDIT**
 
 Completed:
-- GitHub repository created
-- project documentation structure defined
+- GitHub repository created and structured
+- repository cloned on `fhc2`
+- local and remote `main` verified synchronized
+- GOGIT Python syntax verified
+- GitHub CLI authentication verified
 - target 1080 x 1920 Short format frozen
 - fixed Mini-Kuzai background concept validated
-- canonical YouTube channel registered in project documentation
+- canonical YouTube channel registered
 
-Next:
-- finish the initial documentation and GOGIT bootstrap
-- clone the repository on `fhc2`
-- run the read-only STEP-01 environment audit
-- publish the audit through GOGIT
+Current:
+- read-only fhc2 environment audit
+- first sanitized GOGIT publication for this project
 
 No YouTube API credentials, OAuth tokens or publication automation are configured yet.
 
@@ -73,8 +74,8 @@ The first pilot will use **V79**. The long-term target is to integrate Short gen
 
 | Step | Scope | Status |
 | --- | --- | --- |
-| STEP-00 | Repository bootstrap and operating rules | **IN PROGRESS** |
-| STEP-01 | fhc2 read-only environment audit | Planned |
+| STEP-00 | Repository bootstrap and operating rules | **COMPLETED** |
+| STEP-01 | fhc2 read-only environment audit | **IN PROGRESS** |
 | STEP-02 | Background, fonts and music assets | Planned |
 | STEP-03 | Python / FFmpeg renderer | Planned |
 | STEP-04 | Piper narration and audio mix | Planned |
