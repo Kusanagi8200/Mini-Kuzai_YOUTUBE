@@ -25,7 +25,7 @@ Completed:
 - FFmpeg installed and verified --> `/usr/bin/ffmpeg`
 - ffprobe installed and verified --> `/usr/bin/ffprobe`
 - FFmpeg/ffprobe version --> `6.1.1-3ubuntu5`
-- 496 fonts detected through fontconfig
+- renderer font selected --> `Ubuntu Sans Bold`
 - 837 GiB free on the target filesystem
 - canonical YouTube channel registered
 - target 1080 x 1920 Short format frozen
@@ -33,7 +33,6 @@ Completed:
 
 Current:
 - register/copy the master background asset
-- select renderer font
 - select/document background music
 - freeze overlay safe zones and coordinates
 
