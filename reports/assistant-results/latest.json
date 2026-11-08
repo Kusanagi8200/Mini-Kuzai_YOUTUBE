@@ -1,18 +1,19 @@
 {
-  "generated_at_utc": "2026-11-08T14:51:50.449534+00:00",
+  "generated_at_utc": "2026-11-08T14:56:38.583880+00:00",
   "results": {
-    "ALL_ZONES_IN_BOUNDS": "1",
-    "CANVAS_HEIGHT": "1920",
-    "CANVAS_WIDTH": "1080",
-    "DYNAMIC_CHILDREN_IN_PRIMARY": "1",
-    "PRIMARY_HEIGHT": "240",
-    "PRIMARY_RESERVED_CLEAR": "1",
-    "PRIMARY_WIDTH": "570",
-    "PRIMARY_X": "310",
-    "PRIMARY_Y": "100",
-    "STEP_STATUS": "PASS"
+    "AUDIO_STREAMS": "0",
+    "AVG_FRAME_RATE": "30/1",
+    "CODEC": "h264",
+    "DURATION_DELTA_MS": "0",
+    "DURATION_MS": "60000",
+    "FFPROBE_RC": "0",
+    "HEIGHT": "1920",
+    "PIX_FMT": "yuv420p",
+    "STEP_STATUS": "PASS",
+    "VIDEO_PRESENT": "1",
+    "WIDTH": "1080"
   },
   "schema_version": 1,
-  "source_commit": "e6c1f3777239a90075eb28ad10101ad589af9a92",
-  "step_id": "STEP-02-OVERLAY-LAYOUT-VERIFY-001"
+  "source_commit": "7b6dc3f35a01ef4c4ada8eed82b627a8a7b7e67d",
+  "step_id": "STEP-03-RENDERER-VERIFY-001"
 }
