@@ -86,11 +86,26 @@ If only MP3 is available from the source, use:
 
 `assets/music/kuzai-dark-cyberpunk-background-60s.mp3`
 
-Requirements:
-- YouTube-compatible usage rights
-- source/license documented
-- 60-second usable timeline
-- suitable for low-volume mixing below Piper narration
+GOGIT report `STEP-02-MUSIC-WAV-VERIFY-001` --> **PASS**
+
+Verified on fhc2:
+- canonical file --> `assets/music/kuzai-dark-cyberpunk-background-60s.wav`
+- format --> WAV
+- codec --> `pcm_s32le`
+- sample rate --> 48000 Hz
+- channels --> 2
+- bits per sample --> 32
+- duration --> 60.000 s
+- file size --> 23,040,378 bytes
+- SHA-256 --> `e73c66f523290613cfe1ad513174803a1a6b07041a6211ddfbafe3a8e9d604bd`
+- Git blob --> `a756651fdae861cda8aeb247a7f81cbf84fa697f`
+- Git blob match --> PASS
+
+Source --> Suno-generated track supplied by the project operator.
+
+Rights note --> exact Suno plan/license entitlement has not been recorded yet and must be documented before public publication.
+
+Mixing requirement --> keep music below Piper narration.
 
 ## `Font`
 
@@ -118,7 +133,9 @@ Verified:
 
 - master background present and verified --> **DONE**
 - font selected and validated --> **DONE**
-- music asset present and license/source recorded
+- music asset present and technically validated --> **DONE**
+- music source recorded --> **DONE**
+- public-use license entitlement documented --> **TODO**
 - safe zones / overlay coordinates frozen
 - fixed duration --> **60 seconds**
 - FFmpeg and ffprobe available --> **DONE**
