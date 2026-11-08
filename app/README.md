@@ -2,7 +2,7 @@
 
 ## `Current implementation`
 
-STEP-03 renderer:
+STEP-03 renderer --> **COMPLETED**:
 
 `app/render_short.py`
 
@@ -24,11 +24,16 @@ Output validation:
 
 `tools/audits/step03_renderer_check.py`
 
+## `Current STEP-04 work`
+
+- probe installed Piper CLI and canonical voice
+- freeze deterministic synthesis invocation
+- implement narration integration
+- implement background music and narration mix
+
 ## `Planned modules`
 
 - structured final Short brief builder
-- Piper narration integration
-- background music and narration mix
 - final media validation
 - YouTube uploader
 - publication journal and idempotence
