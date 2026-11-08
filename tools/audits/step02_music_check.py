@@ -10,8 +10,10 @@ from pathlib import Path
 
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 ROOT = Path(__file__).resolve().parents[2]
-ASSET = ROOT / "assets" / "music" / "kuzai-dark-cyberpunk-background-60s.mp3"
-EXPECTED_GIT_BLOB = "63e9a55e2c99fcc98576d1525ab82644bb9734db"
+ASSET = ROOT / "assets" / "music" / "kuzai-dark-cyberpunk-background-60s.wav"
+EXPECTED_GIT_BLOB = "a756651fdae861cda8aeb247a7f81cbf84fa697f"
+TARGET_DURATION_MS = 60000
+DURATION_TOLERANCE_MS = 50
 
 
 def run(args: list[str]) -> tuple[int, str]:
@@ -45,7 +47,7 @@ def main() -> int:
     rc, out = run([
         "ffprobe", "-v", "error",
         "-show_entries",
-        "format=duration,bit_rate,format_name:stream=codec_name,codec_type,sample_rate,channels,channel_layout",
+        "format=duration,bit_rate,format_name:stream=codec_name,codec_type,sample_rate,channels,channel_layout,bits_per_sample",
         "-of", "json",
         str(ASSET),
     ])
@@ -63,8 +65,10 @@ def main() -> int:
 
     duration = float(fmt.get("duration", "0") or 0)
     duration_ms = round(duration * 1000)
-    usable_60s = duration >= 60.0
-    passed = bool(audio and blob == EXPECTED_GIT_BLOB and usable_60s)
+    duration_delta_ms = abs(duration_ms - TARGET_DURATION_MS)
+    duration_valid = duration_delta_ms <= DURATION_TOLERANCE_MS
+    blob_valid = blob == EXPECTED_GIT_BLOB
+    passed = bool(audio and blob_valid and duration_valid)
 
     values = {
         "STEP_STATUS": "PASS" if passed else "FAIL",
@@ -75,13 +79,15 @@ def main() -> int:
         "SAMPLE_RATE": audio.get("sample_rate", ""),
         "CHANNELS": audio.get("channels", ""),
         "CHANNEL_LAYOUT": audio.get("channel_layout", ""),
+        "BITS_PER_SAMPLE": audio.get("bits_per_sample", ""),
         "BIT_RATE": fmt.get("bit_rate", ""),
         "DURATION_MS": duration_ms,
-        "DURATION_GE_60S": int(usable_60s),
+        "DURATION_DELTA_MS": duration_delta_ms,
+        "DURATION_60S_VALID": int(duration_valid),
         "FILE_SIZE_BYTES": len(data),
         "SHA256": sha256,
         "GIT_BLOB": blob,
-        "GIT_BLOB_MATCH": int(blob == EXPECTED_GIT_BLOB),
+        "GIT_BLOB_MATCH": int(blob_valid),
     }
 
     print(MARKER)
