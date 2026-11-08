@@ -1,6 +1,6 @@
 # `STEP-04 - Piper narration and audio`
 
-Status --> **COMPLETED**
+Status --> **IN PROGRESS - V2 CORRECTION**
 
 ## `Objective`
 
@@ -75,11 +75,27 @@ Verified final test media:
 - duration --> 60.000 s
 - ffprobe --> PASS
 
+## `V2 correction`
+
+Operator-requested final presentation rules:
+- dynamic text --> footer
+- dynamic text --> centered
+- text frame --> none
+- background music --> 20%
+- voice-over starts --> 10.000 s
+- voice-over ends --> 50.000 s
+- voice-over active window --> 40.000 s
+- automatic narration timing correction --> maximum +/-10%
+
+The source narration is normalized to the 40-second voice window using FFmpeg `atempo`. If the required speed correction exceeds +/-10%, rendering fails and the narration text must be revised.
+
+STEP-04 remains open until the V2 media passes automated validation and operator visual/audio review.
+
 ## `Closure`
 
-STEP-04 --> **COMPLETED**
+STEP-04 V2 --> **PENDING VERIFICATION**
 
-Next --> [STEP-05 - YouTube Data API](STEP-05-YOUTUBE-API.md)
+STEP-05 --> **PAUSED UNTIL V2 ACCEPTANCE**
 
 ---
 
