@@ -66,7 +66,18 @@ Step-specific videos will add automatically:
 - short conclusion
 - `DEV FLOW #xxx`
 
-Coordinates and safe zones still need to be frozen.
+GOGIT report `STEP-02-OVERLAY-LAYOUT-VERIFY-001` --> **PASS**
+
+Frozen layout:
+- canvas --> 1080 x 1920
+- primary dynamic panel --> x=310, y=100, width=570, height=240
+- all dynamic child zones contained in primary panel --> PASS
+- all zones inside canvas --> PASS
+- primary panel clear of reserved logo, character, branding and conservative Shorts UI zones --> PASS
+
+Canonical configuration --> `config/overlay-layout.json`
+
+Documentation --> `docs/OVERLAY-LAYOUT.md`
 
 ## `Music`
 
@@ -136,7 +147,7 @@ Verified:
 - music asset present and technically validated --> **DONE**
 - music source recorded --> **DONE**
 - public-use license entitlement documented --> **TODO**
-- safe zones / overlay coordinates frozen
+- safe zones / overlay coordinates frozen --> **DONE**
 - fixed duration --> **60 seconds**
 - FFmpeg and ffprobe available --> **DONE**
 
