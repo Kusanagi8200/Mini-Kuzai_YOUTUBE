@@ -1,19 +1,23 @@
 {
-  "generated_at_utc": "2026-11-08T15:02:20.919721+00:00",
+  "generated_at_utc": "2026-11-08T15:03:24.214368+00:00",
   "results": {
-    "AUDIO_PRESENT": "1",
-    "CHANNELS": "1",
-    "CHANNEL_LAYOUT": "",
-    "CODEC": "pcm_s16le",
-    "DURATION_LE_55S": "1",
-    "DURATION_MS": "40920",
+    "AUDIO_CHANNELS": "2",
+    "AUDIO_CODEC": "aac",
+    "AUDIO_SAMPLE_RATE": "48000",
+    "AUDIO_STREAMS": "1",
+    "DURATION_DELTA_MS": "0",
+    "DURATION_MS": "60000",
     "FFPROBE_RC": "0",
-    "FILE_SIZE_BYTES": "1804639",
-    "FORMAT": "wav",
-    "SAMPLE_RATE": "22050",
-    "STEP_STATUS": "PASS"
+    "FILE_SIZE_BYTES": "5160478",
+    "HEIGHT": "1920",
+    "MEDIA_PRESENT": "1",
+    "PIX_FMT": "yuv420p",
+    "STEP_STATUS": "PASS",
+    "VIDEO_CODEC": "h264",
+    "VIDEO_STREAMS": "1",
+    "WIDTH": "1080"
   },
   "schema_version": 1,
-  "source_commit": "18e5c1bb4880abca0cf227db7368cfafa21933c7",
-  "step_id": "STEP-04-NARRATION-VERIFY-001"
+  "source_commit": "2be8dcf1c7dd677b93bb5d6c62d0190c04935c91",
+  "step_id": "STEP-04-FINAL-MEDIA-VERIFY-001"
 }
