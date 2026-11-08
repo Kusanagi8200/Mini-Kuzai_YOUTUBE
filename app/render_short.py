@@ -34,12 +34,7 @@ def run(args: list[str]) -> str:
 
 
 def resolve_font() -> Path:
-    output = run([
-        "fc-match",
-        "-f",
-        "%{file}",
-        "Ubuntu Sans:style=Bold",
-    ])
+    output = run(["fc-match", "-f", "%{file}", "Ubuntu Sans:style=Bold"])
     font = Path(output)
     if not font.is_file():
         raise RuntimeError(f"Ubuntu Sans Bold font not found: {font}")
@@ -62,20 +57,11 @@ def validate_timeline(timeline: dict) -> None:
         raise ValueError("Timeline must contain at least one segment")
 
 
-def rgba(value: str) -> tuple[int, int, int, int]:
-    value = value.strip()
-    if value.startswith("#"):
-        raw = value[1:]
-        if len(raw) != 6:
-            raise ValueError(f"Invalid color: {value}")
-        return tuple(int(raw[i:i+2], 16) for i in (0, 2, 4)) + (255,)
-    if value.startswith("rgba(") and value.endswith(")"):
-        parts = [p.strip() for p in value[5:-1].split(",")]
-        if len(parts) != 4:
-            raise ValueError(f"Invalid rgba color: {value}")
-        alpha = float(parts[3])
-        return int(parts[0]), int(parts[1]), int(parts[2]), round(alpha * 255)
-    raise ValueError(f"Unsupported color: {value}")
+def hex_rgba(value: str) -> tuple[int, int, int, int]:
+    raw = value.strip().lstrip("#")
+    if len(raw) != 6:
+        raise ValueError(f"Invalid color: {value}")
+    return tuple(int(raw[i:i + 2], 16) for i in (0, 2, 4)) + (255,)
 
 
 def fit_font(
@@ -85,26 +71,30 @@ def fit_font(
     start_size: int,
     max_width: int,
     max_height: int,
-    min_size: int = 24,
+    stroke_width: int,
+    min_size: int = 20,
 ) -> ImageFont.FreeTypeFont:
     for size in range(start_size, min_size - 1, -2):
         font = ImageFont.truetype(str(font_path), size=size)
-        box = draw.textbbox((0, 0), text, font=font)
+        box = draw.textbbox((0, 0), text, font=font, stroke_width=stroke_width)
         if box[2] - box[0] <= max_width and box[3] - box[1] <= max_height:
             return font
     return ImageFont.truetype(str(font_path), size=min_size)
 
 
-def draw_right_text(
+def draw_center_text(
     draw: ImageDraw.ImageDraw,
     zone: dict,
     text: str,
     font_path: Path,
     start_size: int,
     fill: tuple[int, int, int, int],
+    stroke_fill: tuple[int, int, int, int],
+    stroke_width: int,
 ) -> None:
     if not text:
         return
+
     font = fit_font(
         draw,
         text,
@@ -112,13 +102,22 @@ def draw_right_text(
         start_size,
         zone["width"],
         zone["height"],
+        stroke_width,
     )
-    box = draw.textbbox((0, 0), text, font=font)
+    box = draw.textbbox((0, 0), text, font=font, stroke_width=stroke_width)
     width = box[2] - box[0]
     height = box[3] - box[1]
-    x = zone["x"] + zone["width"] - width
-    y = zone["y"] + max(0, (zone["height"] - height) // 2) - box[1]
-    draw.text((x, y), text, font=font, fill=fill)
+    x = zone["x"] + (zone["width"] - width) / 2 - box[0]
+    y = zone["y"] + (zone["height"] - height) / 2 - box[1]
+
+    draw.text(
+        (x, y),
+        text,
+        font=font,
+        fill=fill,
+        stroke_width=stroke_width,
+        stroke_fill=stroke_fill,
+    )
 
 
 def render_frame(
@@ -133,34 +132,42 @@ def render_frame(
     draw = ImageDraw.Draw(overlay)
 
     zones = layout["dynamic_zones"]
-    style = layout["panel_style"]
     typography = layout["typography"]
-    panel = zones["primary_panel"]
+    text_style = layout["text_style"]
 
-    x0, y0 = panel["x"], panel["y"]
-    x1 = x0 + panel["width"]
-    y1 = y0 + panel["height"]
+    text_color = hex_rgba(text_style["text"])
+    stroke_color = hex_rgba(text_style["stroke"])
+    stroke_width = int(typography["stroke_px"])
 
-    draw.rounded_rectangle(
-        (x0, y0, x1, y1),
-        radius=18,
-        fill=rgba(style["background"]),
-        outline=rgba(style["border"]),
-        width=2,
+    draw_center_text(
+        draw,
+        zones["badge"],
+        segment.get("badge", ""),
+        font_path,
+        int(typography["badge_px"]),
+        text_color,
+        stroke_color,
+        stroke_width,
     )
-
-    text_color = rgba(style["text"])
-    draw_right_text(
-        draw, zones["badge"], segment.get("badge", ""),
-        font_path, int(typography["badge_px"]), text_color,
+    draw_center_text(
+        draw,
+        zones["headline"],
+        segment.get("headline", ""),
+        font_path,
+        int(typography["headline_px"]),
+        text_color,
+        stroke_color,
+        stroke_width,
     )
-    draw_right_text(
-        draw, zones["headline"], segment.get("headline", ""),
-        font_path, int(typography["headline_px"]), text_color,
-    )
-    draw_right_text(
-        draw, zones["body"], segment.get("body", ""),
-        font_path, int(typography["body_px"]), text_color,
+    draw_center_text(
+        draw,
+        zones["body"],
+        segment.get("body", ""),
+        font_path,
+        int(typography["body_px"]),
+        text_color,
+        stroke_color,
+        stroke_width,
     )
 
     Image.alpha_composite(frame, overlay).convert("RGB").save(output, "PNG")
