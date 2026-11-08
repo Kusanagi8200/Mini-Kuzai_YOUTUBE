@@ -53,7 +53,15 @@ Target repository path:
 
 ## Font
 
-STEP-01 detected 496 fontconfig entries. The final renderer font will be selected from installed fonts rather than installing one unnecessarily.
+GOGIT report `STEP-02-FONT-SELECTION-001` --> **PASS**
+
+Selected renderer font:
+- family --> `Ubuntu Sans`
+- style --> `Bold`
+- fontconfig pattern --> `Ubuntu Sans:style=Bold`
+- path --> `/usr/share/fonts/truetype/ubuntu/UbuntuSans[wdth,wght].ttf`
+
+No additional font package is required.
 
 ## Runtime prerequisite
 
@@ -70,7 +78,7 @@ The rendering prerequisite is satisfied.
 ## Exit criteria
 
 - master background present under the canonical filename and checksum reverified
-- font selected and validated
+- font selected and validated --> **DONE**
 - music asset selected and license/source recorded
 - safe zones / overlay coordinates frozen
 - FFmpeg and ffprobe available --> **DONE**
