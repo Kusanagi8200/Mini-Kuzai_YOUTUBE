@@ -1,6 +1,6 @@
 # `STEP-02 - Assets`
 
-Status --> **IN PROGRESS**
+Status --> **COMPLETED**
 
 ## `Objective`
 
@@ -112,9 +112,13 @@ Verified on fhc2:
 - Git blob --> `a756651fdae861cda8aeb247a7f81cbf84fa697f`
 - Git blob match --> PASS
 
-Source --> Suno-generated track supplied by the project operator.
+Source --> track created by the project operator for THE KUZ NETWORK using Suno.
 
-Rights note --> exact Suno plan/license entitlement has not been recorded yet and must be documented before public publication.
+Usage --> **NON-COMMERCIAL**.
+
+Usage policy --> `docs/SUNO-RIGHTS.md`.
+
+If future monetization or another commercial use is enabled, rights must be reviewed again before publication.
 
 Mixing requirement --> keep music below Piper narration.
 
@@ -146,7 +150,7 @@ Verified:
 - font selected and validated --> **DONE**
 - music asset present and technically validated --> **DONE**
 - music source recorded --> **DONE**
-- public-use license entitlement documented --> **TODO**
+- non-commercial usage policy documented --> **DONE**
 - safe zones / overlay coordinates frozen --> **DONE**
 - fixed duration --> **60 seconds**
 - FFmpeg and ffprobe available --> **DONE**
