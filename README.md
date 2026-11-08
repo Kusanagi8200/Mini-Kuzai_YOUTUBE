@@ -58,7 +58,7 @@ Permanent project addresses are displayed inside the rendered video instead of t
 
 ## `Current status`
 
-**IN PROGRESS --> STEP-06 CHANNEL INTRODUCTION PILOT**
+**NEXT --> STEP-07 MINI-KUZAI FINAL-DEV-FLOW INTEGRATION**
 
 Completed:
 
@@ -71,6 +71,9 @@ Completed:
 - first automated private upload
 - authenticated channel verification
 - actual private visibility verification
+- VIDEO-001 operator review
+- VIDEO-001 public publication
+- public visibility verification through API
 - publication journal
 - media SHA256 idempotence
 
@@ -82,12 +85,16 @@ VIDEO-001 pilot:
 - private upload --> PASS
 - operator visual/audio review --> PASS
 
+VIDEO-001 final state:
+
+- Video ID --> `pexXCUznWRk`
+- visibility --> `public`
+- public state verified through YouTube Data API --> PASS
+
 Current action:
 
-- publish VIDEO-001 manually from YouTube Studio
-- verify public state
-- close STEP-06
 - prepare STEP-07 DEV-FLOW integration
+- keep YouTube as an independent publication sink after verified Mini-Kuzai FINAL steps
 
 ## `Google Cloud / OAuth state`
 
@@ -162,8 +169,8 @@ YouTube publication failure never invalidates the underlying Mini-Kuzai scientif
 | STEP-03 | Python / FFmpeg renderer | **COMPLETED** |
 | STEP-04 | Piper narration and audio mix | **COMPLETED - V6 CANONICAL** |
 | STEP-05 | YouTube Data API and OAuth | **COMPLETED** |
-| STEP-06 | Channel introduction pilot | **IN PROGRESS - PRIVATE VERIFIED** |
-| STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | Planned |
+| STEP-06 | Channel introduction pilot | **COMPLETED** |
+| STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | **NEXT** |
 
 ## `Operating principles`
 
