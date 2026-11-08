@@ -1,23 +1,20 @@
 {
-  "generated_at_utc": "2026-11-08T17:32:41.650231+00:00",
+  "generated_at_utc": "2026-11-08T17:34:42.087542+00:00",
   "results": {
     "CHANNEL_ID": "UC9MDfq5s-6j_twe4xJH_XXA",
-    "CHANNEL_TITLE": "THE_KUZ_NETWORK",
-    "CONSENT_FLOW": "PASS",
-    "IDEMPOTENCE_ENABLED": "1",
-    "JOURNAL_CREATED": "1",
-    "PRIVACY_POLICY": "PRIVATE_ONLY",
+    "IDEMPOTENCE_VERIFIED": "1",
+    "JOURNAL_CHANNEL_MATCH": "1",
+    "JOURNAL_MATCH_COUNT": "1",
+    "JOURNAL_PRESENT": "1",
+    "JOURNAL_PRIVACY": "private",
+    "PRIVACY_STATUS": "private",
+    "PRIVATE_CONFIRMED": "1",
     "STEP_STATUS": "PASS",
     "TARGET_CHANNEL_MATCH": "1",
-    "UPLOAD_PERFORMED": "1",
-    "UPLOAD_PRIVACY": "private",
     "VIDEO_ID": "pexXCUznWRk",
-    "VIDEO_PRESENT": "1",
-    "VIDEO_SHA256": "f363c2a154cd890544a564be4c7522f47d7d6d8baa86546200b26c544a946ab8",
-    "YOUTUBE_READONLY_SCOPE": "1",
-    "YOUTUBE_UPLOAD_SCOPE": "1"
+    "VIDEO_LOOKUP": "PASS"
   },
   "schema_version": 1,
-  "source_commit": "ba63c68bf71c1427b3f1a493993ac7c69d7b1dd1",
-  "step_id": "STEP-05-PRIVATE-UPLOAD-001"
+  "source_commit": "aa5efac1f89031396c470f75a99c7e422bbebd62",
+  "step_id": "STEP-05-PRIVATE-VERIFY-001"
 }

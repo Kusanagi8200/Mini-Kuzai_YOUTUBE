@@ -1,0 +1,20 @@
+{
+  "generated_at_utc": "2026-11-08T17:34:42.087542+00:00",
+  "results": {
+    "CHANNEL_ID": "UC9MDfq5s-6j_twe4xJH_XXA",
+    "IDEMPOTENCE_VERIFIED": "1",
+    "JOURNAL_CHANNEL_MATCH": "1",
+    "JOURNAL_MATCH_COUNT": "1",
+    "JOURNAL_PRESENT": "1",
+    "JOURNAL_PRIVACY": "private",
+    "PRIVACY_STATUS": "private",
+    "PRIVATE_CONFIRMED": "1",
+    "STEP_STATUS": "PASS",
+    "TARGET_CHANNEL_MATCH": "1",
+    "VIDEO_ID": "pexXCUznWRk",
+    "VIDEO_LOOKUP": "PASS"
+  },
+  "schema_version": 1,
+  "source_commit": "aa5efac1f89031396c470f75a99c7e422bbebd62",
+  "step_id": "STEP-05-PRIVATE-VERIFY-001"
+}
