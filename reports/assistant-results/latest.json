@@ -1,25 +1,23 @@
 {
-  "generated_at_utc": "2026-11-08T16:23:02.607727+00:00",
+  "generated_at_utc": "2026-11-08T17:32:41.650231+00:00",
   "results": {
-    "CANONICAL_LAYOUT": "V6",
-    "DURATION_MS": "60000",
-    "FONT_FAMILY": "ANTA",
-    "FONT_REPOSITORY_EMBEDDED": "1",
-    "FUTURE_VIDEO_CONSTRAINTS": "FROZEN",
-    "GITHUB_FOOTER": "PASS",
-    "KUZAI_ORG": "PASS",
-    "MUSIC_VOLUME_PERCENT": "20",
-    "OPERATOR_VISUAL_ACCEPTANCE": "PASS",
-    "PIPER_SENTENCE_CHUNKING": "1",
-    "SCRATCH_AUDIO_FIXED": "1",
+    "CHANNEL_ID": "UC9MDfq5s-6j_twe4xJH_XXA",
+    "CHANNEL_TITLE": "THE_KUZ_NETWORK",
+    "CONSENT_FLOW": "PASS",
+    "IDEMPOTENCE_ENABLED": "1",
+    "JOURNAL_CREATED": "1",
+    "PRIVACY_POLICY": "PRIVATE_ONLY",
     "STEP_STATUS": "PASS",
-    "THE_KUZ_NETWORK": "PASS",
-    "TOP_RIGHT_BRANDING": "PASS",
-    "VOICE_END_MS": "50000",
-    "VOICE_START_MS": "10000",
-    "VOICE_WINDOW_MS": "40000"
+    "TARGET_CHANNEL_MATCH": "1",
+    "UPLOAD_PERFORMED": "1",
+    "UPLOAD_PRIVACY": "private",
+    "VIDEO_ID": "pexXCUznWRk",
+    "VIDEO_PRESENT": "1",
+    "VIDEO_SHA256": "f363c2a154cd890544a564be4c7522f47d7d6d8baa86546200b26c544a946ab8",
+    "YOUTUBE_READONLY_SCOPE": "1",
+    "YOUTUBE_UPLOAD_SCOPE": "1"
   },
   "schema_version": 1,
-  "source_commit": "a79cebe2d0827f5f65d5ccf909dc38f9bcc9e2be",
-  "step_id": "STEP-04-V6-CANONICAL-VERIFY-001"
+  "source_commit": "ba63c68bf71c1427b3f1a493993ac7c69d7b1dd1",
+  "step_id": "STEP-05-PRIVATE-UPLOAD-001"
 }
