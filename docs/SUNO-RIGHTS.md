@@ -1,21 +1,33 @@
-# `Suno publication rights gate`
+# `Suno track usage policy`
 
 ## `Purpose`
 
-This document records the publication gate for the Suno-generated background track used by the Mini-Kuzai YouTube pipeline.
+This document records the usage policy for the canonical background track used by the Mini-Kuzai YouTube pipeline.
 
-This gate affects **public or monetized publication only**. It does not block local rendering, testing or PRIVATE YouTube pilot work.
+## `Project declaration`
 
-## `Official Suno position checked on 2026-11-08`
+The canonical track:
 
-Official Suno documentation states:
+`assets/music/kuzai-dark-cyberpunk-background-60s.wav`
 
-- songs created while subscribed to a paid Pro or Premier plan are granted commercial-use rights
-- those rights include use in content published to YouTube
-- songs created on the Basic/free tier are limited to personal, non-commercial use
-- subscribing after a free-tier song was created does not grant retroactive commercial rights by default
-- commercial exploitation requires a permitted download obtained through an approved Suno download channel
-- commercial-use rights do not guarantee that the generated work qualifies for copyright protection
+was created by the project operator for THE KUZ NETWORK.
+
+THE KUZ NETWORK uses this track in the Mini-Kuzai YouTube project on a **non-commercial basis**.
+
+The project does not use this track for:
+- paid licensing
+- resale
+- advertising campaigns
+- sponsored content
+- monetized commercial exploitation
+
+## `Suno scope`
+
+Official Suno documentation checked on 2026-11-08 distinguishes commercial rights from non-commercial use.
+
+For this project, commercial exploitation is outside the declared scope.
+
+If THE KUZ NETWORK later enables monetization, sponsorship, paid licensing or another commercial use, the Suno terms applicable to the track must be reviewed again before that change.
 
 Official references:
 
@@ -25,25 +37,17 @@ Official references:
 - https://help.suno.com/en/articles/2425729
 - https://suno.com/terms
 
-## `Project publication gate`
-
-Before any Mini-Kuzai video containing the canonical Suno track is made PUBLIC or monetized, the operator must record:
-
-- Suno plan active when the canonical track was generated --> Pro or Premier for commercial use
-- confirmation that the canonical track was downloaded through the official Suno download channel
-- generation/download evidence retained privately by the operator if needed
-
-No credential, invoice, account identifier or private subscription data is stored in this public repository.
-
 ## `Current status`
 
 Technical audio validation --> **PASS**
 
-Commercial/public-use entitlement --> **NOT YET RECORDED**
+Project usage --> **NON-COMMERCIAL**
 
-Public publication using this track --> **BLOCKED UNTIL GATE IS SATISFIED**
+Current publication gate for non-commercial YouTube use --> **PASS**
 
-Local rendering and PRIVATE pilot work --> **AUTHORIZED**
+Commercial or monetized use --> **OUT OF SCOPE / REQUIRES NEW REVIEW**
+
+No credential, invoice, subscription identifier or other private account information is stored in this public repository.
 
 ---
 
