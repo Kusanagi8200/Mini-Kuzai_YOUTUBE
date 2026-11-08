@@ -1,28 +1,25 @@
 {
-  "generated_at_utc": "2026-11-08T15:46:45.967815+00:00",
+  "generated_at_utc": "2026-11-08T16:23:02.607727+00:00",
   "results": {
-    "AUDIO_CHANNELS": "2",
-    "AUDIO_CODEC": "aac",
-    "AUDIO_SAMPLE_RATE": "48000",
-    "DURATION_DELTA_MS": "0",
+    "CANONICAL_LAYOUT": "V6",
     "DURATION_MS": "60000",
-    "FFPROBE_RC": "0",
-    "FILE_SIZE_BYTES": "5229604",
-    "HEIGHT": "1920",
-    "MEDIA_PRESENT": "1",
-    "MIX_METADATA_PRESENT": "1",
+    "FONT_FAMILY": "ANTA",
+    "FONT_REPOSITORY_EMBEDDED": "1",
+    "FUTURE_VIDEO_CONSTRAINTS": "FROZEN",
+    "GITHUB_FOOTER": "PASS",
+    "KUZAI_ORG": "PASS",
     "MUSIC_VOLUME_PERCENT": "20",
-    "NARRATION_SOURCE_DURATION_MS": "40809",
-    "NARRATION_SPEED_FACTOR": "1.02023582",
-    "PIX_FMT": "yuv420p",
+    "OPERATOR_VISUAL_ACCEPTANCE": "PASS",
+    "PIPER_SENTENCE_CHUNKING": "1",
+    "SCRATCH_AUDIO_FIXED": "1",
     "STEP_STATUS": "PASS",
-    "VIDEO_CODEC": "h264",
+    "THE_KUZ_NETWORK": "PASS",
+    "TOP_RIGHT_BRANDING": "PASS",
     "VOICE_END_MS": "50000",
     "VOICE_START_MS": "10000",
-    "VOICE_WINDOW_MS": "40000",
-    "WIDTH": "1080"
+    "VOICE_WINDOW_MS": "40000"
   },
   "schema_version": 1,
-  "source_commit": "3096017aa04bd931ec01e39a228c56881383812e",
-  "step_id": "STEP-04-V3-SCRATCH-FIX-VERIFY-001"
+  "source_commit": "a79cebe2d0827f5f65d5ccf909dc38f9bcc9e2be",
+  "step_id": "STEP-04-V6-CANONICAL-VERIFY-001"
 }
