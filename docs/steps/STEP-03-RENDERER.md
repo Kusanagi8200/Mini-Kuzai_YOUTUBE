@@ -1,6 +1,6 @@
 # `STEP-03 - Renderer`
 
-Status --> **IN PROGRESS**
+Status --> **COMPLETED**
 
 ## `Objective`
 
@@ -54,9 +54,25 @@ The STEP-03 audit checks:
 - duration --> 60,000 ms with maximum 100 ms tolerance
 - audio streams --> 0
 
-## `Exit criteria`
+## `Verified result`
 
-A locally generated 60-second MP4 passes `tools/audits/step03_renderer_check.py` and is published through a unique GOGIT result.
+GOGIT report `STEP-03-RENDERER-VERIFY-001` --> **PASS**
+
+Verified on fhc2:
+- codec --> H.264
+- width --> 1080
+- height --> 1920
+- pixel format --> yuv420p
+- frame rate --> 30 fps
+- duration --> 60.000 s
+- audio streams --> 0
+- ffprobe --> PASS
+
+## `Closure`
+
+STEP-03 --> **COMPLETED**
+
+Next --> [STEP-04 - Piper narration and audio](STEP-04-PIPER-AUDIO.md)
 
 ---
 
