@@ -2,111 +2,143 @@
 
 Automated YouTube Shorts pipeline for **Mini-Kuzai / THE KUZ NETWORK**.
 
-The project converts Mini-Kuzai development information into short vertical videos with a fixed visual identity, Piper narration, background music and controlled YouTube publication.
+The project converts validated Mini-Kuzai development information into short vertical videos with a fixed visual identity, Piper narration, background music and controlled YouTube publication.
 
 ## `Target YouTube channel`
 
 - Channel --> [THE KUZ NETWORK](https://www.youtube.com/channel/UC9MDfq5s-6j_twe4xJH_XXA)
 - Channel ID --> `UC9MDfq5s-6j_twe4xJH_XXA`
-- Usage --> canonical publication target for Mini-Kuzai Shorts
+- usage --> canonical publication target for Mini-Kuzai Shorts
 
 ## `Editorial order`
 
-The **first video is a channel introduction**, not a DEV-FLOW step video.
+The first video is a channel introduction, not a DEV-FLOW step video.
 
-Video 001 will present:
+VIDEO-001 presents:
+
 - THE KUZ NETWORK
 - Mini-Kuzai
-- the "LLM From Scratch" objective
+- the `LLM From Scratch` objective
 - the purpose of the channel
-- the fact that future videos will document validated development steps
+- the fact that future Shorts document validated development milestones
 
-Video 001 has **no Vxx reference**.
+VIDEO-001 has no Vxx reference.
 
-Only later videos use the automatic DEV-FLOW format with `Vxx`, step title, metric/result and `DEV FLOW #xxx`.
+Only later videos use the DEV-FLOW format.
 
-The currently active Mini-Kuzai V80 work is therefore **not** the first YouTube video.
+## `Canonical video format`
 
-## `Video format`
+All generated videos use:
 
-All generated videos use the same fixed format:
 - resolution --> 1080 x 1920
 - aspect ratio --> 9:16
 - duration --> **60 seconds exactly**
-- narration and overlays must fit inside this fixed duration
-- background music is trimmed or looped/faded to the same 60-second timeline
+- font --> Anta
+- permanent top-right branding --> `THE KUZ NETWORK` + `KUZAI.ORG`
+- permanent footer --> `GITHUB.COM/KUSANAGI8200`
+- Piper narration --> sentence-chunked
+- narration window --> 10 s to 50 s
+- background music --> 20 percent
+- H.264 video
+- AAC stereo 48 kHz audio
+
+## `YouTube metadata policy`
+
+Descriptions for all Shorts follow these project constraints:
+
+- no final colon character
+- supplied colons are normalized to ` → `
+- no `<` or `>`
+- no `http://`
+- no `https://`
+- no `www.` URL
+- descriptive text only
+
+Permanent project addresses are displayed inside the rendered video instead of the description.
 
 ## `Current status`
 
-**IN PROGRESS --> STEP-04 V2 PRESENTATION CORRECTION**
+**IN PROGRESS --> STEP-06 CHANNEL INTRODUCTION PILOT**
 
 Completed:
+
 - STEP-00 repository bootstrap
 - STEP-01 fhc2 environment audit
-- Python 3.12.3 detected
-- Pillow detected
-- Piper detected at `/opt/kuzai-tts/piper/venv/bin/piper`
-- Piper voice detected at `/opt/kuzai-tts/piper/models/en_US-lessac-high.onnx`
-- Git and GitHub CLI verified
-- FFmpeg installed and verified --> `/usr/bin/ffmpeg`
-- ffprobe installed and verified --> `/usr/bin/ffprobe`
-- FFmpeg/ffprobe version --> `6.1.1-3ubuntu5`
-- renderer font selected --> `Ubuntu Sans Bold`
-- master background stored at `assets/backgrounds/mini-kuzai-short-master.png`
-- canonical YouTube channel registered
-- target 1080 x 1920 Short format frozen
-- fixed duration --> 60 seconds
-- canonical background music validated --> 60.000-second WAV, 48 kHz stereo
-- overlay layout frozen and verified --> PASS
-- STEP-02 assets --> COMPLETED
-- background music usage --> NON-COMMERCIAL
-- STEP-03 renderer --> PASS (1080x1920, H.264, 30 fps, 60.000 s)
-- STEP-04 Piper narration --> PASS (40.920 s, PCM mono 22.05 kHz)
-- STEP-04 final media mux --> PASS (H.264 + AAC stereo 48 kHz, 60.000 s)
+- STEP-02 assets
+- STEP-03 renderer
+- STEP-04 canonical V6 presentation/audio pipeline
+- STEP-05 Google Cloud / YouTube Data API / OAuth
+- first automated private upload
+- authenticated channel verification
+- actual private visibility verification
+- publication journal
+- media SHA256 idempotence
 
-Current:
-- validate footer-centered overlays without frame
-- validate background music at 20%
-- validate voice-over window from 10.000 s to 50.000 s
+VIDEO-001 pilot:
 
-STEP-05 OAuth work is paused until this V2 media is accepted.
+- Video ID --> `pexXCUznWRk`
+- title --> `THE KUZ NETWORK // MINI-KUZAI - LLM FROM SCRATCH`
+- target channel --> verified
+- private upload --> PASS
+- operator visual/audio review --> PASS
 
-No YouTube API credentials, OAuth tokens or publication automation are configured yet.
+Current action:
+
+- publish VIDEO-001 manually from YouTube Studio
+- verify public state
+- close STEP-06
+- prepare STEP-07 DEV-FLOW integration
+
+## `Google Cloud / OAuth state`
+
+Verified:
+
+- Google Cloud project --> `Mini-Kuzai-YouTube`
+- YouTube Data API v3 --> enabled
+- OAuth client --> Desktop app
+- audience --> External
+- current publishing status --> Testing
+- scopes --> `youtube.upload` + `youtube.readonly`
+- OAuth files --> outside Git
+- target Channel ID verification --> mandatory before upload
+
+Known limitation:
+
+Google documents that External OAuth applications in Testing issue refresh tokens that expire after seven days when non-basic identity scopes are used.
+
+STEP-07 unattended automation therefore requires a production-state review before activation.
+
+Complete setup procedure:
+
+[Google Cloud and YouTube OAuth setup](docs/GOOGLE-YOUTUBE-OAUTH-PROCESS.md)
 
 ## `Target pipeline`
 
 ```text
-VIDEO 001
-channel introduction
-      |
-      v
-fixed background + intro overlays
-+ Piper narration + music
-      |
-      v
-60-second validated MP4
-      |
-      v
-PRIVATE YouTube pilot
-
-THEN
-
 validated Mini-Kuzai FINAL step
       |
       v
-structured short brief
+structured Short brief
       |
-      +--> fixed 1080x1920 background
-      +--> dynamic Vxx / title / metric overlays
-      +--> Piper narration
+      +--> canonical 1080x1920 renderer
+      +--> Anta overlays
+      +--> Piper sentence-chunked narration
       +--> background music
       |
       v
 60-second validated MP4
       |
       v
+target-channel verification
+      |
+      v
 controlled YouTube publication
+      |
+      v
+journal + idempotence evidence
 ```
+
+YouTube publication failure never invalidates the underlying Mini-Kuzai scientific result.
 
 ## `Navigation`
 
@@ -114,9 +146,9 @@ controlled YouTube publication
 | --- | --- |
 | Documentation index | [docs/README.md](docs/README.md) |
 | Installation / development steps | [docs/steps/README.md](docs/steps/README.md) |
+| Google Cloud / YouTube OAuth process | [docs/GOOGLE-YOUTUBE-OAUTH-PROCESS.md](docs/GOOGLE-YOUTUBE-OAUTH-PROCESS.md) |
 | Project workflow policy | [docs/WORKFLOW.md](docs/WORKFLOW.md) |
 | GOGIT documentation | [tools/GOGIT.md](tools/GOGIT.md) |
-| GOGIT implementation | [tools/gogit_publish.py](tools/gogit_publish.py) |
 | Application code | [app/README.md](app/README.md) |
 | Assistant reports | [reports/assistant-results/README.md](reports/assistant-results/README.md) |
 
@@ -125,24 +157,25 @@ controlled YouTube publication
 | Step | Scope | Status |
 | --- | --- | --- |
 | STEP-00 | Repository bootstrap and operating rules | **COMPLETED** |
-| STEP-01 | fhc2 read-only environment audit | **COMPLETED** |
+| STEP-01 | fhc2 environment audit | **COMPLETED** |
 | STEP-02 | Background, fonts and music assets | **COMPLETED** |
 | STEP-03 | Python / FFmpeg renderer | **COMPLETED** |
-| STEP-04 | Piper narration and audio mix | **IN PROGRESS - V2** |
-| STEP-05 | YouTube Data API and OAuth | **PAUSED** |
-| STEP-06 | Channel introduction private pilot | Planned |
+| STEP-04 | Piper narration and audio mix | **COMPLETED - V6 CANONICAL** |
+| STEP-05 | YouTube Data API and OAuth | **COMPLETED** |
+| STEP-06 | Channel introduction pilot | **IN PROGRESS - PRIVATE VERIFIED** |
 | STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | Planned |
 
 ## `Operating principles`
 
 - Work step by step and verify each change.
 - Back up an existing file before modifying it.
-- Prefer autonomous bounded sequences when intermediate manual validation is not required.
-- Publish sanitized command results through GOGIT instead of manually copying successful terminal output.
-- Update code and documentation after every completed installation step.
-- Never commit OAuth secrets, tokens, passwords, private keys or private data.
+- Never commit OAuth secrets, tokens, passwords, private keys or private account data.
+- Keep OAuth and publication state outside Git.
+- Verify the authenticated YouTube Channel ID before every upload.
+- Block duplicate media through SHA256 journal checks.
+- Publish sanitized command results through GOGIT.
+- Update code and documentation after every completed project step.
 - YouTube failure must never invalidate a Mini-Kuzai scientific result.
-- Generated videos and temporary render files stay outside Git.
 
 ---
 
