@@ -27,6 +27,15 @@ Only later videos use the automatic DEV-FLOW format with `Vxx`, step title, metr
 
 The currently active Mini-Kuzai V80 work is therefore **not** the first YouTube video.
 
+## Video format
+
+All generated videos use the same fixed format:
+- resolution --> 1080 x 1920
+- aspect ratio --> 9:16
+- duration --> **60 seconds exactly**
+- narration and overlays must fit inside this fixed duration
+- background music is trimmed or looped/faded to the same 60-second timeline
+
 ## Current status
 
 **IN PROGRESS --> STEP-02 ASSETS**
@@ -46,9 +55,9 @@ Completed:
 - master background stored at `assets/backgrounds/mini-kuzai-short-master.png`
 - canonical YouTube channel registered
 - target 1080 x 1920 Short format frozen
+- fixed duration --> 60 seconds
 
 Current:
-- verify the master background on fhc2
 - select/document background music
 - freeze overlay safe zones and coordinates
 
@@ -65,7 +74,7 @@ fixed background + intro overlays
 + Piper narration + music
       |
       v
-validated MP4
+60-second validated MP4
       |
       v
 PRIVATE YouTube pilot
@@ -83,7 +92,7 @@ structured short brief
       +--> background music
       |
       v
-validated MP4
+60-second validated MP4
       |
       v
 controlled YouTube publication
