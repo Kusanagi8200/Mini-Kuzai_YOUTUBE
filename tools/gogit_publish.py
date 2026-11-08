@@ -21,7 +21,7 @@ BACKUP_DIR = ROOT / ".gogit-backups"
 MARKER = "##### SECTION RESULTS FOR ASSISTANT ######"
 STEP_RE = re.compile(r"^[A-Z0-9][A-Z0-9_-]{2,95}$")
 KEY_RE = re.compile(r"^[A-Z][A-Z0-9_]{0,63}$")
-VALUE_RE = re.compile(r"^[A-Za-z0-9 ._:/@+%(),\\[\\]=#-]{0,240}$")
+VALUE_RE = re.compile(r"^[\x20-\x7E]{0,240}$")
 DENIED_KEY_PARTS = {
     "TOKEN", "SECRET", "PASSWORD", "PASSWD", "AUTH",
     "COOKIE", "CREDENTIAL", "API_KEY", "PRIVATE_KEY",
