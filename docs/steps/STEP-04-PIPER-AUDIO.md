@@ -1,6 +1,6 @@
 # `STEP-04 - Piper narration and audio`
 
-Status --> **IN PROGRESS - V2 CORRECTION**
+Status --> **COMPLETED - V6 CANONICAL**
 
 ## `Objective`
 
@@ -8,94 +8,89 @@ Reuse the existing fhc2 Piper installation and canonical English voice, then pro
 
 The narration must not invent scientific claims.
 
-## `Known runtime`
-
-Already detected during STEP-01:
+## `Verified runtime`
 
 - Piper binary --> `/opt/kuzai-tts/piper/venv/bin/piper`
 - voice model --> `/opt/kuzai-tts/piper/models/en_US-lessac-high.onnx`
-- canonical background music --> `assets/music/kuzai-dark-cyberpunk-background-60s.wav`
+- model JSON --> present
+- background music --> `assets/music/kuzai-dark-cyberpunk-background-60s.wav`
+- font --> `assets/fonts/Anta-Regular.ttf`
+- FFmpeg / ffprobe --> verified
 
-## `Current action`
+## `Canonical narration implementation`
 
-Before implementing synthesis, probe the actual installed Piper CLI and voice runtime.
+The initial long Piper synthesis produced two audible scratch artifacts.
 
-The probe must verify:
-- Piper binary exists and executes
-- model file exists
-- matching model JSON configuration presence
-- available CLI flags relevant to deterministic synthesis
-- no assumption about unsupported flags
+The final implementation therefore synthesizes narration sentence by sentence.
 
-Probe tool:
+`app/generate_narration.py` now:
 
-`tools/audits/step04_piper_probe.py`
+- splits narration into sentences
+- generates each sentence independently with Piper
+- applies a short 12 ms fade at chunk boundaries
+- inserts controlled inter-sentence silence
+- concatenates chunks into one PCM WAV
+- prevents the scratch artifacts observed in the long single-pass synthesis
 
-## `Planned audio contract`
+Operator listening verification --> PASS.
 
-After the probe is validated:
+## `Canonical audio contract`
 
-- narration --> Piper WAV
-- background music --> canonical 60-second WAV
-- music kept below narration
-- final output --> AAC audio stream
-- final media duration --> 60.000 seconds
-- final mux --> STEP-03 H.264 video + STEP-04 AAC audio
+- total video duration --> 60.000 s
+- voice start --> 10.000 s
+- voice end --> 50.000 s
+- voice window --> 40.000 s
+- background music volume --> 20 percent
+- narration timing normalization --> FFmpeg `atempo`
+- maximum accepted narration speed correction --> plus/minus 10 percent
+- final audio --> AAC stereo 48 kHz
+- final video --> H.264 1080 x 1920 yuv420p
 
-Exact Piper invocation and mix parameters will be frozen only after real runtime verification.
+If narration would require more than the allowed timing correction, the mix fails instead of excessively distorting speech.
 
-## `Verified results`
+## `Canonical V6 presentation`
 
-GOGIT report `STEP-04-PIPER-PROBE-001` --> **PASS**
+Verified presentation:
 
-Verified runtime:
-- Piper binary present
-- voice model present
-- model JSON present
-- required synthesis flags present
+- Anta font
+- top-right `THE KUZ NETWORK`
+- `KUZAI.ORG` directly below
+- white text on black square-corner backgrounds
+- central area reserved for current/future step information
+- dynamic text centered
+- `GITHUB.COM/KUSANAGI8200` permanent footer
+- exact 60-second duration
 
-GOGIT report `STEP-04-NARRATION-VERIFY-001` --> **PASS**
+Operator visual acceptance --> PASS.
 
-Verified narration:
-- format --> WAV
-- codec --> PCM 16-bit
-- channels --> mono
-- sample rate --> 22050 Hz
-- duration --> 40.920 s
+## `Verified evidence`
 
-GOGIT report `STEP-04-FINAL-MEDIA-VERIFY-001` --> **PASS**
+GOGIT:
 
-Verified final test media:
-- video --> H.264
-- resolution --> 1080 x 1920
-- pixel format --> yuv420p
-- audio --> AAC
-- audio sample rate --> 48000 Hz
-- audio channels --> stereo
-- duration --> 60.000 s
-- ffprobe --> PASS
+- `STEP-04-PIPER-PROBE-001` --> PASS
+- `STEP-04-NARRATION-VERIFY-001` --> PASS
+- `STEP-04-FINAL-MEDIA-VERIFY-001` --> PASS
+- `STEP-04-V3-SCRATCH-FIX-VERIFY-001` --> PASS
+- `STEP-04-V6-CANONICAL-VERIFY-001` --> PASS
 
-## `V2 correction`
+Final canonical report confirms:
 
-Operator-requested final presentation rules:
-- dynamic text --> footer
-- dynamic text --> centered
-- text frame --> none
-- background music --> 20%
-- voice-over starts --> 10.000 s
-- voice-over ends --> 50.000 s
-- voice-over active window --> 40.000 s
-- automatic narration timing correction --> maximum +/-10%
-
-The source narration is normalized to the 40-second voice window using FFmpeg `atempo`. If the required speed correction exceeds +/-10%, rendering fails and the narration text must be revised.
-
-STEP-04 remains open until the V2 media passes automated validation and operator visual/audio review.
+- `CANONICAL_LAYOUT=V6`
+- `OPERATOR_VISUAL_ACCEPTANCE=PASS`
+- `DURATION_MS=60000`
+- `VOICE_START_MS=10000`
+- `VOICE_END_MS=50000`
+- `VOICE_WINDOW_MS=40000`
+- `MUSIC_VOLUME_PERCENT=20`
+- `FONT_FAMILY=ANTA`
+- `SCRATCH_AUDIO_FIXED=1`
+- `FUTURE_VIDEO_CONSTRAINTS=FROZEN`
 
 ## `Closure`
 
-STEP-04 V2 --> **PENDING VERIFICATION**
+STEP-04 --> **COMPLETED**
 
-STEP-05 --> **PAUSED UNTIL V2 ACCEPTANCE**
+The V6 presentation/audio rules are frozen for VIDEO-001 and future Mini-Kuzai Shorts.
 
 ---
 
