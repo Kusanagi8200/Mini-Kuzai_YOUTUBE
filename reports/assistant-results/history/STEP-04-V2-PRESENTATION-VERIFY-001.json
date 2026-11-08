@@ -1,0 +1,28 @@
+{
+  "generated_at_utc": "2026-11-08T15:23:08.273872+00:00",
+  "results": {
+    "AUDIO_CHANNELS": "2",
+    "AUDIO_CODEC": "aac",
+    "AUDIO_SAMPLE_RATE": "48000",
+    "DURATION_DELTA_MS": "0",
+    "DURATION_MS": "60000",
+    "FFPROBE_RC": "0",
+    "FILE_SIZE_BYTES": "5225917",
+    "HEIGHT": "1920",
+    "MEDIA_PRESENT": "1",
+    "MIX_METADATA_PRESENT": "1",
+    "MUSIC_VOLUME_PERCENT": "20",
+    "NARRATION_SOURCE_DURATION_MS": "40410",
+    "NARRATION_SPEED_FACTOR": "1.0102415",
+    "PIX_FMT": "yuv420p",
+    "STEP_STATUS": "PASS",
+    "VIDEO_CODEC": "h264",
+    "VOICE_END_MS": "50000",
+    "VOICE_START_MS": "10000",
+    "VOICE_WINDOW_MS": "40000",
+    "WIDTH": "1080"
+  },
+  "schema_version": 1,
+  "source_commit": "d3bbf558a4caf62eabdbb51ea6448a39364a2f92",
+  "step_id": "STEP-04-V2-PRESENTATION-VERIFY-001"
+}
