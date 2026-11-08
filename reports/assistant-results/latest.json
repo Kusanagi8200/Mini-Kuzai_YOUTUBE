@@ -1,20 +1,20 @@
 {
-  "generated_at_utc": "2026-11-08T17:34:42.087542+00:00",
+  "generated_at_utc": "2026-11-08T17:54:30.299826+00:00",
   "results": {
     "CHANNEL_ID": "UC9MDfq5s-6j_twe4xJH_XXA",
-    "IDEMPOTENCE_VERIFIED": "1",
-    "JOURNAL_CHANNEL_MATCH": "1",
-    "JOURNAL_MATCH_COUNT": "1",
-    "JOURNAL_PRESENT": "1",
-    "JOURNAL_PRIVACY": "private",
-    "PRIVACY_STATUS": "private",
-    "PRIVATE_CONFIRMED": "1",
+    "DESCRIPTION_POLICY": "FROZEN",
+    "GOOGLE_PROCESS_DOC": "PASS",
+    "NEXT_STEP": "STEP-07",
+    "OPERATOR_ACCEPTANCE": "PASS",
+    "PRIVACY_STATUS": "public",
+    "PUBLIC_CONFIRMED": "1",
+    "REPO_SYNC": "PASS",
+    "STEP06_DOC": "COMPLETED",
     "STEP_STATUS": "PASS",
     "TARGET_CHANNEL_MATCH": "1",
-    "VIDEO_ID": "pexXCUznWRk",
-    "VIDEO_LOOKUP": "PASS"
+    "VIDEO_ID": "pexXCUznWRk"
   },
   "schema_version": 1,
-  "source_commit": "aa5efac1f89031396c470f75a99c7e422bbebd62",
-  "step_id": "STEP-05-PRIVATE-VERIFY-001"
+  "source_commit": "f5c290a533e316ecd2c99ed0a8786811a745043f",
+  "step_id": "STEP-06-PUBLIC-CLOSE-001"
 }
