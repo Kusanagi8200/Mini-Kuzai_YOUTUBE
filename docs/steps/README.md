@@ -3,8 +3,8 @@
 | Step | Document | Status |
 | --- | --- | --- |
 | STEP-00 | [Project bootstrap](STEP-00-PROJECT-BOOTSTRAP.md) | **COMPLETED** |
-| STEP-01 | [fhc2 environment audit](STEP-01-FHC2-AUDIT.md) | **IN PROGRESS** |
-| STEP-02 | [Assets](STEP-02-ASSETS.md) | Planned |
+| STEP-01 | [fhc2 environment audit](STEP-01-FHC2-AUDIT.md) | **COMPLETED** |
+| STEP-02 | [Assets](STEP-02-ASSETS.md) | **IN PROGRESS** |
 | STEP-03 | [Renderer](STEP-03-RENDERER.md) | Planned |
 | STEP-04 | [Piper and audio](STEP-04-PIPER-AUDIO.md) | Planned |
 | STEP-05 | [YouTube API](STEP-05-YOUTUBE-API.md) | Planned |
