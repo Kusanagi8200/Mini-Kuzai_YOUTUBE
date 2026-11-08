@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "VIDEO-001-CHANNEL-INTRO-RENDER-TEST",
+  "test_only": true,
+  "duration_seconds": 60,
+  "segments": [
+    {
+      "duration_seconds": 12,
+      "badge": "",
+      "headline": "THE KUZ NETWORK",
+      "body": "BUILD LOCAL. KEEP CONTROL."
+    },
+    {
+      "duration_seconds": 12,
+      "badge": "",
+      "headline": "MINI-KUZAI",
+      "body": "A LOCAL LLM FROM SCRATCH"
+    },
+    {
+      "duration_seconds": 12,
+      "badge": "",
+      "headline": "BUILT FROM ZERO",
+      "body": "DATA. TRAINING. EVALUATION."
+    },
+    {
+      "duration_seconds": 12,
+      "badge": "",
+      "headline": "OPEN DEVELOPMENT",
+      "body": "ONLY VALIDATED MILESTONES"
+    },
+    {
+      "duration_seconds": 12,
+      "badge": "",
+      "headline": "FOLLOW THE BUILD",
+      "body": "MINI-KUZAI DEV FLOW"
+    }
+  ]
+}
