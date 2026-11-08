@@ -38,7 +38,7 @@ All generated videos use the same fixed format:
 
 ## `Current status`
 
-**IN PROGRESS --> STEP-04 PIPER + AUDIO**
+**IN PROGRESS --> STEP-05 YOUTUBE API + OAUTH**
 
 Completed:
 - STEP-00 repository bootstrap
@@ -61,10 +61,12 @@ Completed:
 - STEP-02 assets --> COMPLETED
 - background music usage --> NON-COMMERCIAL
 - STEP-03 renderer --> PASS (1080x1920, H.264, 30 fps, 60.000 s)
+- STEP-04 Piper narration --> PASS (40.920 s, PCM mono 22.05 kHz)
+- STEP-04 final media mux --> PASS (H.264 + AAC stereo 48 kHz, 60.000 s)
 
 Current:
-- probe the existing Piper runtime and voice CLI
-- implement narration generation and final audio mix after probe validation
+- configure YouTube Data API v3 and OAuth outside Git
+- verify the authenticated channel before any upload
 
 No YouTube API credentials, OAuth tokens or publication automation are configured yet.
 
@@ -123,8 +125,8 @@ controlled YouTube publication
 | STEP-01 | fhc2 read-only environment audit | **COMPLETED** |
 | STEP-02 | Background, fonts and music assets | **COMPLETED** |
 | STEP-03 | Python / FFmpeg renderer | **COMPLETED** |
-| STEP-04 | Piper narration and audio mix | **IN PROGRESS** |
-| STEP-05 | YouTube Data API and OAuth | Planned |
+| STEP-04 | Piper narration and audio mix | **COMPLETED** |
+| STEP-05 | YouTube Data API and OAuth | **IN PROGRESS** |
 | STEP-06 | Channel introduction private pilot | Planned |
 | STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | Planned |
 
