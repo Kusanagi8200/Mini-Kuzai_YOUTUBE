@@ -1,19 +1,24 @@
 {
-  "generated_at_utc": "2026-11-08T14:56:38.583880+00:00",
+  "generated_at_utc": "2026-11-08T14:59:27.912493+00:00",
   "results": {
-    "AUDIO_STREAMS": "0",
-    "AVG_FRAME_RATE": "30/1",
-    "CODEC": "h264",
-    "DURATION_DELTA_MS": "0",
-    "DURATION_MS": "60000",
-    "FFPROBE_RC": "0",
-    "HEIGHT": "1920",
-    "PIX_FMT": "yuv420p",
-    "STEP_STATUS": "PASS",
-    "VIDEO_PRESENT": "1",
-    "WIDTH": "1080"
+    "FLAG_LENGTH_SCALE": "1",
+    "FLAG_MODEL": "1",
+    "FLAG_NOISE_SCALE": "1",
+    "FLAG_NOISE_W": "1",
+    "FLAG_OUTPUT_FILE": "1",
+    "FLAG_OUTPUT_RAW": "1",
+    "FLAG_SENTENCE_SILENCE": "1",
+    "FLAG_SPEAKER": "1",
+    "MODEL_CONFIG_PRESENT": "1",
+    "MODEL_CONFIG_SHA256": "db42b97d9859f257bc1561b8ed980e7fb2398402050a74ddd6cbec931a92412f",
+    "MODEL_PRESENT": "1",
+    "MODEL_SHA256": "4cabf7c3a638017137f34a1516522032d4fe3f38228a843cc9b764ddcbcd9e09",
+    "PIPER_HELP_RC": "0",
+    "PIPER_PRESENT": "1",
+    "PIPER_SHA256": "6ad296e7f35e719c8da2a9e7ecd5d92583ce15f35da2e3b27408ce5582336e29",
+    "STEP_STATUS": "PASS"
   },
   "schema_version": 1,
-  "source_commit": "7b6dc3f35a01ef4c4ada8eed82b627a8a7b7e67d",
-  "step_id": "STEP-03-RENDERER-VERIFY-001"
+  "source_commit": "b394ad439b714debe2f2d29632a25a8a3b6578ed",
+  "step_id": "STEP-04-PIPER-PROBE-001"
 }
