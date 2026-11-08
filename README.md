@@ -22,19 +22,20 @@ Completed:
 - Piper detected at `/opt/kuzai-tts/piper/venv/bin/piper`
 - Piper voice detected at `/opt/kuzai-tts/piper/models/en_US-lessac-high.onnx`
 - Git and GitHub CLI verified
+- FFmpeg installed and verified --> `/usr/bin/ffmpeg`
+- ffprobe installed and verified --> `/usr/bin/ffprobe`
+- FFmpeg/ffprobe version --> `6.1.1-3ubuntu5`
 - 496 fonts detected through fontconfig
 - 837 GiB free on the target filesystem
 - canonical YouTube channel registered
 - target 1080 x 1920 Short format frozen
-- fixed Mini-Kuzai background concept validated
-
-Missing runtime dependency identified:
-- FFmpeg
-- ffprobe
+- fixed Mini-Kuzai background master validated
 
 Current:
-- STEP-02 asset validation and layout definition
-- prepare FFmpeg installation before renderer implementation
+- register/copy the master background asset
+- select renderer font
+- select/document background music
+- freeze overlay safe zones and coordinates
 
 No YouTube API credentials, OAuth tokens or publication automation are configured yet.
 
