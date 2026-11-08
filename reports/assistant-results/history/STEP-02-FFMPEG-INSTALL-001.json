@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-11-08T13:12:22.374529+00:00",
+  "results": {
+    "FFMPEG_PATH": "/usr/bin/ffmpeg",
+    "FFMPEG_PRESENT": "1",
+    "FFMPEG_RC": "0",
+    "FFMPEG_VERSION_LINE": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+    "FFPROBE_PATH": "/usr/bin/ffprobe",
+    "FFPROBE_PRESENT": "1",
+    "FFPROBE_RC": "0",
+    "FFPROBE_VERSION_LINE": "ffprobe version 6.1.1-3ubuntu5 Copyright (c) 2007-2023 the FFmpeg developers",
+    "STEP_STATUS": "PASS"
+  },
+  "schema_version": 1,
+  "source_commit": "831e3cbdf32812c5965a1916c2774d3d55bc023f",
+  "step_id": "STEP-02-FFMPEG-INSTALL-001"
+}
