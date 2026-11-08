@@ -1,0 +1,18 @@
+{
+  "generated_at_utc": "2026-11-08T14:51:50.449534+00:00",
+  "results": {
+    "ALL_ZONES_IN_BOUNDS": "1",
+    "CANVAS_HEIGHT": "1920",
+    "CANVAS_WIDTH": "1080",
+    "DYNAMIC_CHILDREN_IN_PRIMARY": "1",
+    "PRIMARY_HEIGHT": "240",
+    "PRIMARY_RESERVED_CLEAR": "1",
+    "PRIMARY_WIDTH": "570",
+    "PRIMARY_X": "310",
+    "PRIMARY_Y": "100",
+    "STEP_STATUS": "PASS"
+  },
+  "schema_version": 1,
+  "source_commit": "e6c1f3777239a90075eb28ad10101ad589af9a92",
+  "step_id": "STEP-02-OVERLAY-LAYOUT-VERIFY-001"
+}
