@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "canvas": {
+    "width": 1080,
+    "height": 1920
+  },
+  "policy": {
+    "coordinate_origin": "top-left",
+    "units": "pixels",
+    "dynamic_text_policy": "reuse-primary-panel-sequentially",
+    "essential_content_outside_reserved_zones": true
+  },
+  "reserved_zones": {
+    "fixed_logo": {
+      "x": 40,
+      "y": 60,
+      "width": 260,
+      "height": 280
+    },
+    "character_protection": {
+      "x": 220,
+      "y": 340,
+      "width": 620,
+      "height": 900
+    },
+    "fixed_branding": {
+      "x": 120,
+      "y": 1260,
+      "width": 840,
+      "height": 240
+    },
+    "shorts_right_ui_conservative": {
+      "x": 900,
+      "y": 300,
+      "width": 180,
+      "height": 1200
+    },
+    "shorts_bottom_ui_conservative": {
+      "x": 0,
+      "y": 1500,
+      "width": 1080,
+      "height": 420
+    }
+  },
+  "dynamic_zones": {
+    "primary_panel": {
+      "x": 310,
+      "y": 100,
+      "width": 570,
+      "height": 240
+    },
+    "badge": {
+      "x": 740,
+      "y": 110,
+      "width": 130,
+      "height": 60
+    },
+    "headline": {
+      "x": 330,
+      "y": 170,
+      "width": 520,
+      "height": 80
+    },
+    "body": {
+      "x": 330,
+      "y": 250,
+      "width": 520,
+      "height": 80
+    }
+  },
+  "typography": {
+    "family": "Ubuntu Sans",
+    "style": "Bold",
+    "badge_px": 42,
+    "headline_px": 54,
+    "body_px": 38,
+    "text_alignment": "right",
+    "max_headline_lines": 2,
+    "max_body_lines": 2
+  },
+  "panel_style": {
+    "background": "rgba(0,0,0,0.58)",
+    "border": "rgba(210,210,210,0.55)",
+    "text": "#F2F2F2",
+    "padding_px": 20
+  }
+}
