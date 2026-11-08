@@ -1,6 +1,6 @@
 # `STEP-06 - Channel introduction pilot`
 
-Status --> **COMPLETED**
+Status --> **IN PROGRESS - V8 SAFE-ZONE REPLACEMENT**
 
 ## `Objective`
 
@@ -26,7 +26,7 @@ No `DEV FLOW #xxx` reference.
 
 ## `Canonical presentation`
 
-Verified V6 presentation:
+Verified V8 presentation:
 
 - 1080 x 1920
 - 60 seconds
@@ -34,7 +34,7 @@ Verified V6 presentation:
 - `THE KUZ NETWORK` top-right
 - `KUZAI.ORG` directly below
 - dynamic information area preserved
-- `GITHUB.COM/KUSANAGI8200` footer
+- `GITHUB.COM/KUSANAGI8200` footer moved into the YouTube Shorts safe zone
 - Piper narration by sentence chunks
 - voice from 10 s to 50 s
 - music at 20 percent
@@ -84,6 +84,34 @@ YouTube Data API verification after the change:
 - target channel match --> PASS
 - API visibility --> `public`
 - public confirmation --> PASS
+
+
+## `V8 corrective replacement`
+
+Real YouTube Shorts playback revealed that the native YouTube handle/title overlay could cover the lower project footer.
+
+Corrective V8 layout:
+
+- dynamic badge moved upward
+- dynamic headline moved upward
+- dynamic body moved upward
+- GitHub footer moved upward and right-aligned
+- GitHub footer positioned around the YouTube handle level
+- no change to narration, music, duration, branding, codec or media contract
+
+V8 technical media validation --> PASS.
+
+The original public VIDEO-001 remains online until the corrected V8 replacement is uploaded privately and verified.
+
+Replacement sequence:
+
+1. upload corrected V8 as private
+2. verify target channel and private status
+3. delete the original public VIDEO-001 manually in YouTube Studio
+4. set corrected V8 to public
+5. verify original video is absent
+6. verify replacement is public
+7. close STEP-06 again
 
 ## `Later videos`
 

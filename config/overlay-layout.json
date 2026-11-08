@@ -29,7 +29,7 @@
       "enabled": true,
       "field": "badge",
       "center_x": 540,
-      "top_y": 1570,
+      "top_y": 1510,
       "max_text_width": 860,
       "max_text_height": 36,
       "font_px": 28,
@@ -44,7 +44,7 @@
       "enabled": true,
       "field": "headline",
       "center_x": 540,
-      "top_y": 1615,
+      "top_y": 1555,
       "max_text_width": 920,
       "max_text_height": 62,
       "font_px": 56,
@@ -59,7 +59,7 @@
       "enabled": true,
       "field": "body",
       "center_x": 540,
-      "top_y": 1690,
+      "top_y": 1630,
       "max_text_width": 920,
       "max_text_height": 46,
       "font_px": 38,
@@ -73,8 +73,6 @@
     "github_footer": {
       "enabled": true,
       "text": "GITHUB.COM/KUSANAGI8200",
-      "center_x": 540,
-      "top_y": 1775,
       "max_text_width": 820,
       "max_text_height": 32,
       "font_px": 28,
@@ -83,7 +81,9 @@
       "stroke_color": "#FFFFFF",
       "stroke_px": 0,
       "padding_x": 2,
-      "padding_y": 6
+      "padding_y": 6,
+      "right_x": 1077,
+      "top_y": 1748
     },
     "static_site": {
       "enabled": true,

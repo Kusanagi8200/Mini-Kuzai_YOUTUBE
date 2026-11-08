@@ -1,0 +1,104 @@
+{
+  "schema_version": 4,
+  "canvas": {
+    "width": 1080,
+    "height": 1920
+  },
+  "font_preferences": [
+    "assets/fonts/Anta-Regular.ttf",
+    "Anta",
+    "Ubuntu Sans:style=Bold"
+  ],
+  "elements": {
+    "static_title": {
+      "enabled": true,
+      "text": "THE KUZ NETWORK",
+      "right_x": 1030,
+      "top_y": 70,
+      "max_text_width": 500,
+      "max_text_height": 42,
+      "font_px": 34,
+      "text_color": "#FFFFFF",
+      "background_color": "#000000",
+      "stroke_color": "#FFFFFF",
+      "stroke_px": 0,
+      "padding_x": 1,
+      "padding_y": 5
+    },
+    "dynamic_badge": {
+      "enabled": true,
+      "field": "badge",
+      "center_x": 540,
+      "top_y": 1570,
+      "max_text_width": 860,
+      "max_text_height": 36,
+      "font_px": 28,
+      "text_color": "#FFFFFF",
+      "background_color": "#000000",
+      "stroke_color": "#FFFFFF",
+      "stroke_px": 0,
+      "padding_x": 2,
+      "padding_y": 4
+    },
+    "dynamic_headline": {
+      "enabled": true,
+      "field": "headline",
+      "center_x": 540,
+      "top_y": 1615,
+      "max_text_width": 920,
+      "max_text_height": 62,
+      "font_px": 56,
+      "text_color": "#FFFFFF",
+      "background_color": "#000000",
+      "stroke_color": "#FFFFFF",
+      "stroke_px": 0,
+      "padding_x": 2,
+      "padding_y": 6
+    },
+    "dynamic_body": {
+      "enabled": true,
+      "field": "body",
+      "center_x": 540,
+      "top_y": 1690,
+      "max_text_width": 920,
+      "max_text_height": 46,
+      "font_px": 38,
+      "text_color": "#FFFFFF",
+      "background_color": "#000000",
+      "stroke_color": "#FFFFFF",
+      "stroke_px": 0,
+      "padding_x": 2,
+      "padding_y": 6
+    },
+    "github_footer": {
+      "enabled": true,
+      "text": "GITHUB.COM/KUSANAGI8200",
+      "max_text_width": 820,
+      "max_text_height": 32,
+      "font_px": 28,
+      "text_color": "#FFFFFF",
+      "background_color": "#000000",
+      "stroke_color": "#FFFFFF",
+      "stroke_px": 0,
+      "padding_x": 2,
+      "padding_y": 6,
+      "right_x": 1077,
+      "bottom_y": 1917
+    },
+    "static_site": {
+      "enabled": true,
+      "text": "KUZAI.ORG",
+      "right_x": 1030,
+      "top_y": 125,
+      "max_text_width": 320,
+      "max_text_height": 34,
+      "font_px": 28,
+      "text_color": "#FFFFFF",
+      "background_color": "#000000",
+      "stroke_color": "#FFFFFF",
+      "stroke_px": 0,
+      "padding_x": 1,
+      "padding_y": 5
+    }
+  }
+}

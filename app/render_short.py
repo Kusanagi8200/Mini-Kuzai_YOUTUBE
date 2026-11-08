@@ -123,6 +123,7 @@ def draw_boxed_center_text(
     padding_x: int,
     padding_y: int,
     right_x: int | None = None,
+    bottom_y: int | None = None,
 ) -> None:
     if not text:
         return
@@ -153,8 +154,15 @@ def draw_boxed_center_text(
         rect_x0 = round(center_x - (rect_w / 2))
         rect_x1 = rect_x0 + rect_w
 
-    rect_y0 = top_y
-    rect_y1 = rect_y0 + rect_h
+    if bottom_y is not None:
+        # bottom_y is an exclusive canvas coordinate.
+        # Example on 1920px canvas with 3px margin:
+        # bottom_y=1917 --> last painted pixel is 1916.
+        rect_y1 = int(bottom_y) - 1
+        rect_y0 = rect_y1 - rect_h + 1
+    else:
+        rect_y0 = top_y
+        rect_y1 = rect_y0 + rect_h
 
     draw.rectangle((rect_x0, rect_y0, rect_x1, rect_y1), fill=background_color)
 
@@ -207,7 +215,7 @@ def render_frame(
                 if "center_x" in config
                 else None
             ),
-            top_y=int(config["top_y"]),
+            top_y=int(config.get("top_y", 0)),
             text=text,
             font_path=font_path,
             font_px=int(config["font_px"]),
@@ -222,6 +230,11 @@ def render_frame(
             right_x=(
                 int(config["right_x"])
                 if "right_x" in config
+                else None
+            ),
+            bottom_y=(
+                int(config["bottom_y"])
+                if "bottom_y" in config
                 else None
             ),
         )
