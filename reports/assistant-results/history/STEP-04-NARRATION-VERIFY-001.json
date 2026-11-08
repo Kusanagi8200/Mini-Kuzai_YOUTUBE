@@ -1,0 +1,19 @@
+{
+  "generated_at_utc": "2026-11-08T15:02:20.919721+00:00",
+  "results": {
+    "AUDIO_PRESENT": "1",
+    "CHANNELS": "1",
+    "CHANNEL_LAYOUT": "",
+    "CODEC": "pcm_s16le",
+    "DURATION_LE_55S": "1",
+    "DURATION_MS": "40920",
+    "FFPROBE_RC": "0",
+    "FILE_SIZE_BYTES": "1804639",
+    "FORMAT": "wav",
+    "SAMPLE_RATE": "22050",
+    "STEP_STATUS": "PASS"
+  },
+  "schema_version": 1,
+  "source_commit": "18e5c1bb4880abca0cf227db7368cfafa21933c7",
+  "step_id": "STEP-04-NARRATION-VERIFY-001"
+}
