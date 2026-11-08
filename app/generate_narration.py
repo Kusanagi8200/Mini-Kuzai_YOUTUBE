@@ -42,8 +42,7 @@ def main() -> int:
             "--noise_w", "0.8",
             "--sentence_silence", "0.25",
         ],
-        input=text + "
-",
+        input=text + chr(10),
         text=True,
         capture_output=True,
         check=False,
