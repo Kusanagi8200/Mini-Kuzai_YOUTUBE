@@ -1,0 +1,11 @@
+THE KUZ NETWORK is an open technology lab built around one idea: build local, keep control, own the stack.
+
+Mini-Kuzai is one of its core projects: a language model developed from scratch, step by step, with its own data, training process, evaluations, and documented development flow.
+
+This channel follows that journey.
+
+Each video will present a verified milestone in a simple one-minute format, showing what was built, what was tested, and what comes next.
+
+No marketing claims. No hidden cloud dependency. Just a transparent local AI project, developed openly and documented as it evolves.
+
+Welcome to Mini-Kuzai. LLM from scratch.
