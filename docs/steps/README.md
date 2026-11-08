@@ -6,8 +6,8 @@
 | STEP-01 | [fhc2 environment audit](STEP-01-FHC2-AUDIT.md) | **COMPLETED** |
 | STEP-02 | [Assets](STEP-02-ASSETS.md) | **COMPLETED** |
 | STEP-03 | [Renderer](STEP-03-RENDERER.md) | **COMPLETED** |
-| STEP-04 | [Piper and audio](STEP-04-PIPER-AUDIO.md) | **IN PROGRESS** |
-| STEP-05 | [YouTube API](STEP-05-YOUTUBE-API.md) | Planned |
+| STEP-04 | [Piper and audio](STEP-04-PIPER-AUDIO.md) | **COMPLETED** |
+| STEP-05 | [YouTube API](STEP-05-YOUTUBE-API.md) | **IN PROGRESS** |
 | STEP-06 | [Channel introduction pilot](STEP-06-CHANNEL-INTRO.md) | Planned |
 | STEP-07 | [DEV-FLOW integration](STEP-07-DEV-FLOW-INTEGRATION.md) | Planned |
 
