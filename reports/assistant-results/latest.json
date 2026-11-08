@@ -1,20 +1,24 @@
 {
-  "generated_at_utc": "2026-11-08T17:54:30.299826+00:00",
+  "generated_at_utc": "2026-11-08T18:19:59.053540+00:00",
   "results": {
-    "CHANNEL_ID": "UC9MDfq5s-6j_twe4xJH_XXA",
-    "DESCRIPTION_POLICY": "FROZEN",
-    "GOOGLE_PROCESS_DOC": "PASS",
-    "NEXT_STEP": "STEP-07",
-    "OPERATOR_ACCEPTANCE": "PASS",
-    "PRIVACY_STATUS": "public",
-    "PUBLIC_CONFIRMED": "1",
-    "REPO_SYNC": "PASS",
-    "STEP06_DOC": "COMPLETED",
+    "DURATION_MS": "60000",
+    "DYNAMIC_BADGE_TOP": "1510",
+    "DYNAMIC_BODY_TOP": "1630",
+    "DYNAMIC_HEADLINE_TOP": "1555",
+    "FONT": "ANTA",
+    "GITHUB_FOOTER_RIGHT": "1077",
+    "GITHUB_FOOTER_TOP": "1748",
+    "HEIGHT": "1920",
+    "LAYOUT_VERSION": "V8",
+    "MEDIA_VALIDATION": "PASS",
+    "OPERATOR_VISUAL_ACCEPTANCE": "PASS",
+    "REPLACEMENT_READY": "1",
     "STEP_STATUS": "PASS",
-    "TARGET_CHANNEL_MATCH": "1",
-    "VIDEO_ID": "pexXCUznWRk"
+    "WIDTH": "1080",
+    "WORKTREE": "CLEAN",
+    "YOUTUBE_SAFEZONE": "PASS"
   },
   "schema_version": 1,
-  "source_commit": "f5c290a533e316ecd2c99ed0a8786811a745043f",
-  "step_id": "STEP-06-PUBLIC-CLOSE-001"
+  "source_commit": "e026f91233092fac03ea1e3df8d18de25336eb33",
+  "step_id": "STEP-06-V8-SAFEZONE-READY-001"
 }
