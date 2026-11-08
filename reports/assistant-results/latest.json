@@ -1,15 +1,19 @@
 {
-  "generated_at_utc": "2026-11-08T13:15:48.304022+00:00",
+  "generated_at_utc": "2026-11-08T13:22:12.870777+00:00",
   "results": {
-    "FC_MATCH_PRESENT": "1",
-    "FONT_FAMILY": "Ubuntu Sans",
-    "FONT_PATH": "/usr/share/fonts/truetype/ubuntu/UbuntuSans[wdth,wght].ttf",
-    "FONT_PATTERN": "Ubuntu Sans:style=Bold",
-    "FONT_SELECTED": "1",
-    "FONT_STYLE": "Bold",
+    "ASSET_PRESENT": "1",
+    "FILE_SIZE_BYTES": "2445180",
+    "GIT_BLOB": "6b40e546b3d0d68840c23c8f30d0faf9fba04076",
+    "GIT_BLOB_MATCH": "1",
+    "IMAGE_FORMAT": "PNG",
+    "IMAGE_HEIGHT": "1920",
+    "IMAGE_MODE": "RGB",
+    "IMAGE_VALID": "1",
+    "IMAGE_WIDTH": "1080",
+    "SHA256": "05ad423e88d17d4ff655d61dd7659594242546b2280ebcdf7a172a86ccc6f13d",
     "STEP_STATUS": "PASS"
   },
   "schema_version": 1,
-  "source_commit": "f9f9e4a2f7ca4d9972ab13f7f47f3291b6f8cc5e",
-  "step_id": "STEP-02-FONT-SELECTION-001"
+  "source_commit": "6989192c8857cfe650bde7da0a5acb56be110faf",
+  "step_id": "STEP-02-BACKGROUND-VERIFY-001"
 }
