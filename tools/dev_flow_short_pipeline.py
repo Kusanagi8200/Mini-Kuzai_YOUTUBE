@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """Run the validated Mini-Kuzai FINAL-DEV-FLOW YouTube Short pipeline.
 
-Current STEP-07 implementation is intentionally publication-disabled:
+STEP-07 production flow:
 - validate Short brief and FINAL provenance
 - render canonical V8 video
 - generate Piper narration
 - mix canonical audio
 - audit final media
-- run YouTube uploader preflight
-- never upload media
+- verify target YouTube channel
+- execute exactly one public upload through the guarded uploader
 """
 
 from __future__ import annotations
@@ -234,13 +234,29 @@ def main() -> int:
     for tag in youtube["tags"]:
         upload_args.extend(["--tag", tag])
 
-    # Deliberately no --execute in STEP-07 dry-run orchestrator.
-    preflight_output = run(upload_args)
-    preflight = parse_results(preflight_output)
+    publication_mode = youtube["publication_mode"]
+    if publication_mode != "public":
+        raise PipelineError("Production DEV-FLOW publication mode must be public")
 
-    require(preflight, "PREFLIGHT", "PASS")
-    require(preflight, "TARGET_CHANNEL_MATCH", "1")
-    require(preflight, "UPLOAD_PERFORMED", "0")
+    upload_args.extend([
+        "--privacy",
+        publication_mode,
+        "--execute",
+    ])
+
+    upload_output = run(upload_args)
+    upload = parse_results(upload_output)
+
+    require(upload, "PREFLIGHT", "PASS")
+    require(upload, "TARGET_CHANNEL_MATCH", "1")
+    require(upload, "REQUESTED_PRIVACY", "public")
+    require(upload, "EXECUTE_REQUESTED", "1")
+    require(upload, "UPLOAD_PERFORMED", "1")
+    require(upload, "UPLOAD_PRIVACY", "public")
+
+    video_id = upload.get("VIDEO_ID", "")
+    if not re.fullmatch(r"[A-Za-z0-9_-]{6,32}", video_id):
+        raise PipelineError("YouTube uploader returned invalid VIDEO_ID")
 
     print("##### SECTION RESULTS FOR ASSISTANT ######")
     print("STEP_STATUS=PASS")
@@ -263,12 +279,14 @@ def main() -> int:
     print("TARGET_CHANNEL_MATCH=1")
     print(
         "DUPLICATE_SHA256="
-        + preflight.get("DUPLICATE_SHA256", "")
+        + upload.get("DUPLICATE_SHA256", "")
     )
-    print("UPLOAD_PERFORMED=0")
-    print("PUBLICATION=DISABLED")
+    print("UPLOAD_PERFORMED=1")
+    print("UPLOAD_PRIVACY=public")
+    print("PUBLICATION=PUBLIC")
+    print(f"YOUTUBE_VIDEO_ID={video_id}")
     print(f"FINAL_VIDEO={final_video}")
-    print(f"VIDEO_SHA256={preflight['VIDEO_SHA256']}")
+    print(f"VIDEO_SHA256={upload['VIDEO_SHA256']}")
     print("PIPELINE_ORCHESTRATOR=PASS")
 
     return 0
