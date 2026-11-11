@@ -142,7 +142,7 @@ class BriefValidatorTests(unittest.TestCase):
                     "THE KUZ NETWORK",
                     "LLM From Scratch",
                 ],
-                "publication_mode": "private",
+                "publication_mode": "public",
             },
         }
 
