@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Consume verified Mini-Kuzai FINAL receipts and run Short dry-runs.
+"""Consume verified Mini-Kuzai FINAL receipts and publish validated Shorts.
 
 Safety model:
 - separate from Mini-Kuzai DEV-FLOW worker
@@ -8,8 +8,8 @@ Safety model:
 - accepts only committed Vxx-final Short briefs
 - requires matching Mini-Kuzai FINAL receipt with PUBLISHED status
 - local idempotence journal outside Git
-- current implementation is DRY_RUN_ONLY
-- never passes --execute to the YouTube uploader
+- exactly one public upload per immutable brief/media SHA256
+- YouTube failure never mutates or invalidates the Mini-Kuzai scientific FINAL
 """
 
 from __future__ import annotations
@@ -311,7 +311,7 @@ def inspect_candidate(
         if previous.get("brief_sha256") != digest:
             fail(f"Conflicting already-processed brief for {step}")
 
-        if previous.get("status") == "DRY_RUN_VERIFIED":
+        if previous.get("status") in {"DRY_RUN_VERIFIED", "PUBLIC_PUBLISHED"}:
             return step, relative, "ALREADY_VERIFIED"
 
         fail(f"Unexpected previous worker state for {step}")
@@ -371,11 +371,18 @@ def process_candidate(
     if values.get("PIPELINE_ORCHESTRATOR") != "PASS":
         fail("Pipeline orchestrator did not report PASS")
 
-    if values.get("UPLOAD_PERFORMED") != "0":
-        fail("Worker dry-run unexpectedly uploaded media")
+    if values.get("UPLOAD_PERFORMED") != "1":
+        fail("Worker expected exactly one YouTube upload")
 
-    if values.get("PUBLICATION") != "DISABLED":
-        fail("Worker publication safety invariant failed")
+    if values.get("UPLOAD_PRIVACY") != "public":
+        fail("Worker expected public YouTube visibility")
+
+    if values.get("PUBLICATION") != "PUBLIC":
+        fail("Worker public publication invariant failed")
+
+    youtube_video_id = values.get("YOUTUBE_VIDEO_ID", "")
+    if not re.fullmatch(r"[A-Za-z0-9_-]{6,32}", youtube_video_id):
+        fail("Pipeline returned invalid YouTube video ID")
 
     video_sha256 = values.get("VIDEO_SHA256", "")
 
@@ -383,20 +390,23 @@ def process_candidate(
         fail("Pipeline returned invalid video SHA256")
 
     journal["steps"][step] = {
-        "status": "DRY_RUN_VERIFIED",
+        "status": "PUBLIC_PUBLISHED",
         "brief_path": relative,
         "brief_sha256": digest,
         "video_sha256": video_sha256,
-        "verified_at_utc": datetime.now(timezone.utc).isoformat(),
+        "youtube_video_id": youtube_video_id,
+        "privacy_status": "public",
+        "published_at_utc": datetime.now(timezone.utc).isoformat(),
     }
 
     save_journal(journal_path, journal)
 
     return {
         "step": step,
-        "state": "DRY_RUN_VERIFIED",
+        "state": "PUBLIC_PUBLISHED",
         "processed": "1",
         "video_sha256": video_sha256,
+        "youtube_video_id": youtube_video_id,
     }
 
 
@@ -453,8 +463,8 @@ def main() -> int:
         fcntl.flock(lock.fileno(), fcntl.LOCK_EX)
 
         print("##### SECTION RESULTS FOR ASSISTANT ######")
-        print("WORKER_MODE=DRY_RUN_ONLY")
-        print("PUBLICATION=DISABLED")
+        print("WORKER_MODE=PUBLIC_UPLOAD")
+        print("PUBLICATION=PUBLIC")
 
         if not args.skip_repo_checks:
             youtube_head = verify_repo(ROOT)
@@ -507,6 +517,8 @@ def main() -> int:
 
         if "video_sha256" in result:
             print(f"VIDEO_SHA256={result['video_sha256']}")
+        if "youtube_video_id" in result:
+            print(f"YOUTUBE_VIDEO_ID={result['youtube_video_id']}")
 
         print("WORKER=PASS")
         return 0
