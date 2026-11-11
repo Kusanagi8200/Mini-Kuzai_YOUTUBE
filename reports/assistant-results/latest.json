@@ -1,18 +1,19 @@
 {
-  "generated_at_utc": "2026-11-11T15:01:58.752048+00:00",
+  "generated_at_utc": "2026-11-11T15:05:39.230782+00:00",
   "results": {
-    "NEXT_ACTION": "STEP07_OAUTH_REVIEW",
-    "PUBLICATION": "DISABLED",
-    "SERVICE_EXEC_STATUS": "0",
-    "SERVICE_RESULT": "success",
+    "CLIENT_BINDING_MATCH": "1",
+    "CLIENT_FILE_MODE": "600",
+    "CLIENT_FILE_PRESENT": "1",
+    "CLIENT_KIND_DESKTOP": "1",
+    "NEXT_ACTION": "STEP07_GOOGLE_CONSOLE_STATE_REVIEW",
+    "READ_SCOPE_PRESENT": "1",
+    "REFRESH_PRESENT": "1",
+    "SESSION_FILE_MODE": "600",
+    "SESSION_FILE_PRESENT": "1",
     "STEP_STATUS": "PASS",
-    "TIMER_ACTIVE_STATE": "active",
-    "TIMER_ENABLED_STATE": "enabled",
-    "WORKER": "IDLE",
-    "WORKER_MODE": "DRY_RUN_ONLY",
-    "WORKTREE": "CLEAN"
+    "UPLOAD_SCOPE_PRESENT": "1"
   },
   "schema_version": 1,
-  "source_commit": "24b9f4990b6ca0ebb4c7afc01462378c8f49b80f",
-  "step_id": "STEP-07-RUNTIME-REVIEW-001"
+  "source_commit": "c3c4d7411fa549f43a20543ecff89b326ce9e48a",
+  "step_id": "STEP-07-GOOGLE-LOCAL-AUDIT-001"
 }
