@@ -86,3 +86,20 @@ Verified result:
 
 STEP-07 exit criterion is satisfied.
 
+
+
+## `Cross-channel extension for V81+`
+
+V80 validated automatic public YouTube publication after FINAL.
+
+The next extension adds synchronized media publication:
+
+- YouTube --> public Short
+- LinkedIn --> native video post through KUZ-DIN
+- GitHub --> media publication attached to or linked from the canonical FINAL Discussion
+- documentation --> updated after all channel receipts are verified
+
+Before V81, `FLOW-PRESENTATION-001` validates this architecture as a non-scientific publication.
+
+See [FLOW-PRESENTATION-001](../FLOW-PRESENTATION-001.md).
+
