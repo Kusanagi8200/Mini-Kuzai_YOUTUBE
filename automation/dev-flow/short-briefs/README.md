@@ -10,9 +10,11 @@ Rules:
 - matching Mini-Kuzai FINAL receipt must already exist with `PUBLISHED` status
 - matching FINAL request and immutable GOGIT report are validated before rendering
 - the YouTube worker is independent from Mini-Kuzai and KUZ-DIN
-- current worker mode --> `DRY_RUN_ONLY`
-- current publication mode --> disabled
+- current worker mode --> `PUBLIC_UPLOAD`
+- current publication mode --> public
 - duplicate or conflicting processing is blocked by local journal state
+- exactly one public upload is allowed per immutable brief/media SHA256
+- YouTube failure never invalidates the Mini-Kuzai scientific FINAL
 
 The local worker journal remains outside Git under:
 
