@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-11-11T15:56:20.619397+00:00",
+  "results": {
+    "NEXT_ACTION": "STEP07_SELECT_PREFLIGHT_MEDIA",
+    "REPO_MP4_COUNT": "22",
+    "STATE_MP4_COUNT": "0",
+    "STEP_STATUS": "PASS",
+    "V8_MATCH_COUNT": "2",
+    "V8_MATCH_PATH": "NONE"
+  },
+  "schema_version": 1,
+  "source_commit": "0221054b03404d707302268ed9e96b8333bfcdf5",
+  "step_id": "STEP-07-PRODUCTION-MEDIA-LOCATE-001"
+}
