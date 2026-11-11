@@ -25,9 +25,11 @@ Verified rules:
 
 - Piper narration generated sentence by sentence
 - short fades between chunks prevent scratch artifacts
-- voice window --> 10.000 s to 50.000 s
+- voice window --> 5.000 s to 55.000 s for V81+
 - background music --> 20 percent
 - final audio --> AAC stereo 48 kHz
+
+The V80 production Short remains a historical 10-50 s artifact. The 5-55 s contract applies to new media generated after the 2026-11-11 timing revision.
 
 ## `YouTube uploader`
 
