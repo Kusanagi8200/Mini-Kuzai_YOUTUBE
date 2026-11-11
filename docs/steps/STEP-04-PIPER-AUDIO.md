@@ -37,9 +37,9 @@ Operator listening verification --> PASS.
 ## `Canonical audio contract`
 
 - total video duration --> 60.000 s
-- voice start --> 10.000 s
-- voice end --> 50.000 s
-- voice window --> 40.000 s
+- voice start --> 5.000 s
+- voice end --> 55.000 s
+- voice window --> 50.000 s
 - background music volume --> 20 percent
 - narration timing normalization --> FFmpeg `atempo`
 - maximum accepted narration speed correction --> plus/minus 10 percent
@@ -47,6 +47,20 @@ Operator listening verification --> PASS.
 - final video --> H.264 1080 x 1920 yuv420p
 
 If narration would require more than the allowed timing correction, the mix fails instead of excessively distorting speech.
+
+### `2026-11-11 timing revision`
+
+The canonical narration window for newly generated media was expanded from 10-50 s to 5-55 s.
+
+Scope:
+
+- V81+ and new cross-channel presentation media --> 5-55 s
+- VIDEO-001 and V80 remain immutable historical 10-50 s outputs
+- music volume remains 20 percent
+- maximum narration speed correction remains plus/minus 10 percent
+- total media duration remains exactly 60 seconds
+
+The media audit was updated to require `VOICE_START_MS=5000`, `VOICE_END_MS=55000` and `VOICE_WINDOW_MS=50000` for new outputs.
 
 ## `Canonical V6 presentation`
 
@@ -90,7 +104,7 @@ Final canonical report confirms:
 
 STEP-04 --> **COMPLETED**
 
-The V6 presentation/audio rules are frozen for VIDEO-001 and future Mini-Kuzai Shorts.
+The V6 visual rules remain frozen. VIDEO-001 and V80 preserve their historical audio timing; newly generated V81+ media uses the revised 5-55 second narration window.
 
 ---
 
