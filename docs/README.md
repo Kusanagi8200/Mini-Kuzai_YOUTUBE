@@ -5,6 +5,7 @@ This directory contains project documentation independently from the source code
 ## `Main documents`
 
 - [Workflow policy](WORKFLOW.md)
+- [FLOW-PRESENTATION-001 cross-channel validation](FLOW-PRESENTATION-001.md)
 - [Installation and development step index](steps/README.md)
 - [Google Cloud and YouTube OAuth setup](GOOGLE-YOUTUBE-OAUTH-PROCESS.md)
 - [GOGIT operating model](../tools/GOGIT.md)
