@@ -43,7 +43,7 @@
       }
     ]
   },
-  "narration": "Mini-Kuzai V79 tested whether the context-order effect seen earlier would remain when both comparisons used the same batch-32 execution path. Across 9,170 validation prefixes, only five top-one predictions changed, together with five alpha-sign changes. Original and reverse orders both remained correct on exactly 2,594 positions, and all of those correct positions were shared. The effect therefore persists after removing the previous execution-path asymmetry, but it remains weak and does not demonstrate semantic competence.",
+  "narration": "Mini-Kuzai V79 tested whether the context-order effect seen earlier would remain when both comparisons used the same batch-32 execution path. Across 9,170 validation prefixes, only five top-one predictions changed, together with five alpha-sign changes. Original and reverse orders both remained correct on exactly 2,594 positions, and all of those correct positions were shared. Absolute alpha correlation remained at 99.99 percent, confirming that the numerical difference stayed very small. The effect therefore persists after removing the previous execution-path asymmetry, but it remains weak and does not demonstrate semantic competence.",
   "youtube": {
     "title": "MINI-KUZAI V79 // SAME-PATH CONTEXT-ORDER CONTROL",
     "description": "Mini-Kuzai V79 verifies the same-path context-order control. Five top-one prediction changes remain across 9,170 validation prefixes while both orders retain the same 2,594 correct positions.\n\nBUILD LOCAL. KEEP CONTROL. OWN THE STACK.",
