@@ -1,0 +1,23 @@
+{
+  "generated_at_utc": "2026-11-11T14:19:06.968068+00:00",
+  "results": {
+    "BACKUP_PRESENT": "1",
+    "NEXT_ACTION": "SYSTEMD_MANUAL_START_TEST",
+    "PUBLICATION": "DISABLED",
+    "SERVICE_ACTIVE_STATE": "inactive",
+    "SERVICE_FILE_MATCH": "1",
+    "SERVICE_LOAD_STATE": "loaded",
+    "STEP_STATUS": "PASS",
+    "SYSTEMD_INSTALLED": "1",
+    "SYSTEMD_VERIFY": "PASS",
+    "TIMER_ACTIVE_STATE": "inactive",
+    "TIMER_ENABLED_STATE": "disabled",
+    "TIMER_FILE_MATCH": "1",
+    "TIMER_LOAD_STATE": "loaded",
+    "TIMER_STARTED": "0",
+    "WORKER_MODE": "DRY_RUN_ONLY"
+  },
+  "schema_version": 1,
+  "source_commit": "e2539c68d13164a2798249ac774654cd450170b5",
+  "step_id": "STEP-07-SYSTEMD-INSTALL-001"
+}
