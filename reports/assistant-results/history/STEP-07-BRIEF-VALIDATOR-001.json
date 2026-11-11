@@ -1,0 +1,23 @@
+{
+  "generated_at_utc": "2026-11-11T13:58:36.241310+00:00",
+  "results": {
+    "FINAL_RECEIPT_CONTROL": "PASS",
+    "FINAL_REQUEST_CONTROL": "PASS",
+    "GOGIT_REPORT_CONTROL": "PASS",
+    "METADATA_POLICY_CONTROL": "PASS",
+    "NEXT_ACTION": "SHORT_BRIEF_FIXTURE",
+    "REPO_SYNC": "PASS",
+    "SCHEMA_VALIDATION": "PASS",
+    "SOURCE_SNAPSHOT_CONTROL": "PASS",
+    "STEP_STATUS": "PASS",
+    "UNIT_TESTS": "PASS",
+    "UNIT_TEST_COUNT": "4",
+    "VALIDATOR_COMPILE": "PASS",
+    "VALIDATOR_PRESENT": "1",
+    "VALIDATOR_SHA256": "cdc918fd3dd253e7106f10e78b67ae43d74943aa31fb73a848c85f3befdf74eb",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "18acafa698e1dd3a633540ffd895399d6a02c27d",
+  "step_id": "STEP-07-BRIEF-VALIDATOR-001"
+}
