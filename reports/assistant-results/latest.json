@@ -1,18 +1,20 @@
 {
-  "generated_at_utc": "2026-11-11T14:23:18.212546+00:00",
+  "generated_at_utc": "2026-11-11T14:24:50.310240+00:00",
   "results": {
-    "BACKUP_PRESENT": "1",
-    "NEXT_ACTION": "TIMER_START",
+    "NEXT_ACTION": "TIMER_RUNTIME_VERIFY",
+    "NEXT_ELAPSE_PRESENT": "0",
     "PUBLICATION": "DISABLED",
+    "SERVICE_EXEC_STATUS": "0",
+    "SERVICE_RESULT": "success",
     "STEP_STATUS": "PASS",
-    "TIMER_ACTIVE_STATE": "inactive",
-    "TIMER_ENABLE": "PASS",
+    "TIMER_ACTIVE_STATE": "active",
     "TIMER_ENABLED_STATE": "enabled",
-    "TIMER_STARTED": "0",
-    "TIMER_SYMLINK_PRESENT": "1",
+    "TIMER_RESULT": "success",
+    "TIMER_START": "PASS",
+    "UPLOAD_PERFORMED": "0",
     "WORKER_MODE": "DRY_RUN_ONLY"
   },
   "schema_version": 1,
-  "source_commit": "5f0204494b320d0a48abb59ebc26b7fe38d2db2f",
-  "step_id": "STEP-07-SYSTEMD-TIMER-ENABLE-001"
+  "source_commit": "104dde9b2254d4e809b203068dce965980232119",
+  "step_id": "STEP-07-SYSTEMD-TIMER-START-001"
 }
