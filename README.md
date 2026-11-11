@@ -58,7 +58,7 @@ Permanent project addresses are displayed inside the rendered video instead of t
 
 ## `Current status`
 
-**STEP-07 --> COMPLETED - V80 PUBLIC FINAL UPLOAD VERIFIED**
+**STEP-07 --> COMPLETED / FLOW-PRESENTATION-001 TRI-CHANNEL VALIDATED / V81 ORCHESTRATION NEXT**
 
 Completed:
 
@@ -97,12 +97,17 @@ Current action:
 - OAuth production readiness is validated
 - FINAL-only public upload is enabled
 - V80 is the first verified live FINAL Short - YouTube video ID `y-YnlPLbT9Q`
+- FLOW-PRESENTATION-001 validated the 5-55 s media contract and tri-channel publication
+- presentation YouTube video ID --> `vhQmddUuMcg`
+- LinkedIn native-video post URN --> `urn:li:ugcPost:7526340708715327488`
+- GitHub media publication --> Mini-Kuzai Discussion #12
+- next engineering task --> automatic orchestration from a future genuine V81 FINAL receipt
 - keep YouTube as an independent publication sink
 - never let YouTube failure invalidate the scientific FINAL
 
 ## `Pre-V81 cross-channel publication validation`
 
-`FLOW-PRESENTATION-001` is a non-scientific publication used to validate the media path before V81.
+`FLOW-PRESENTATION-001` is the completed non-scientific validation of the media path before V81.
 
 Target flow:
 
@@ -201,6 +206,7 @@ YouTube publication failure never invalidates the underlying Mini-Kuzai scientif
 | Installation / development steps | [docs/steps/README.md](docs/steps/README.md) |
 | Google Cloud / YouTube OAuth process | [docs/GOOGLE-YOUTUBE-OAUTH-PROCESS.md](docs/GOOGLE-YOUTUBE-OAUTH-PROCESS.md) |
 | Project workflow policy | [docs/WORKFLOW.md](docs/WORKFLOW.md) |
+| Cross-channel flow validation | [docs/FLOW-PRESENTATION-001.md](docs/FLOW-PRESENTATION-001.md) |
 | GOGIT documentation | [tools/GOGIT.md](tools/GOGIT.md) |
 | Application code | [app/README.md](app/README.md) |
 | Assistant reports | [reports/assistant-results/README.md](reports/assistant-results/README.md) |
@@ -216,7 +222,7 @@ YouTube publication failure never invalidates the underlying Mini-Kuzai scientif
 | STEP-04 | Piper narration and audio mix | **COMPLETED - V6 CANONICAL** |
 | STEP-05 | YouTube Data API and OAuth | **COMPLETED** |
 | STEP-06 | Channel introduction pilot | **COMPLETED** |
-| STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | **COMPLETED - V80 PUBLIC FINAL UPLOAD VERIFIED** |
+| STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | **COMPLETED - V80 + TRI-CHANNEL MEDIA VALIDATED** |
 
 ## `Operating principles`
 
