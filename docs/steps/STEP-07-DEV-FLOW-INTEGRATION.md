@@ -1,6 +1,6 @@
 # `STEP-07 - Mini-Kuzai DEV-FLOW integration`
 
-Status --> IN PROGRESS - PRODUCTION READY / REAL FINAL UPLOAD GATED
+Status --> ACTIVE - PUBLIC FINAL UPLOAD ENABLED
 
 ## `Objective`
 
@@ -31,9 +31,10 @@ Validated and active:
 
 Current runtime state:
 
-- worker mode --> DRY_RUN_ONLY
-- publication --> DISABLED
-- upload performed --> 0
+- worker mode --> PUBLIC_UPLOAD
+- publication --> PUBLIC
+- uploader requires explicit --execute from the validated FINAL pipeline
+- target privacy --> public
 - YouTube failure cannot invalidate Mini-Kuzai scientific FINAL
 - START-DEV-FLOW does not trigger YouTube
 
@@ -52,13 +53,13 @@ Production readiness validated:
 - execute requested --> 0
 - upload performed --> 0
 
-Real YouTube upload remains intentionally gated.
+Public YouTube upload is now enabled for eligible FINAL-DEV-FLOW Shorts.
 
-The next real upload must come from a future eligible Mini-Kuzai FINAL-DEV-FLOW through the independent worker. No additional upload is required merely to validate STEP-07 readiness.
+The worker still requires the committed FINAL receipt, matching immutable scientific GOGIT report, committed Short brief, exact target channel, successful media audit and duplicate-SHA256 clearance before upload.
 
 ## `Exit criteria`
 
-A later Vxx step can generate and publish exactly one verified Short through the controlled pipeline.
+STEP-07 production activation is complete when the first eligible FINAL step generates and publishes exactly one verified public Short through the controlled pipeline. V80 is the first intended live FINAL candidate.
 
 ---
 
