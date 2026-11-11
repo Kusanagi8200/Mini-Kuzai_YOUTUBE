@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "publication_id": "FLOW-PRESENTATION-001",
+  "purpose": "NON_SCIENTIFIC_PUBLICATION_FLOW_TEST",
+  "timeline": {
+    "duration_seconds": 60,
+    "segments": [
+      {
+        "duration_seconds": 12,
+        "badge": "DEV FLOW",
+        "headline": "VALIDATE THE STEP",
+        "body": "SCIENTIFIC RESULT FIRST. GOGIT BEFORE PUBLICATION."
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "DEV FLOW",
+        "headline": "FINAL-DEV-FLOW",
+        "body": "GITHUB FINAL CREATES THE CANONICAL PUBLIC RECORD."
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "DEV FLOW",
+        "headline": "BUILD THE VIDEO",
+        "body": "60 SECOND SHORT. PIPER FROM 5 TO 55 SECONDS."
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "DEV FLOW",
+        "headline": "PUBLISH EVERYWHERE",
+        "body": "YOUTUBE PUBLIC. LINKEDIN NATIVE VIDEO. GITHUB MEDIA."
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "DEV FLOW",
+        "headline": "CLOSE THE LOOP",
+        "body": "VERIFY RECEIPTS. UPDATE DOCS. THEN START THE NEXT STEP."
+      }
+    ]
+  },
+  "narration": "Mini-Kuzai now documents each validated development step through one controlled publication flow. Scientific work is verified first on GitHub through GOGIT and FINAL-DEV-FLOW. After the final receipt is published, the media pipeline creates a sixty-second vertical video, generates Piper narration, mixes the project soundtrack, and audits the result. The verified video is then published publicly on YouTube. The same media package is prepared for a native LinkedIn video post, while GitHub receives a final media publication linked to the technical record. Documentation is updated only after every publication receipt is checked. One validated development step becomes one technical record, one video, and synchronized public communication across GitHub, LinkedIn, and YouTube.",
+  "youtube": {
+    "title": "MINI-KUZAI // AUTOMATED DEVELOPMENT DOCUMENTATION FLOW",
+    "description": "How Mini-Kuzai turns a validated development step into one technical record, one generated video and synchronized publication across GitHub, LinkedIn and YouTube.\n\nBUILD LOCAL. KEEP CONTROL. OWN THE STACK.",
+    "tags": [
+      "Mini-Kuzai",
+      "THE KUZ NETWORK",
+      "LLM From Scratch",
+      "Local AI",
+      "Dev Flow"
+    ]
+  },
+  "linkedin": {
+    "title": "MINI-KUZAI // DEVELOPMENT DOCUMENTATION FLOW",
+    "commentary": "MINI-KUZAI // DEVELOPMENT DOCUMENTATION FLOW\n\nEvery validated development step follows a controlled publication pipeline.\n\nScientific validation\n→ GOGIT verified\n→ FINAL-DEV-FLOW\n→ GitHub technical record\n→ generated 60-second video\n→ YouTube public Short\n→ LinkedIn native video post\n→ GitHub media publication\n→ documentation update\n→ STEP CLOSED\n\nThe objective is simple: one validated development step, one technical record, one generated video, and synchronized public communication across three channels.\n\nBUILD LOCAL. KEEP CONTROL. OWN THE STACK.\n\n#MiniKuzai #LocalAI #LLMFromScratch #OpenSource #TheKuzNetwork"
+  },
+  "github": {
+    "target": "Mini-Kuzai Discussions",
+    "title": "Mini-Kuzai development documentation flow",
+    "body": "MEDIA FLOW TEST // FLOW-PRESENTATION-001\n\nThis non-scientific publication demonstrates the Mini-Kuzai documentation pipeline: validated development result → GitHub FINAL → generated Short → YouTube public publication → LinkedIn native video → GitHub media publication → documentation update.\n\nThis publication does not represent V81 scientific evidence and does not authorize training, BLIND access or checkpoint changes."
+  }
+}
