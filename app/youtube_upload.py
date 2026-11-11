@@ -4,7 +4,7 @@
 Safety rules:
 - credentials live outside Git
 - authenticated channel must match the frozen target Channel ID
-- uploads are forced to PRIVATE
+- upload visibility must be explicitly selected
 - duplicate media SHA256 values are blocked by a local journal
 - default mode is preflight only; --execute is required to upload
 - YouTube Short descriptions reject URLs and angle brackets
@@ -44,6 +44,7 @@ SCOPES = [
 ]
 
 URL_RE = re.compile(r"(?i)(?:https?://|www\.)")
+PRIVACY_VALUES = ("private", "public", "unlisted")
 
 
 def sha256_file(path: Path) -> str:
@@ -69,6 +70,8 @@ def validate_title(title: str) -> str:
     title = title.strip()
     if not title:
         raise RuntimeError("Title is empty")
+    if len(title) > 100:
+        raise RuntimeError("YouTube title exceeds 100 characters")
     if "<" in title or ">" in title:
         raise RuntimeError("YouTube titles must not contain angle brackets")
     return title
@@ -197,13 +200,17 @@ def save_journal(journal: dict) -> None:
     os.chmod(JOURNAL_FILE, 0o600)
 
 
-def upload_private(
+def upload_video(
     youtube,
     video: Path,
     title: str,
     description: str,
     tags: list[str],
+    privacy: str,
 ) -> str:
+    if privacy not in PRIVACY_VALUES:
+        raise RuntimeError("Unsupported YouTube privacy value")
+
     body = {
         "snippet": {
             "title": title,
@@ -211,7 +218,7 @@ def upload_private(
             "tags": tags,
         },
         "status": {
-            "privacyStatus": "private",
+            "privacyStatus": privacy,
             "selfDeclaredMadeForKids": False,
         },
     }
@@ -245,6 +252,11 @@ def main() -> int:
     parser.add_argument("--title")
     parser.add_argument("--description", default="")
     parser.add_argument("--tag", action="append", default=[])
+    parser.add_argument(
+        "--privacy",
+        choices=PRIVACY_VALUES,
+        default="private",
+    )
     parser.add_argument("--execute", action="store_true")
     args = parser.parse_args()
 
@@ -273,7 +285,8 @@ def main() -> int:
     print(f"TARGET_CHANNEL_MATCH={int(channel_id == TARGET_CHANNEL_ID)}")
     print(f"CHANNEL_ID={channel_id}")
     print(f"CHANNEL_TITLE={channel_title}")
-    print("PRIVACY_POLICY=PRIVATE_ONLY")
+    print("PRIVACY_POLICY=EXPLICIT")
+    print(f"REQUESTED_PRIVACY={args.privacy}")
     print("DESCRIPTION_POLICY=PASS")
     print(f"VIDEO_PRESENT={int(video.is_file())}")
     print(f"VIDEO_SIZE_BYTES={video.stat().st_size}")
@@ -293,12 +306,13 @@ def main() -> int:
     if not title:
         raise RuntimeError("--title is required with --execute")
 
-    video_id = upload_private(
+    video_id = upload_video(
         youtube=youtube,
         video=video,
         title=title,
         description=description,
         tags=args.tag,
+        privacy=args.privacy,
     )
 
     journal["uploads"].append(
@@ -306,14 +320,14 @@ def main() -> int:
             "uploaded_at_utc": datetime.now(timezone.utc).isoformat(),
             "channel_id": channel_id,
             "media_sha256": media_sha256,
-            "privacy_status": "private",
+            "privacy_status": args.privacy,
             "video_id": video_id,
         }
     )
     save_journal(journal)
 
     print("UPLOAD_PERFORMED=1")
-    print("UPLOAD_PRIVACY=private")
+    print(f"UPLOAD_PRIVACY={args.privacy}")
     print(f"VIDEO_ID={video_id}")
     print(f"JOURNAL_FILE={JOURNAL_FILE}")
 
