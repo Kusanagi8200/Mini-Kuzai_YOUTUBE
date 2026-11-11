@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "step": "V80",
+  "video_id": "VIDEO-V80-FINAL",
+  "source": {
+    "final_receipt": "automation/dev-flow/receipts/V80-final.json",
+    "gogit_report": "reports/assistant-results/history/PHASE03-SMOLTALK-V80-DECISION-BOUNDARY-PROXIMITY-CONTROL-001.json",
+    "source_commit": "b74a37731c279527eead7ac64b8bf3c6e70a99f6",
+    "final_status": "PUBLISHED"
+  },
+  "timeline": {
+    "duration_seconds": 60,
+    "segments": [
+      {
+        "duration_seconds": 12,
+        "badge": "V80",
+        "headline": "BOUNDARY CONTROL",
+        "body": "THE FIVE V79 CHANGES WERE REPLAYED EXACTLY"
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "V80",
+        "headline": "9,170 PREFIXES",
+        "body": "ORIGINAL AND REVERSE BOTH STAY AT 2,594 CORRECT"
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "V80",
+        "headline": "5 SIGN CROSSINGS",
+        "body": "ALL FIVE PREDICTION CHANGES REMAIN PRESENT"
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "V80",
+        "headline": "OUTSIDE 1E-3",
+        "body": "NONE OF THE FIVE CHANGES SIT NEAR THE ZERO BOUNDARY"
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "V80",
+        "headline": "REAL ORDER EFFECT",
+        "body": "STRONGER EVIDENCE WITHOUT CLAIMING SEMANTIC COMPETENCE"
+      }
+    ]
+  },
+  "narration": "Mini-Kuzai V80 tested whether the five context-order changes found in V79 were only fragile numerical flips near the residual decision boundary. The exact V79 result replayed successfully across 9,170 validation prefixes, with five prediction changes, five alpha-sign changes, and 2,594 correct positions in both original and reversed context order. None of the changed positions fell within the widest frozen boundary threshold of one times ten to the minus three. The measured distances were materially larger than a near-zero numerical flip. V80 therefore strengthens evidence for a real context-order sensitivity in this frozen diagnostic, while still making no claim of semantic competence or reasoning.",
+  "youtube": {
+    "title": "MINI-KUZAI V80 // DECISION-BOUNDARY PROXIMITY CONTROL",
+    "description": "Mini-Kuzai V80 verifies that the five V79 context-order changes are not confined to a near-zero numerical boundary. All five changes remain outside the widest frozen 1e-3 proximity threshold while both paths retain 2,594 correct positions.\n\nBUILD LOCAL. KEEP CONTROL. OWN THE STACK.",
+    "tags": [
+      "Mini-Kuzai",
+      "THE KUZ NETWORK",
+      "LLM From Scratch",
+      "Local AI",
+      "V80"
+    ],
+    "publication_mode": "public"
+  }
+}
