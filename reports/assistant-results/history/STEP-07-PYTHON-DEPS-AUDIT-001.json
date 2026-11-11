@@ -1,0 +1,18 @@
+{
+  "generated_at_utc": "2026-11-11T13:51:23.550691+00:00",
+  "results": {
+    "DEPENDENCY_MANIFEST": "ABSENT",
+    "GOOGLE_API_VERSION": "2.201.0",
+    "GOOGLE_CORE_LIB_VERSION": "2.62.1",
+    "GOOGLE_FLOW_LIB_VERSION": "1.5.0",
+    "JSONSCHEMA_VERSION": "MISSING",
+    "NEXT_ACTION": "ADD_JSONSCHEMA_DEPENDENCY",
+    "PILLOW_VERSION": "MISSING",
+    "PIP_VERSION": "26.3",
+    "PYTHON_VERSION": "3.12.3",
+    "STEP_STATUS": "PASS"
+  },
+  "schema_version": 1,
+  "source_commit": "440bddb8a5804129d5832e6ca325d2d58ce9f132",
+  "step_id": "STEP-07-PYTHON-DEPS-AUDIT-001"
+}
