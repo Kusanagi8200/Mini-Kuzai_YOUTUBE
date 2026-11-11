@@ -280,8 +280,8 @@ def validate_brief(
     if normalized != description:
         fail("YouTube description is not in canonical normalized form")
 
-    if brief["youtube"]["publication_mode"] != "private":
-        fail("Publication mode must remain private")
+    if brief["youtube"]["publication_mode"] != "public":
+        fail("Publication mode must be public for production DEV-FLOW Shorts")
 
     return {
         "step": step,
