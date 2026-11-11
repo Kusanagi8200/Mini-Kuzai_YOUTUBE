@@ -80,3 +80,32 @@ This repository publishes communication assets. It does not authorize Mini-Kuzai
 ---
 
 **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
+
+
+## `Cross-channel media publication`
+
+A scientific FINAL and a media publication are separate transactions.
+
+For V81+ the intended sequence is:
+
+```text
+scientific FINAL receipt
+  -> media build
+  -> media audit
+  -> YouTube public publication
+  -> LinkedIn native video publication
+  -> GitHub media publication
+  -> verify channel receipts
+  -> update documentation
+```
+
+Rules:
+
+- no media generation from START-DEV-FLOW
+- no media publication before a committed FINAL receipt
+- YouTube / LinkedIn / GitHub media failures never invalidate the scientific FINAL
+- duplicate media is blocked by SHA256 journals where available
+- LinkedIn native video publication must use a separate live gate
+- GitHub Discussion MP4 attachment automation must be independently validated before enabling it
+- a verified public YouTube URL is the GitHub fallback when native Discussion attachment automation is unavailable
+
