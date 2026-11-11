@@ -5,7 +5,7 @@
   "source": {
     "final_receipt": "automation/dev-flow/receipts/V80-final.json",
     "gogit_report": "reports/assistant-results/history/PHASE03-SMOLTALK-V80-DECISION-BOUNDARY-PROXIMITY-CONTROL-001.json",
-    "source_commit": "b74a37731c279527eead7ac64b8bf3c6e70a99f6",
+    "source_commit": "206ae3f6df4c688cf458270b98164b260b6172dc",
     "final_status": "PUBLISHED"
   },
   "timeline": {
