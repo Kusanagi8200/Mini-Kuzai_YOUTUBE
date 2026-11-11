@@ -1,5 +1,5 @@
 [Unit]
-Description=Poll Mini-Kuzai FINAL receipts for YouTube Short dry-runs
+Description=Poll Mini-Kuzai FINAL receipts for public YouTube Shorts
 
 [Timer]
 OnBootSec=2min
