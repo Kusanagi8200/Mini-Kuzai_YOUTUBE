@@ -1,17 +1,12 @@
 {
-  "generated_at_utc": "2026-11-11T15:59:12.024893+00:00",
+  "generated_at_utc": "2026-11-11T16:02:14.280956+00:00",
   "results": {
-    "DUPLICATE_SHA256": "0",
-    "EXECUTE_REQUESTED": "0",
-    "MEDIA": "step07-v79-orchestrator-final.mp4",
-    "NEXT_ACTION": "STEP07_PRIVATE_UPLOAD_GATE",
-    "PREFLIGHT": "PASS",
+    "DOC_BACKUP": "PASS",
+    "NEXT_ACTION": "STEP07_DOC_PRODUCTION_READY_UPDATE",
     "STEP_STATUS": "PASS",
-    "TARGET_CHANNEL_MATCH": "1",
-    "UPLOADER_RC": "0",
-    "UPLOAD_PERFORMED": "0"
+    "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "cf932f699118ccc280a3b867883b19f76fe2c5e7",
-  "step_id": "STEP-07-PRODUCTION-PREFLIGHT-002"
+  "source_commit": "810f0d72597f66004d1d5f6d6778c0bf5f64b178",
+  "step_id": "STEP-07-DOC-PRECLOSE-BACKUP-001"
 }
