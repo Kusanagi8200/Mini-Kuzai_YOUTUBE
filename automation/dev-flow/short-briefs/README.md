@@ -23,3 +23,12 @@ The local worker journal remains outside Git under:
 ---
 
 **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
+
+
+## `Current orchestration gap`
+
+The renderer, audit and YouTube publication path are validated.
+
+For V81+, the remaining automation task is to create the canonical `Vxx-final.json` brief automatically from a genuine committed FINAL receipt + immutable scientific GOGIT evidence. Until that orchestration exists, brief authoring remains an explicit preparation step.
+
+`FLOW-PRESENTATION-001` validated downstream media publication but is not a DEV-FLOW scientific brief.
