@@ -1,6 +1,6 @@
 # `STEP-07 - Mini-Kuzai DEV-FLOW integration`
 
-Status --> COMPLETED - FIRST LIVE PUBLIC FINAL UPLOAD VERIFIED
+Status --> COMPLETED - V80 PUBLIC FINAL + PRE-V81 TRI-CHANNEL MEDIA VALIDATED
 
 ## `Objective`
 
@@ -38,7 +38,7 @@ Current runtime state:
 - YouTube failure cannot invalidate Mini-Kuzai scientific FINAL
 - START-DEV-FLOW does not trigger YouTube
 
-Production readiness validated:
+Production state validated:
 
 - Google Auth Platform --> External / In production
 - OAuth application branding --> completed
@@ -48,10 +48,9 @@ Production readiness validated:
 - production OAuth reauthorization --> PASS
 - refresh credential --> present
 - authenticated channel verification --> PASS
-- production preflight with V79 orchestrator final media --> PASS
+- V80 real public FINAL upload --> PASS
 - duplicate-media protection --> PASS
-- execute requested --> 0
-- upload performed --> 0
+- FLOW-PRESENTATION-001 public upload --> PASS
 
 Public YouTube upload is now enabled for eligible FINAL-DEV-FLOW Shorts.
 
@@ -99,7 +98,18 @@ The next extension adds synchronized media publication:
 - GitHub --> media publication attached to or linked from the canonical FINAL Discussion
 - documentation --> updated after all channel receipts are verified
 
-Before V81, `FLOW-PRESENTATION-001` validates this architecture as a non-scientific publication.
+Before V81, `FLOW-PRESENTATION-001` validated this architecture as a non-scientific publication.
 
 See [FLOW-PRESENTATION-001](../FLOW-PRESENTATION-001.md).
 
+
+
+Cross-channel validation result --> PASS
+
+- YouTube --> PUBLIC / `vhQmddUuMcg`
+- LinkedIn --> native video PUBLISHED / `urn:li:ugcPost:7526340708715327488`
+- GitHub --> Discussion #12 using verified public YouTube fallback
+- media SHA256 --> `c34b3dc19788e6770e4edb9dffc2331df2438b23c6663858b7d5299ad5731034`
+- narration window --> 5-55 seconds
+
+The remaining V81 task is orchestration, not media capability validation.
