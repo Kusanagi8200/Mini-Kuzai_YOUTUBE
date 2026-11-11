@@ -56,6 +56,23 @@ A local failure that prevents GOGIT publication may be pasted manually for diagn
 - one unique STEP_ID per immutable GOGIT history report
 - documentation update at the end of every completed step
 
+## `Execution target policy`
+
+Every operator command must state its execution target before the command block.
+
+Canonical targets:
+
+- `fhc2` --> Mini-Kuzai scientific repository and Mini-Kuzai_YOUTUBE runtime
+- `VPS KUZAI.ORG / ov-19d492` --> production website repository under `/var/www/kuzai.org`
+- `fhc` --> interactive browser / SSH tunnel helper when an OAuth loopback flow requires a graphical browser
+
+Rules:
+
+- never leave the target machine implicit
+- when one workflow spans several hosts, separate the commands by machine
+- GOGIT instructions must also identify the machine and repository that publish the report
+- do not repeat a machine question when the execution target is already known from the active workflow
+
 ## `Scientific boundary`
 
 This repository publishes communication assets. It does not authorize Mini-Kuzai training, BLIND access, checkpoint changes or scientific experiments.
