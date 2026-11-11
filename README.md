@@ -128,9 +128,11 @@ Current implementation:
 - presentation config --> `config/flow-presentation-001.json`
 - audited local builder --> `tools/build_flow_presentation.py`
 - builder performs no external publication
-- native LinkedIn video publication is implemented and validated separately in KUZ-DIN before activation
-- GitHub Discussions accepts MP4 attachments, but automated Discussion attachment publication remains a separate integration gate
-- YouTube public URL remains the safe GitHub fallback
+- FLOW-PRESENTATION-001 tri-channel publication --> VERIFIED
+- YouTube public video --> `vhQmddUuMcg`
+- LinkedIn native video post --> `urn:li:ugcPost:7526340708715327488`
+- GitHub media publication --> Discussion #12 using the verified public YouTube link fallback
+- GitHub Discussions accepts MP4 attachments, but automated native Discussion attachment publication remains a separate integration gate
 
 ## `Google Cloud / OAuth state`
 
