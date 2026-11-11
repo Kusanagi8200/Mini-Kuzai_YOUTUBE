@@ -1,0 +1,21 @@
+{
+  "generated_at_utc": "2026-11-11T13:53:48.508673+00:00",
+  "results": {
+    "DEPENDENCY_COUNT": "5",
+    "DEPENDENCY_MANIFEST": "requirements.txt",
+    "GOOGLE_API_VERSION": "2.201.0",
+    "GOOGLE_CORE_LIB_VERSION": "2.62.1",
+    "GOOGLE_FLOW_LIB_VERSION": "1.5.0",
+    "JSONSCHEMA_VERSION": "4.26.0",
+    "MANIFEST_SHA256": "6cf8a0b573844d3d07a14a6c8a0d0701824c982a5d00580bb44f3ff68c4ef788",
+    "NEXT_ACTION": "BRIEF_VALIDATOR",
+    "PILLOW_VERSION": "13.0.0",
+    "PIP_DRY_RUN": "PASS",
+    "REPO_SYNC": "PASS",
+    "STEP_STATUS": "PASS",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "909c47afefbbcfc2322a2c80275aa597f47ac428",
+  "step_id": "STEP-07-DEPENDENCY-MANIFEST-001"
+}
