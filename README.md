@@ -37,7 +37,7 @@ All generated videos use:
 - permanent top-right branding --> `THE KUZ NETWORK` + `KUZAI.ORG`
 - permanent footer --> `GITHUB.COM/KUSANAGI8200`
 - Piper narration --> sentence-chunked
-- narration window --> 10 s to 50 s
+- narration window --> 5 s to 55 s for V81+ / cross-channel media flow
 - background music --> 20 percent
 - H.264 video
 - AAC stereo 48 kHz audio
@@ -99,6 +99,38 @@ Current action:
 - V80 is the first verified live FINAL Short - YouTube video ID `y-YnlPLbT9Q`
 - keep YouTube as an independent publication sink
 - never let YouTube failure invalidate the scientific FINAL
+
+## `Pre-V81 cross-channel publication validation`
+
+`FLOW-PRESENTATION-001` is a non-scientific publication used to validate the media path before V81.
+
+Target flow:
+
+```text
+validated media package
+      |
+      +--> YouTube public Short
+      +--> LinkedIn native video post
+      +--> GitHub media publication / public YouTube fallback
+      |
+      v
+publication receipts
+      |
+      v
+documentation update
+```
+
+The presentation does not represent V81 scientific evidence and cannot authorize training, BLIND access or checkpoint changes.
+
+Current implementation:
+
+- canonical voice window --> 5 s to 55 s
+- presentation config --> `config/flow-presentation-001.json`
+- audited local builder --> `tools/build_flow_presentation.py`
+- builder performs no external publication
+- native LinkedIn video publication is implemented and validated separately in KUZ-DIN before activation
+- GitHub Discussions accepts MP4 attachments, but automated Discussion attachment publication remains a separate integration gate
+- YouTube public URL remains the safe GitHub fallback
 
 ## `Google Cloud / OAuth state`
 
