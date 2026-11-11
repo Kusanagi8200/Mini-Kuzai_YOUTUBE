@@ -135,7 +135,7 @@
           }
         },
         "publication_mode": {
-          "const": "private"
+          "const": "public"
         }
       }
     }
