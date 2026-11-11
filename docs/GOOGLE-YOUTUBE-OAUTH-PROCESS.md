@@ -279,17 +279,25 @@ https://developers.google.com/youtube/data/reference/rest/v3/videos/update
 
 ## `15 - Verified public transition for VIDEO-001`
 
-The first pilot video was reviewed manually in YouTube Studio and changed from `Private` to `Public`.
+The original private pilot was reviewed manually in YouTube Studio and changed from `Private` to `Public`.
 
-Verified result:
+Historical pilot result:
 
-- Video ID --> `pexXCUznWRk`
+- legacy Video ID --> `pexXCUznWRk`
 - target channel --> `UC9MDfq5s-6j_twe4xJH_XXA`
 - target channel match --> PASS
 - API visibility after Studio change --> `public`
 - public confirmation --> PASS
+- later lifecycle --> legacy upload removed during the VIDEO-001 V8 replacement cycle
 
-The transition was performed manually because the current OAuth scopes intentionally remain limited to `youtube.upload` and `youtube.readonly`.
+Current canonical public VIDEO-001:
+
+- Video ID --> `lWo3DobOLqQ`
+- title --> `THE KUZ NETWORK // MINI-KUZAI - LLM FROM SCRATCH`
+- V8 operator visual/audio review --> PASS
+- canonical presentation video --> active
+
+The visibility transition remains manual because the current OAuth scopes intentionally remain limited to `youtube.upload` and `youtube.readonly`.
 
 No broader write scope was added solely to change visibility.
 
@@ -358,6 +366,28 @@ The repository may contain only:
 - public Channel ID
 - sanitized GOGIT evidence
 - documentation
+
+## `Verified STEP-07 OAuth and production-readiness evidence`
+
+Sanitized GOGIT evidence includes:
+
+- `STEP-07-GOOGLE-LOCAL-AUDIT-001` --> PASS
+- `STEP-07-OAUTH-PRODUCTION-PREBACKUP-001` --> PASS
+- `STEP-07-OAUTH-PRODUCTION-REAUTHORIZE-001` --> PASS
+- `STEP-07-PRODUCTION-PREFLIGHT-002` --> PASS
+
+Validated production-readiness state:
+
+- Google Auth Platform --> External / In production
+- OAuth reauthorization after production transition --> PASS
+- refresh credential --> present
+- required scopes --> present
+- authenticated channel --> exact target match
+- production preflight --> PASS
+- execute requested --> 0
+- upload performed --> 0
+
+No extra upload was required to prove STEP-07 readiness. The next real upload is reserved for a future eligible Mini-Kuzai FINAL-DEV-FLOW.
 
 ## `Verified STEP-05 evidence`
 
