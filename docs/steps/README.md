@@ -9,7 +9,7 @@
 | STEP-04 | [Piper and audio](STEP-04-PIPER-AUDIO.md) | **COMPLETED - V6 CANONICAL** |
 | STEP-05 | [YouTube API](STEP-05-YOUTUBE-API.md) | **COMPLETED** |
 | STEP-06 | [Channel introduction pilot](STEP-06-CHANNEL-INTRO.md) | **COMPLETED** |
-| STEP-07 | [DEV-FLOW integration](STEP-07-DEV-FLOW-INTEGRATION.md) | **NEXT** |
+| STEP-07 | [DEV-FLOW integration](STEP-07-DEV-FLOW-INTEGRATION.md) | **IN PROGRESS - PRODUCTION READY / REAL UPLOAD GATED** |
 
 Each page is updated when its step is executed and verified.
 

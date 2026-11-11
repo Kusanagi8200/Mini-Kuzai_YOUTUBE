@@ -55,6 +55,7 @@ Configure:
 - Audience --> `External`
 - Contact information --> monitored Google account
 - Publishing status during initial setup --> `Testing`
+- Current STEP-07 production status --> `In production`
 
 Do not store the support/contact email address in this public repository.
 
@@ -168,7 +169,7 @@ If the browser runs on another Linux host while the OAuth script runs on `fhc2`,
 
 Then run the OAuth flow on `fhc2`.
 
-The browser displays Google's unverified-app warning while the application is External and Testing. Continue only with the account explicitly configured as a test user.
+The browser may display Google's unverified-app warning because the application is operator-controlled and not submitted for public verification. Continue only with the Google account that owns or administers the target YouTube channel.
 
 After consent, Google redirects to the local loopback callback and the script writes:
 
@@ -292,17 +293,49 @@ The transition was performed manually because the current OAuth scopes intention
 
 No broader write scope was added solely to change visibility.
 
-## `16 - Testing-mode refresh-token limitation`
+## `16 - STEP-07 production OAuth state`
 
-Google OAuth applications configured as External with publishing status `Testing` issue refresh tokens that expire after seven days when scopes exceed basic identity scopes.
+The initial pilot used an External OAuth application in `Testing`.
 
-This is acceptable for the initial pilot but not for unattended long-term automation.
+For STEP-07 unattended readiness, the Google Auth Platform configuration was completed and moved to:
 
-Before STEP-07 production automation, review the Google Auth Platform publishing/verification requirements and move the application to an appropriate production state.
+- audience --> `External`
+- publishing status --> `In production`
+- application home page --> `https://kuzai.org/`
+- privacy policy --> `https://kuzai.org/index.php?page=oauth-privacy`
+- authorized domain --> `kuzai.org`
+
+The OAuth authorization was then recreated after the production transition.
+
+Verified result:
+
+- OAuth client type --> Desktop app
+- refresh credential --> present
+- `youtube.upload` --> present
+- `youtube.readonly` --> present
+- authenticated channel count --> 1
+- target Channel ID match --> PASS
+- production preflight --> PASS
+- real upload during readiness validation --> 0
+
+The application remains operator-controlled and no broader OAuth scope was introduced.
 
 Official reference:
 
 https://developers.google.com/identity/protocols/oauth2/
+
+## `Canonical VIDEO-001 note`
+
+The original private pilot used Video ID `pexXCUznWRk`.
+
+That legacy upload was later removed during the VIDEO-001 V8 replacement cycle.
+
+Current canonical public VIDEO-001:
+
+- Video ID --> `lWo3DobOLqQ`
+- title --> `THE KUZ NETWORK // MINI-KUZAI - LLM FROM SCRATCH`
+- V8 operator review --> PASS
+- current public presentation video --> canonical
 
 ## `Security rules`
 

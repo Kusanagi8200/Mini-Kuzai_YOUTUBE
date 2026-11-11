@@ -58,7 +58,7 @@ Permanent project addresses are displayed inside the rendered video instead of t
 
 ## `Current status`
 
-**NEXT --> STEP-07 MINI-KUZAI FINAL-DEV-FLOW INTEGRATION**
+**STEP-07 --> IN PROGRESS - PRODUCTION READY / REAL FINAL UPLOAD GATED**
 
 Completed:
 
@@ -93,8 +93,12 @@ VIDEO-001 final state:
 
 Current action:
 
-- prepare STEP-07 DEV-FLOW integration
-- keep YouTube as an independent publication sink after verified Mini-Kuzai FINAL steps
+- STEP-07 dry-run runtime is active
+- OAuth production readiness is validated
+- production preflight is validated without upload
+- wait for a future eligible Mini-Kuzai FINAL-DEV-FLOW
+- keep YouTube as an independent publication sink
+- never let YouTube failure invalidate the scientific FINAL
 
 ## `Google Cloud / OAuth state`
 
@@ -104,16 +108,24 @@ Verified:
 - YouTube Data API v3 --> enabled
 - OAuth client --> Desktop app
 - audience --> External
-- current publishing status --> Testing
+- current publishing status --> In production
 - scopes --> `youtube.upload` + `youtube.readonly`
 - OAuth files --> outside Git
 - target Channel ID verification --> mandatory before upload
 
-Known limitation:
+Production OAuth state:
 
-Google documents that External OAuth applications in Testing issue refresh tokens that expire after seven days when non-basic identity scopes are used.
+- Google Auth Platform --> External / In production
+- public application home page --> KUZAI.ORG
+- public OAuth privacy policy --> KUZAI.ORG
+- authorized domain --> kuzai.org
+- production OAuth reauthorization --> PASS
+- refresh credential --> present
+- target channel verification --> PASS
+- production upload preflight --> PASS
+- real STEP-07 upload --> still gated
 
-STEP-07 unattended automation therefore requires a production-state review before activation.
+The application remains operator-controlled. No real DEV-FLOW Short is uploaded until an eligible future FINAL-DEV-FLOW reaches the explicit publication gate.
 
 Complete setup procedure:
 
@@ -170,7 +182,7 @@ YouTube publication failure never invalidates the underlying Mini-Kuzai scientif
 | STEP-04 | Piper narration and audio mix | **COMPLETED - V6 CANONICAL** |
 | STEP-05 | YouTube Data API and OAuth | **COMPLETED** |
 | STEP-06 | Channel introduction pilot | **COMPLETED** |
-| STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | **NEXT** |
+| STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | **IN PROGRESS - PRODUCTION READY / REAL UPLOAD GATED** |
 
 ## `Operating principles`
 
