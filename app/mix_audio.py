@@ -13,8 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 MUSIC = ROOT / "assets" / "music" / "kuzai-dark-cyberpunk-background-60s.wav"
 
 TARGET_DURATION = 60.0
-VOICE_START = 10.0
-VOICE_END = 50.0
+VOICE_START = 5.0
+VOICE_END = 55.0
 VOICE_WINDOW = VOICE_END - VOICE_START
 MUSIC_VOLUME = 0.20
 MIN_SPEED_FACTOR = 0.90
