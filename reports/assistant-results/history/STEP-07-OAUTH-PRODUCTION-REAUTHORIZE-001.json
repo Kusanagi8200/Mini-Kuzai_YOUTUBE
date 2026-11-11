@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-11-11T15:53:48.547661+00:00",
+  "results": {
+    "CHANNEL_COUNT": "1",
+    "CHANNEL_MATCH": "1",
+    "NEXT_ACTION": "STEP07_PRODUCTION_PREFLIGHT",
+    "READ_SCOPE_PRESENT": "1",
+    "REFRESH_PRESENT": "1",
+    "SESSION_MODE": "600",
+    "SESSION_PRESENT": "1",
+    "STEP_STATUS": "PASS",
+    "UPLOAD_SCOPE_PRESENT": "1"
+  },
+  "schema_version": 1,
+  "source_commit": "e7591978678dc2147ecf707b037545c2838b193d",
+  "step_id": "STEP-07-OAUTH-PRODUCTION-REAUTHORIZE-001"
+}
