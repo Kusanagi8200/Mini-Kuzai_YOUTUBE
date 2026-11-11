@@ -58,7 +58,7 @@ Permanent project addresses are displayed inside the rendered video instead of t
 
 ## `Current status`
 
-**STEP-07 --> ACTIVE - PUBLIC FINAL UPLOAD ENABLED**
+**STEP-07 --> COMPLETED - V80 PUBLIC FINAL UPLOAD VERIFIED**
 
 Completed:
 
@@ -96,7 +96,7 @@ Current action:
 - STEP-07 production runtime is active
 - OAuth production readiness is validated
 - FINAL-only public upload is enabled
-- V80 is the first intended live FINAL Short
+- V80 is the first verified live FINAL Short - YouTube video ID `y-YnlPLbT9Q`
 - keep YouTube as an independent publication sink
 - never let YouTube failure invalidate the scientific FINAL
 
@@ -182,7 +182,7 @@ YouTube publication failure never invalidates the underlying Mini-Kuzai scientif
 | STEP-04 | Piper narration and audio mix | **COMPLETED - V6 CANONICAL** |
 | STEP-05 | YouTube Data API and OAuth | **COMPLETED** |
 | STEP-06 | Channel introduction pilot | **COMPLETED** |
-| STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | **ACTIVE - PUBLIC FINAL UPLOAD ENABLED** |
+| STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | **COMPLETED - V80 PUBLIC FINAL UPLOAD VERIFIED** |
 
 ## `Operating principles`
 
