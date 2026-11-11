@@ -1,0 +1,25 @@
+{
+  "generated_at_utc": "2026-11-11T14:13:22.649997+00:00",
+  "results": {
+    "BRIEF_CANDIDATES": "0",
+    "CONFLICT_REPLAY_BLOCK": "PASS",
+    "FINAL_RECEIPT_REQUIRED": "1",
+    "LOCAL_IDEMPOTENCE": "PASS",
+    "NEXT_ACTION": "SYSTEMD_DRY_RUN",
+    "PENDING_BRIEFS": "0",
+    "PRODUCTION_SCAN": "IDLE",
+    "PUBLICATION": "DISABLED",
+    "REPO_SYNC": "PASS",
+    "STEP_STATUS": "PASS",
+    "UNIT_TESTS": "PASS",
+    "UNIT_TEST_COUNT": "4",
+    "WORKER_COMPILE": "PASS",
+    "WORKER_MODE": "DRY_RUN_ONLY",
+    "WORKER_PRESENT": "1",
+    "WORKER_SHA256": "69dbfe76e9b3ec1f0d346a981f61a3065c871b1bb04d6d8e2d56d2f649767a7c",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "871b8e9bd1348c4d266071a4cc6158950aa7c50f",
+  "step_id": "STEP-07-FINAL-RECEIPT-WORKER-001"
+}
