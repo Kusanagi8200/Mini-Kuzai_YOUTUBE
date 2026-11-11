@@ -1,0 +1,12 @@
+[Unit]
+Description=Poll Mini-Kuzai FINAL receipts for YouTube Short dry-runs
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=1min
+AccuracySec=10s
+Persistent=true
+Unit=mini-kuzai-youtube-final.service
+
+[Install]
+WantedBy=timers.target

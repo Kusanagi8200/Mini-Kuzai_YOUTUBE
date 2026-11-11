@@ -1,0 +1,12 @@
+[Unit]
+Description=Mini-Kuzai YouTube FINAL Short worker
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/root/GitHub-Mini-Kuzai/Mini-Kuzai_YOUTUBE
+ExecStart=/root/GitHub-Mini-Kuzai/Mini-Kuzai_YOUTUBE/.venv/bin/python /root/GitHub-Mini-Kuzai/Mini-Kuzai_YOUTUBE/tools/dev_flow_short_worker.py
+UMask=0077
+StandardOutput=journal
+StandardError=journal
