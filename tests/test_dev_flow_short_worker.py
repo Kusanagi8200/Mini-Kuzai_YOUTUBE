@@ -97,8 +97,10 @@ class WorkerTests(unittest.TestCase):
             """#!/usr/bin/env python3
 print("##### SECTION RESULTS FOR ASSISTANT ######")
 print("PIPELINE_ORCHESTRATOR=PASS")
-print("UPLOAD_PERFORMED=0")
-print("PUBLICATION=DISABLED")
+print("UPLOAD_PERFORMED=1")
+print("UPLOAD_PRIVACY=public")
+print("PUBLICATION=PUBLIC")
+print("YOUTUBE_VIDEO_ID=AbCdEf12345")
 print("VIDEO_SHA256=" + "a" * 64)
 """,
             encoding="utf-8",
@@ -136,7 +138,7 @@ print("VIDEO_SHA256=" + "a" * 64)
             require_committed=False,
         )
 
-        self.assertEqual(result["state"], "DRY_RUN_VERIFIED")
+        self.assertEqual(result["state"], "PUBLIC_PUBLISHED")
         self.assertEqual(result["processed"], "1")
 
         result2 = module.process_candidate(
