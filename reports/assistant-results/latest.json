@@ -1,19 +1,18 @@
 {
-  "generated_at_utc": "2026-11-11T14:26:21.615200+00:00",
+  "generated_at_utc": "2026-11-11T15:01:58.752048+00:00",
   "results": {
-    "LAST_TRIGGER_PRESENT": "1",
-    "NEXT_ACTION": "STEP07_RUNTIME_REVIEW",
-    "NEXT_MONOTONIC_PRESENT": "1",
+    "NEXT_ACTION": "STEP07_OAUTH_REVIEW",
     "PUBLICATION": "DISABLED",
     "SERVICE_EXEC_STATUS": "0",
     "SERVICE_RESULT": "success",
     "STEP_STATUS": "PASS",
     "TIMER_ACTIVE_STATE": "active",
     "TIMER_ENABLED_STATE": "enabled",
-    "UPLOAD_PERFORMED": "0",
-    "WORKER_MODE": "DRY_RUN_ONLY"
+    "WORKER": "IDLE",
+    "WORKER_MODE": "DRY_RUN_ONLY",
+    "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "d5472f04bbced356d4fa0ccddf0f78d4e10068e7",
-  "step_id": "STEP-07-SYSTEMD-TIMER-RUNTIME-001"
+  "source_commit": "24b9f4990b6ca0ebb4c7afc01462378c8f49b80f",
+  "step_id": "STEP-07-RUNTIME-REVIEW-001"
 }
