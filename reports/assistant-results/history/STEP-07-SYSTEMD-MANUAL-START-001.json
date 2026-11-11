@@ -1,0 +1,21 @@
+{
+  "generated_at_utc": "2026-11-11T14:21:40.509237+00:00",
+  "results": {
+    "BRIEF_CANDIDATES": "0",
+    "EXEC_MAIN_STATUS": "0",
+    "NEXT_ACTION": "TIMER_ENABLE_REVIEW",
+    "PENDING_BRIEFS": "0",
+    "PUBLICATION": "DISABLED",
+    "SERVICE_FINAL_STATE": "inactive",
+    "SERVICE_RESULT": "success",
+    "STEP_STATUS": "PASS",
+    "SYSTEMD_MANUAL_START": "PASS",
+    "TIMER_STARTED": "0",
+    "UPLOAD_PERFORMED": "0",
+    "WORKER_MODE": "DRY_RUN_ONLY",
+    "WORKER_RESULT": "IDLE"
+  },
+  "schema_version": 1,
+  "source_commit": "08c5d957b07fa454fb48200e48142e9b9762670e",
+  "step_id": "STEP-07-SYSTEMD-MANUAL-START-001"
+}
