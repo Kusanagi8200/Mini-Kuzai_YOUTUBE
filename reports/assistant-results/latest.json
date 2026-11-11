@@ -1,24 +1,19 @@
 {
-  "generated_at_utc": "2026-11-11T14:14:34.537703+00:00",
+  "generated_at_utc": "2026-11-11T14:17:13.462560+00:00",
   "results": {
-    "NEXT_ACTION": "SYSTEMD_INSTALLATION_REVIEW",
-    "PUBLICATION": "DISABLED",
-    "REPO_SYNC": "PASS",
-    "SERVICE_MODE": "ONESHOT",
-    "SERVICE_SHA256": "cda4bfce23052c9ee2faf8f02d0befabd6275d093f86cff00f55c1f968d40cf6",
+    "INSTALLATION_PERFORMED": "0",
+    "NEXT_ACTION": "SYSTEMD_INSTALL",
+    "SERVICE_ACTIVE_STATE": "inactive",
+    "SERVICE_ENABLED_STATE": "not-found",
+    "SERVICE_FILE_PRESENT": "0",
+    "SERVICE_LOAD_STATE": "not-found",
     "STEP_STATUS": "PASS",
-    "SYSTEMD_INSTALLED": "0",
-    "SYSTEMD_SERVICE_PRESENT": "1",
-    "SYSTEMD_TIMER_PRESENT": "1",
-    "SYSTEMD_VERIFY": "PASS",
-    "TIMER_ENABLED": "0",
-    "TIMER_INTERVAL_SECONDS": "60",
-    "TIMER_SHA256": "8ee06fe4d463bb34179bda669268b6e6db476674b6574f8797d93c441cdc3c76",
-    "TIMER_STARTED": "0",
-    "WORKER_MODE": "DRY_RUN_ONLY",
-    "WORKTREE": "CLEAN"
+    "TIMER_ACTIVE_STATE": "inactive",
+    "TIMER_ENABLED_STATE": "not-found",
+    "TIMER_FILE_PRESENT": "0",
+    "TIMER_LOAD_STATE": "not-found"
   },
   "schema_version": 1,
-  "source_commit": "f4d616d32a688361681ae0604d46b68f7164f0a2",
-  "step_id": "STEP-07-SYSTEMD-DRY-RUN-001"
+  "source_commit": "fd271d029fad10b7eeea57d8f9d73319355ef4d9",
+  "step_id": "STEP-07-SYSTEMD-INSTALL-AUDIT-001"
 }

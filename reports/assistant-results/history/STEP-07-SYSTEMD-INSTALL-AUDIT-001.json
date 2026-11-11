@@ -1,0 +1,19 @@
+{
+  "generated_at_utc": "2026-11-11T14:17:13.462560+00:00",
+  "results": {
+    "INSTALLATION_PERFORMED": "0",
+    "NEXT_ACTION": "SYSTEMD_INSTALL",
+    "SERVICE_ACTIVE_STATE": "inactive",
+    "SERVICE_ENABLED_STATE": "not-found",
+    "SERVICE_FILE_PRESENT": "0",
+    "SERVICE_LOAD_STATE": "not-found",
+    "STEP_STATUS": "PASS",
+    "TIMER_ACTIVE_STATE": "inactive",
+    "TIMER_ENABLED_STATE": "not-found",
+    "TIMER_FILE_PRESENT": "0",
+    "TIMER_LOAD_STATE": "not-found"
+  },
+  "schema_version": 1,
+  "source_commit": "fd271d029fad10b7eeea57d8f9d73319355ef4d9",
+  "step_id": "STEP-07-SYSTEMD-INSTALL-AUDIT-001"
+}
