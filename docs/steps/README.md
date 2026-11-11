@@ -9,9 +9,13 @@
 | STEP-04 | [Piper and audio](STEP-04-PIPER-AUDIO.md) | **COMPLETED - V6 CANONICAL** |
 | STEP-05 | [YouTube API](STEP-05-YOUTUBE-API.md) | **COMPLETED** |
 | STEP-06 | [Channel introduction pilot](STEP-06-CHANNEL-INTRO.md) | **COMPLETED** |
-| STEP-07 | [DEV-FLOW integration](STEP-07-DEV-FLOW-INTEGRATION.md) | **IN PROGRESS - PRODUCTION READY / REAL UPLOAD GATED** |
+| STEP-07 | [DEV-FLOW integration](STEP-07-DEV-FLOW-INTEGRATION.md) | **COMPLETED - V80 PUBLIC + TRI-CHANNEL FLOW VALIDATED** |
 
 Each page is updated when its step is executed and verified.
+
+Cross-channel validation:
+
+[FLOW-PRESENTATION-001](../FLOW-PRESENTATION-001.md) --> **PASS**. This non-scientific test validated YouTube public publication, LinkedIn native video and GitHub media publication before V81.
 
 Google Cloud / OAuth procedure:
 
