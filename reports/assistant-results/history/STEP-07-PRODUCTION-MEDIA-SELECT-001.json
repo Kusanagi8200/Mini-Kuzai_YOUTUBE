@@ -1,0 +1,13 @@
+{
+  "generated_at_utc": "2026-11-11T15:56:59.267763+00:00",
+  "results": {
+    "NEXT_ACTION": "STEP07_SELECT_CANONICAL_V8",
+    "STEP_STATUS": "PASS",
+    "V8_MATCH_COUNT": "2",
+    "V8_PATH_1": "./work/video001-v8-final.mp4",
+    "V8_PATH_2": "./work/video001-v8-visual.mp4"
+  },
+  "schema_version": 1,
+  "source_commit": "b54426fa5acab67a9a99222eac3e9ca8d1524c0e",
+  "step_id": "STEP-07-PRODUCTION-MEDIA-SELECT-001"
+}
