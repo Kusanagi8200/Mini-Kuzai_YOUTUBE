@@ -1,0 +1,18 @@
+{
+  "generated_at_utc": "2026-11-11T14:23:18.212546+00:00",
+  "results": {
+    "BACKUP_PRESENT": "1",
+    "NEXT_ACTION": "TIMER_START",
+    "PUBLICATION": "DISABLED",
+    "STEP_STATUS": "PASS",
+    "TIMER_ACTIVE_STATE": "inactive",
+    "TIMER_ENABLE": "PASS",
+    "TIMER_ENABLED_STATE": "enabled",
+    "TIMER_STARTED": "0",
+    "TIMER_SYMLINK_PRESENT": "1",
+    "WORKER_MODE": "DRY_RUN_ONLY"
+  },
+  "schema_version": 1,
+  "source_commit": "5f0204494b320d0a48abb59ebc26b7fe38d2db2f",
+  "step_id": "STEP-07-SYSTEMD-TIMER-ENABLE-001"
+}
