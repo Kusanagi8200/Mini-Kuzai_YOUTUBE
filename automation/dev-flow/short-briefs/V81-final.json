@@ -43,7 +43,7 @@
       }
     ]
   },
-  "narration": "Mini-Kuzai V81 has completed the final closure review. The FINAL DEV-FLOW receipt is published and the immutable GOGIT report passed. Key measurements include final max exposure 1,181,664; final stop max tokens 1; final baseline best loss x1e6 4,732,514. This media summary does not authorize new training, does not open BLIND evaluation, and does not claim semantic competence or reasoning.",
+  "narration": "Mini-Kuzai V81 has completed the final closure review. The FINAL DEV-FLOW receipt is published and the immutable GOGIT report passed. Key measurements include final max exposure 1,181,664; final stop max tokens 1; final baseline best loss x1e6 4,732,514. The bounded training continuation resumed from its frozen checkpoint and completed within the authorized exposure budget. The training window is now closed, the final checkpoint state is recorded, and no additional cycle or continuation is authorized without a new protocol and explicit approval. This media summary does not authorize new training, does not open BLIND evaluation, and does not claim semantic competence or reasoning.",
   "youtube": {
     "title": "MINI-KUZAI V81 // FINAL CLOSURE REVIEW",
     "description": "Mini-Kuzai V81 FINAL media summary for final closure review.\n\nVerified immutable report → PHASE03-SMOLTALK-V81-FINAL-CLOSURE-001\nNo new training. BLIND evaluation remains closed. This publication does not claim semantic competence.\n\nBUILD LOCAL. KEEP CONTROL. OWN THE STACK.",
