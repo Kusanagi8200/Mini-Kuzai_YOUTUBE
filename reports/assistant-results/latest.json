@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-11-14T12:26:00.174577+00:00",
+  "generated_at_utc": "2026-11-14T12:26:56.479733+00:00",
   "results": {
     "DIAG": "PASS",
-    "ERROR_SUMMARY": "Command failed: python -- Traceback (most recent call last):",
-    "HEAD": "b5d98efca0f4d7505e0b44f95a26289d6fa5dd61",
-    "TRACEBACK_TAIL": "nov. 14 13:25:09 fhc2 python[22759]: ##### SECTION RESULTS FOR ASSISTANT ###### nov. 14 13:25:09 fhc2 python[22759]: MEDIA_FLOW_WORKER=BLOCKED nov. 14 13:25:09 fhc2 python[22759]: ERROR=Short worker failed: ##### SECTION",
-    "WORKTREE": "CLEAN"
+    "HEAD": "33a574090bb062d5e301eb17c86327054609b6c8",
+    "LAST_EXCEPTION": "RuntimeError: Narration duration is outside the allowed automatic timing range: 29.542s requires atempo=0.590834. Allowed range is 0.90 to 1.10.",
+    "WORKTREE": "CLEAN",
+    "WORK_FILES": "worker-v81-narration.txt,worker-v81-narration.wav,worker-v81-timeline.json,worker-v81-visual.mp4,"
   },
   "schema_version": 1,
-  "source_commit": "b5d98efca0f4d7505e0b44f95a26289d6fa5dd61",
-  "step_id": "V81-MEDIA-FLOW-RUN-004-DIAG-001"
+  "source_commit": "33a574090bb062d5e301eb17c86327054609b6c8",
+  "step_id": "V81-MEDIA-PIPELINE-STAGE-DIAG-001"
 }

@@ -1,0 +1,13 @@
+{
+  "generated_at_utc": "2026-11-14T12:26:56.479733+00:00",
+  "results": {
+    "DIAG": "PASS",
+    "HEAD": "33a574090bb062d5e301eb17c86327054609b6c8",
+    "LAST_EXCEPTION": "RuntimeError: Narration duration is outside the allowed automatic timing range: 29.542s requires atempo=0.590834. Allowed range is 0.90 to 1.10.",
+    "WORKTREE": "CLEAN",
+    "WORK_FILES": "worker-v81-narration.txt,worker-v81-narration.wav,worker-v81-timeline.json,worker-v81-visual.mp4,"
+  },
+  "schema_version": 1,
+  "source_commit": "33a574090bb062d5e301eb17c86327054609b6c8",
+  "step_id": "V81-MEDIA-PIPELINE-STAGE-DIAG-001"
+}
