@@ -9,6 +9,7 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 TOOL = ROOT / "tools" / "generate_dev_flow_short_brief.py"
@@ -193,6 +194,32 @@ class FinalTrainingReportTests(unittest.TestCase):
         self.assertIn("read-only control", narration)
         self.assertIn("controlled numerical observation", narration)
         self.assertIn("not a semantic evaluation", narration)
+
+    def test_short_narration_is_extended_until_timing_passes(self):
+        brief = {"narration": "Short deterministic narration."}
+        with patch.object(
+            module,
+            "measure_narration_seconds",
+            side_effect=[42.0, 47.0],
+        ) as measured:
+            duration = module.fit_narration_to_voice_window(brief)
+
+        self.assertEqual(duration, 47.0)
+        self.assertEqual(measured.call_count, 2)
+        self.assertIn(
+            "published aggregate evidence",
+            brief["narration"],
+        )
+
+    def test_overlong_narration_is_blocked(self):
+        brief = {"narration": "Long deterministic narration."}
+        with patch.object(
+            module,
+            "measure_narration_seconds",
+            return_value=56.0,
+        ):
+            with self.assertRaises(module.BriefGeneratorError):
+                module.fit_narration_to_voice_window(brief)
 
     def test_selected_metrics_excludes_pass_metric(self):
         metrics = {
