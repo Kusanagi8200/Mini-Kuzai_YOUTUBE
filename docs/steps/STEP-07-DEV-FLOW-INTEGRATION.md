@@ -1,6 +1,6 @@
 # `STEP-07 - Mini-Kuzai DEV-FLOW integration`
 
-Status --> COMPLETED - V81+ AUTOMATIC CROSS-CHANNEL MEDIA ORCHESTRATION ACTIVE
+Status --> COMPLETED - V83+ BOUNDED END-TO-END FINAL RECONCILIATION ACTIVE
 
 ## `Objective`
 
@@ -37,10 +37,17 @@ Validated and active:
 Current runtime state:
 
 - systemd ExecStart --> `tools/dev_flow_media_worker.py`
-- one bounded transaction per invocation
-- cycle 1 --> generate and commit one missing V81+ brief
-- cycle 2 --> build, audit and publish one public YouTube Short
-- cycle 3 --> LinkedIn native video + GitHub fallback + committed media receipt
+- V83+ uses a bounded reconciliation loop with a maximum of 8 passes per invocation
+- pass transitions --> missing brief / YouTube / cross-channel receipt / closure GOGIT
+- short narration timing is measured with Piper before the brief is committed
+- safe neutral narration extension is bounded to the canonical source window
+- KUZ-DIN remote preflight may fast-forward only a clean main branch that is an ancestor of origin/main
+- a recoverable KUZ-DIN backup branch is created before that automatic fast-forward
+- LinkedIn START remains text; V83+ FINAL standard text delivery is suppressed
+- V83+ FINAL LinkedIn publication is native-video only
+- final media receipt is verified by a read-only closure audit
+- successful V83+ closure publishes an automatic GOGIT report
+- systemd TimeoutStartSec --> 30 minutes
 - cross-channel live gate --> enabled only in the dedicated media service environment
 - START-DEV-FLOW does not trigger media generation
 - all media failures remain independent from Mini-Kuzai scientific FINAL
@@ -122,17 +129,32 @@ Cross-channel validation result --> PASS
 - media SHA256 --> `c34b3dc19788e6770e4edb9dffc2331df2438b23c6663858b7d5299ad5731034`
 - narration window --> 5-55 seconds
 
-Media orchestration is complete and has now processed a genuine V81 FINAL end to end.
+Media orchestration is complete and has now processed genuine V81 and V82 FINAL evidence end to end.
 
-Verified V81 production result -->
+Verified V82 production result -->
 
-- YouTube --> PUBLIC / `EAMRSevA2zk`
-- LinkedIn --> native video PUBLISHED / `urn:li:ugcPost:7527349657677594624`
-- GitHub --> Discussion #13 comment #19612381
-- cross-channel receipt --> `automation/publication-receipts/V81-final.json`
+- YouTube --> PUBLIC / `JZJzBawTxAw`
+- LinkedIn --> native video PUBLISHED / `urn:li:ugcPost:7527384513589481472`
+- LinkedIn video asset --> `urn:li:video:D4E10AQHlGGjXpoeprA`
+- GitHub --> Discussion #14 comment #19614290
+- cross-channel receipt --> `automation/publication-receipts/V82-final.json`
 - media duration --> 60 seconds
+- media SHA256 --> `3d8c145f1e399cb5d84337238cb53d8dba259d48d965353e35f320897891440e`
 - media failure isolation from scientific validity --> preserved
 - training authorization after closure --> false
 - BLIND access after closure --> false
 
-The production runtime is currently idle and ready for the next eligible FINAL receipt.
+Post-V82 hardening audit -->
+
+- code compilation --> PASS
+- regression tests --> 35
+- failures --> 0
+- errors --> 0
+- bounded reconciliation --> PASS
+- automatic GOGIT closure --> PASS
+- safe KUZ-DIN synchronization --> PASS
+- adaptive Piper timing --> PASS
+- systemd timeout alignment --> PASS
+- runtime smoke test --> IDLE / success / no publication
+
+The production runtime is currently idle. V83 has not started and requires explicit `START-DEV-FLOW V83` before any V83 scientific work.
