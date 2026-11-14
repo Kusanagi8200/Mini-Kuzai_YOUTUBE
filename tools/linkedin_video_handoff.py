@@ -302,6 +302,7 @@ def remote_existing_publication(
     key: Path,
     publication_id: str,
     media_sha256: str,
+    remote_root: str,
 ) -> dict[str, str] | None:
     script = (
         "import json,pathlib; "
@@ -318,7 +319,7 @@ def remote_existing_publication(
         "print('LINKEDIN_POST_URN='+(r.get('linkedin_post_urn','') if r else ''))"
     )
     command = (
-        f"{shlex.quote(DEFAULT_REMOTE_ROOT)}/.venv/bin/python "
+        f"{shlex.quote(remote_root)}/.venv/bin/python "
         f"-c {shlex.quote(script)}"
     )
     result = run(
@@ -358,6 +359,7 @@ def publish(
         key,
         state["publication_id"],
         state["video_sha256"],
+        remote_root,
     )
     if existing is not None:
         return {
@@ -508,6 +510,7 @@ def main() -> int:
         args.ssh_key,
         state["publication_id"],
         state["video_sha256"],
+        args.remote_root,
     )
 
     print("##### SECTION RESULTS FOR ASSISTANT ######")
