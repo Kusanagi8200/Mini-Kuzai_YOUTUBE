@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-11-14T12:09:32.994629+00:00",
+  "results": {
+    "BRIEF_GENERATED": "",
+    "DOWNSTREAM_STEP": "",
+    "MEDIA_STAGE": "",
+    "MEDIA_WORKER": "BLOCKED",
+    "PROCESSED": "",
+    "PUBLICATION_PERFORMED": "",
+    "SERVICE_RC": "1",
+    "SHORT_WORKER": "",
+    "YOUTUBE_VIDEO_ID": ""
+  },
+  "schema_version": 1,
+  "source_commit": "2bff4e6f87cca33d43617302b5ca4884cffdec89",
+  "step_id": "V81-MEDIA-FLOW-RUN-001"
+}
