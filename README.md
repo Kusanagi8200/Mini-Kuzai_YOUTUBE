@@ -58,7 +58,7 @@ Permanent project addresses are displayed inside the rendered video instead of t
 
 ## `Current status`
 
-**STEP-07 --> COMPLETED / V81+ AUTOMATIC CROSS-CHANNEL MEDIA ORCHESTRATION ACTIVE**
+**STEP-07 --> COMPLETED / V83+ BOUNDED END-TO-END FINAL RECONCILIATION ACTIVE**
 
 Completed:
 
@@ -101,16 +101,16 @@ Current action:
 - presentation YouTube video ID --> `vhQmddUuMcg`
 - LinkedIn native-video post URN --> `urn:li:ugcPost:7526340708715327488`
 - GitHub media publication --> Mini-Kuzai Discussion #12
-- automatic V81+ orchestration --> INSTALLED AND ACTIVE
+- automatic V83+ reconciliation --> INSTALLED AND ACTIVE
 - runtime wrapper --> `tools/dev_flow_media_worker.py`
-- FINAL receipt --> deterministic brief --> audited Short --> YouTube --> LinkedIn native video --> GitHub fallback --> committed media receipt
-- V81 genuine FINAL media flow --> VERIFIED / CLOSED
-- V81 YouTube --> PUBLIC / `EAMRSevA2zk`
-- V81 LinkedIn native video --> PUBLISHED / `urn:li:ugcPost:7527349657677594624`
-- V81 GitHub media publication --> Discussion #13 comment #19612381
-- V81 cross-channel receipt --> `automation/publication-receipts/V81-final.json`
+- FINAL receipt --> deterministic brief --> Piper timing gate --> audited Short --> YouTube --> LinkedIn native video --> GitHub fallback --> committed media receipt --> read-only closure audit --> automatic GOGIT
+- V82 genuine FINAL media flow --> VERIFIED / CLOSED
+- V82 YouTube --> PUBLIC / `JZJzBawTxAw`
+- V82 LinkedIn native video --> PUBLISHED / `urn:li:ugcPost:7527384513589481472`
+- V82 GitHub media publication --> Discussion #14 comment #19614290
+- V82 cross-channel receipt --> `automation/publication-receipts/V82-final.json`
 - current runtime state --> IDLE / ready for the next eligible FINAL receipt
-- next project action --> wait for the next scientifically valid FINAL receipt; V82 scientific preparation belongs to Mini-Kuzai
+- next project action --> V83 has not started; `START-DEV-FLOW V83` is required before V83 scientific work
 - keep media publication independent from scientific validity
 - never let a media failure invalidate the scientific FINAL
 
@@ -188,6 +188,9 @@ validated Mini-Kuzai FINAL receipt
 deterministic committed Short brief
       |
       v
+Piper source-duration verification / bounded adaptation
+      |
+      v
 canonical 60-second audited MP4
       |
       v
@@ -201,9 +204,15 @@ GitHub media fallback on canonical FINAL Discussion
       |
       v
 committed cross-channel media receipt
+      |
+      v
+read-only end-to-end closure audit
+      |
+      v
+automatic GOGIT FINAL verification
 ```
 
-The production worker performs one bounded transaction per invocation. Brief generation, YouTube publication and downstream cross-channel publication are therefore isolated and independently auditable.
+For V83+, the production worker performs a bounded reconciliation loop with at most eight passes in one invocation. It advances only verified idempotent transitions and stops on unknown failures. Brief generation, YouTube publication, downstream cross-channel publication, receipt creation and the final read-only GOGIT closure remain independently auditable.
 
 YouTube publication failure never invalidates the underlying Mini-Kuzai scientific result.
 
@@ -218,6 +227,36 @@ V81 is the first genuine V81+ FINAL to complete the full automatic cross-channel
 - cross-channel receipt --> `automation/publication-receipts/V81-final.json`
 - scientific boundary --> training authorization false, BLIND access false
 - repository state after publication --> clean and ready for the next eligible FINAL
+
+## `V82 production result`
+
+V82 is the second genuine scientific FINAL to complete the cross-channel media path.
+
+- YouTube --> PUBLIC / `JZJzBawTxAw`
+- LinkedIn native video --> PUBLISHED / `urn:li:ugcPost:7527384513589481472`
+- LinkedIn video asset --> `urn:li:video:D4E10AQHlGGjXpoeprA`
+- GitHub media fallback --> Discussion #14 comment #19614290
+- media duration --> 60 seconds
+- media SHA256 --> `3d8c145f1e399cb5d84337238cb53d8dba259d48d965353e35f320897891440e`
+- cross-channel receipt --> `automation/publication-receipts/V82-final.json`
+- scientific boundary --> training authorization false, BLIND access false
+- V82 publication is closed and the runtime smoke test is idle/success
+
+## `V83+ hardened FINAL contract`
+
+From V83 onward -->
+
+- START remains a LinkedIn text publication through KUZ-DIN
+- FINAL standard LinkedIn text delivery is suppressed
+- FINAL LinkedIn publication is exactly one native-video post
+- the worker may safely fast-forward a clean KUZ-DIN runtime after creating a recoverable backup branch
+- narration source duration is measured before the brief is committed
+- a short narration may receive bounded neutral context extensions to fit the 45-55 second source window
+- an overlong or otherwise invalid narration fails closed
+- the reconciler is bounded to eight passes
+- the final cross-channel receipt is re-audited read-only
+- the closure audit is published automatically through GOGIT
+- media failure never changes the scientific FINAL
 
 ## `THE KUZ NETWORK maintenance`
 
@@ -247,7 +286,7 @@ The ChatGPT operator command `MAJ-THEKUZNETWORK` audits and synchronizes the fiv
 | STEP-04 | Piper narration and audio mix | **COMPLETED - V6 CANONICAL** |
 | STEP-05 | YouTube Data API and OAuth | **COMPLETED** |
 | STEP-06 | Channel introduction pilot | **COMPLETED** |
-| STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | **COMPLETED - V81+ AUTOMATIC CROSS-CHANNEL ORCHESTRATION ACTIVE** |
+| STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | **COMPLETED - V83+ BOUNDED END-TO-END RECONCILIATION ACTIVE** |
 
 ## `Operating principles`
 
