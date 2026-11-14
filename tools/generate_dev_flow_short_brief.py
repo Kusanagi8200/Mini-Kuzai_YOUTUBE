@@ -457,10 +457,21 @@ def build_brief(
     if not narration_metrics:
         narration_metrics = "the immutable aggregate verification passed"
 
+    training_context = ""
+    if report["metrics"].get("TRAINING_STARTED") == 1:
+        training_context = (
+            "The bounded training continuation resumed from its frozen "
+            "checkpoint and completed within the authorized exposure budget. "
+            "The training window is now closed, the final checkpoint state is "
+            "recorded, and no additional cycle or continuation is authorized "
+            "without a new protocol and explicit approval. "
+        )
+
     narration = (
         f"Mini-Kuzai {step} has completed the {subject}. "
         "The FINAL DEV-FLOW receipt is published and the immutable GOGIT "
         f"report passed. Key measurements include {narration_metrics}. "
+        f"{training_context}"
         "This media summary does not authorize new training, does not open "
         "BLIND evaluation, and does not claim semantic competence or reasoning."
     )
