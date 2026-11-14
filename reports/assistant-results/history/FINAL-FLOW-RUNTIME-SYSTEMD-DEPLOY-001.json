@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-11-14T15:33:40.795893+00:00",
+  "results": {
+    "DEPLOY_SHA_MATCH": "PASS",
+    "SERVICE_LOAD_STATE": "loaded",
+    "SYSTEMD_VERIFY_RC": "0",
+    "TIMEOUT_START_USEC": "30min",
+    "TIMER_ACTIVE": "active",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "de787c144437364936cc358f15c34320b1f3b92a",
+  "step_id": "FINAL-FLOW-RUNTIME-SYSTEMD-DEPLOY-001"
+}
