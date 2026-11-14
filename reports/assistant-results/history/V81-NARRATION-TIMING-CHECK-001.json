@@ -1,0 +1,16 @@
+{
+  "generated_at_utc": "2026-11-14T12:29:32.288232+00:00",
+  "results": {
+    "CANONICAL_45_55S": "PASS",
+    "DURATION_SECONDS": "46.260",
+    "ERROR_SUMMARY": "NONE",
+    "HEAD": "4407deab0e40ed0a8dbec75b1bffbf850e4862ec",
+    "NARRATION_RC": "0",
+    "SENTENCE_COUNT": "6",
+    "TEXT_CHARS": "688",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "4407deab0e40ed0a8dbec75b1bffbf850e4862ec",
+  "step_id": "V81-NARRATION-TIMING-CHECK-001"
+}
