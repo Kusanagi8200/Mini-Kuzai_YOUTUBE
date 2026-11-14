@@ -1,15 +1,12 @@
 {
-  "generated_at_utc": "2026-11-14T14:49:45.892714+00:00",
+  "generated_at_utc": "2026-11-14T14:54:35.188991+00:00",
   "results": {
-    "KUZDIN_JOURNAL_MODE": "600",
-    "KUZDIN_LOCAL_HEAD": "d2219f3fa0b43dd5271e9cd73688a6ac15a30fc8",
-    "KUZDIN_ORIGIN_HEAD": "25d7b0445217dbc1c93303a6f39123d7ae6b5997",
-    "KUZDIN_PYTHON": "OK",
-    "KUZDIN_VIDEO_JOURNAL": "OK",
-    "KUZDIN_VIDEO_RUNNER": "OK",
-    "KUZDIN_WORKTREE": "CLEAN"
+    "BACKUP_BRANCH": "backup/pre-v83-final-video-only-deploy-20261114T145000Z",
+    "BACKUP_HEAD": "d2219f3fa0b43dd5271e9cd73688a6ac15a30fc8",
+    "BACKUP_VERIFY": "d2219f3fa0b43dd5271e9cd73688a6ac15a30fc8",
+    "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "2c9dca6a3a012302af3990af948cd791b1983c02",
-  "step_id": "V82-KUZDIN-REMOTE-PREFLIGHT-DIAG-001"
+  "source_commit": "0f55d815c2036776fabfb1f9a5e6668cdafc4cb3",
+  "step_id": "V82-KUZDIN-PREDEPLOY-BACKUP-001"
 }
