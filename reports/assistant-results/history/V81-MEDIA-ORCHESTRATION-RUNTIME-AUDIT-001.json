@@ -1,0 +1,21 @@
+{
+  "generated_at_utc": "2026-11-14T10:36:32.751444+00:00",
+  "results": {
+    "BLIND_ACCESS": "0",
+    "LOCAL_HEAD": "3b8bc3fc2c181c2f2bcd76a209caf36236bb152d",
+    "ORIGIN_MAIN": "3b8bc3fc2c181c2f2bcd76a209caf36236bb152d",
+    "SCIENTIFIC_V81_STARTED": "0",
+    "STEP_STATUS": "PASS",
+    "TRAINING_ALLOWED": "0",
+    "WORKTREE": "CLEAN",
+    "YOUTUBE_FINAL_EXECSTART": "/root/GitHub-Mini-Kuzai/Mini-Kuzai_YOUTUBE/.venv/bin/python /root/GitHub-Mini-Kuzai/Mini-Kuzai_YOUTUBE/tools/dev_flow_short_worker.py",
+    "YOUTUBE_FINAL_SERVICE_FRAGMENT": "/etc/systemd/system/mini-kuzai-youtube-final.service",
+    "YOUTUBE_FINAL_SERVICE_PRESENT": "1",
+    "YOUTUBE_FINAL_TIMER_ACTIVE": "1",
+    "YOUTUBE_FINAL_TIMER_ENABLED": "1",
+    "YOUTUBE_FINAL_TIMER_TRIGGER": "OnBootSec=2min"
+  },
+  "schema_version": 1,
+  "source_commit": "3b8bc3fc2c181c2f2bcd76a209caf36236bb152d",
+  "step_id": "V81-MEDIA-ORCHESTRATION-RUNTIME-AUDIT-001"
+}
