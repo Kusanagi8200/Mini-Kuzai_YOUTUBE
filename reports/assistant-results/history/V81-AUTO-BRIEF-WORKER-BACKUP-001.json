@@ -1,0 +1,13 @@
+{
+  "generated_at_utc": "2026-11-14T10:55:42.550145+00:00",
+  "results": {
+    "BACKUP_BRANCH": "backup/pre-v81-auto-brief-worker-20261114T105539Z",
+    "REMOTE_BACKUP_HEAD_MATCH": "1",
+    "SOURCE_HEAD": "4c11ae66fff65b5ac19c74a2a9a791c62fdc8ea0",
+    "STEP_STATUS": "PASS",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "4c11ae66fff65b5ac19c74a2a9a791c62fdc8ea0",
+  "step_id": "V81-AUTO-BRIEF-WORKER-BACKUP-001"
+}
