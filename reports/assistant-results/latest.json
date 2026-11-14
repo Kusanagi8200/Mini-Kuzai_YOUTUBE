@@ -1,16 +1,22 @@
 {
-  "generated_at_utc": "2026-11-14T12:29:32.288232+00:00",
+  "generated_at_utc": "2026-11-14T12:30:35.361940+00:00",
   "results": {
-    "CANONICAL_45_55S": "PASS",
-    "DURATION_SECONDS": "46.260",
+    "DOWNSTREAM_STEP": "",
     "ERROR_SUMMARY": "NONE",
-    "HEAD": "4407deab0e40ed0a8dbec75b1bffbf850e4862ec",
-    "NARRATION_RC": "0",
-    "SENTENCE_COUNT": "6",
-    "TEXT_CHARS": "688",
-    "WORKTREE": "CLEAN"
+    "FINAL_VIDEO_PATH": "",
+    "HEAD": "aecef68f9fab91eb16de589c32f6b62d8420eac4",
+    "MEDIA_STAGE": "YOUTUBE_PUBLISHED",
+    "MEDIA_WORKER": "PASS",
+    "PROCESSED": "",
+    "PUBLICATION_PERFORMED": "1",
+    "SERVICE_RC": "0",
+    "SHORT_STEP": "",
+    "SHORT_WORKER": "PASS",
+    "WORKER_STATE": "",
+    "WORKTREE": "CLEAN",
+    "YOUTUBE_VIDEO_ID": ""
   },
   "schema_version": 1,
-  "source_commit": "4407deab0e40ed0a8dbec75b1bffbf850e4862ec",
-  "step_id": "V81-NARRATION-TIMING-CHECK-001"
+  "source_commit": "aecef68f9fab91eb16de589c32f6b62d8420eac4",
+  "step_id": "V81-MEDIA-FLOW-RUN-005"
 }
