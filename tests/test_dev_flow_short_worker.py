@@ -123,6 +123,27 @@ print("VIDEO_SHA256={video_sha256}")
 
         return temporary, mini, briefs, journal, pipeline
 
+    def test_python_runtime_allows_executable_symlink(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            target = root / "python3"
+            link = root / "python"
+
+            target.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
+            target.chmod(0o755)
+            link.symlink_to(target.name)
+
+            module.verify_python_runtime(link)
+
+    def test_python_runtime_rejects_broken_symlink(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            link = root / "python"
+            link.symlink_to("missing-python")
+
+            with self.assertRaises(module.WorkerError):
+                module.verify_python_runtime(link)
+
     def test_pending_candidate(self):
         temporary, mini, briefs, journal, _ = self.fixture()
         self.addCleanup(temporary.cleanup)
