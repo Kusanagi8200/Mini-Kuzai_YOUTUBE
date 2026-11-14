@@ -1,14 +1,13 @@
 {
-  "generated_at_utc": "2026-11-14T14:31:14.084515+00:00",
+  "generated_at_utc": "2026-11-14T14:35:01.477391+00:00",
   "results": {
-    "CANONICAL_45_55S": "FAIL",
-    "DURATION_SECONDS": "43.096508",
-    "HEAD": "0a7c3811e0684e6e8c2f39001067b2c9a3029016",
+    "CANONICAL_45_55S": "PASS",
+    "DURATION_SECONDS": "47.340000",
+    "HEAD": "6a3ba291df433da2559baf0cd4e2db597100f464",
     "NARRATION_RC": "0",
-    "UNIT_TEST_RC": "0",
     "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "0a7c3811e0684e6e8c2f39001067b2c9a3029016",
-  "step_id": "V82-NARRATION-TIMING-FIX-VERIFY-001"
+  "source_commit": "6a3ba291df433da2559baf0cd4e2db597100f464",
+  "step_id": "V82-NARRATION-TIMING-FIX-VERIFY-002"
 }
