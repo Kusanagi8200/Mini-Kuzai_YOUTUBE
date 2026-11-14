@@ -1,18 +1,14 @@
 {
-  "generated_at_utc": "2026-11-14T10:59:17.553942+00:00",
+  "generated_at_utc": "2026-11-14T10:59:57.408899+00:00",
   "results": {
-    "BLIND_ACCESS": "0",
-    "KUZDIN_GH_PRESENT": "1",
-    "KUZDIN_SYSTEM_PYTHON": "1",
-    "KUZDIN_TRANSFER_DIR_WRITABLE": "1",
-    "KUZDIN_VENV_PYTHON": "1",
-    "KUZDIN_VIDEO_RUNNER": "1",
+    "BACKUP_BRANCH": "backup/pre-v81-media-handoff-worker-20261114T105954Z",
     "PUBLICATION_PERFORMED": "0",
-    "SCIENTIFIC_V81_STARTED": "0",
+    "REMOTE_BACKUP_HEAD_MATCH": "1",
+    "SOURCE_HEAD": "8424bf57eedd80c00adf07f64cb42cce9ead3048",
     "STEP_STATUS": "PASS",
-    "TRAINING_ALLOWED": "0"
+    "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "5f0d79139cef4896d446ac950b818979dc8d7225",
-  "step_id": "V81-CROSS-CHANNEL-KUZDIN-RUNTIME-AUDIT-001"
+  "source_commit": "8424bf57eedd80c00adf07f64cb42cce9ead3048",
+  "step_id": "V81-MEDIA-HANDOFF-WORKER-BACKUP-001"
 }
