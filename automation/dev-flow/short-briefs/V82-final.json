@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "step": "V82",
+  "video_id": "VIDEO-V82-FINAL",
+  "source": {
+    "final_receipt": "automation/dev-flow/receipts/V82-final.json",
+    "gogit_report": "reports/assistant-results/history/PHASE03-SMOLTALK-V82-POST-CONTINUATION-CONTEXT-ORDER-REPLICATION-001.json",
+    "source_commit": "b98f7c3f0f4934e973bc9e40f5e1a62987a450c9",
+    "final_status": "PUBLISHED"
+  },
+  "timeline": {
+    "duration_seconds": 60,
+    "segments": [
+      {
+        "duration_seconds": 12,
+        "badge": "V82",
+        "headline": "FINAL VERIFIED",
+        "body": "POST-CONTINUATION CONTEXT-ORDER REPLICATION CONTROL"
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "V82",
+        "headline": "BASELINE PRED CHANGED",
+        "body": "MEASURED VALUE: 5"
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "V82",
+        "headline": "FINAL PRED CHANGED",
+        "body": "MEASURED VALUE: 38"
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "V82",
+        "headline": "BASELINE SIGN CHANGED",
+        "body": "MEASURED VALUE: 5"
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "V82",
+        "headline": "SAFETY BOUNDARY",
+        "body": "NO NEW TRAINING / BLIND CLOSED / NO SEMANTIC CLAIM"
+      }
+    ]
+  },
+  "narration": "Mini-Kuzai V82 has completed the post-continuation context-order replication control. The FINAL DEV-FLOW receipt is published and the immutable GOGIT report passed. Key measurements include baseline pred changed 5; final pred changed 38; baseline sign changed 5. This media summary does not authorize new training, does not open BLIND evaluation, and does not claim semantic competence or reasoning.",
+  "youtube": {
+    "title": "MINI-KUZAI V82 // POST-CONTINUATION CONTEXT-ORDER REPLICATION CONTROL",
+    "description": "Mini-Kuzai V82 FINAL media summary for post-continuation context-order replication control.\n\nVerified immutable report → PHASE03-SMOLTALK-V82-POST-CONTINUATION-CONTEXT-ORDER-REPLICATION-001\nNo new training. BLIND evaluation remains closed. This publication does not claim semantic competence.\n\nBUILD LOCAL. KEEP CONTROL. OWN THE STACK.",
+    "tags": [
+      "Mini-Kuzai",
+      "THE KUZ NETWORK",
+      "LLM From Scratch",
+      "Local AI",
+      "V82"
+    ],
+    "publication_mode": "public"
+  }
+}
