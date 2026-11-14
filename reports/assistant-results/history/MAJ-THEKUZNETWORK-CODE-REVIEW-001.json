@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-11-14T13:06:05.352613+00:00",
+  "results": {
+    "MINI_COMPILE_RC": "0",
+    "MINI_HEAD": "cf77b52bc9805e2dfbe8a28fd13ae9b0b3078abf",
+    "MINI_TEST_RC": "0",
+    "MINI_WORKTREE": "CLEAN",
+    "SYSTEMD_VERIFY_RC": "0",
+    "YOUTUBE_COMPILE_RC": "0",
+    "YOUTUBE_HEAD": "eee93db9896f4174107148509269d252a67d8760",
+    "YOUTUBE_TEST_RC": "0",
+    "YOUTUBE_WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "eee93db9896f4174107148509269d252a67d8760",
+  "step_id": "MAJ-THEKUZNETWORK-CODE-REVIEW-001"
+}
