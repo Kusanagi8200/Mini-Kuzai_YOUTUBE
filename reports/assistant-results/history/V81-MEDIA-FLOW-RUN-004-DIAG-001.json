@@ -1,0 +1,13 @@
+{
+  "generated_at_utc": "2026-11-14T12:26:00.174577+00:00",
+  "results": {
+    "DIAG": "PASS",
+    "ERROR_SUMMARY": "Command failed: python -- Traceback (most recent call last):",
+    "HEAD": "b5d98efca0f4d7505e0b44f95a26289d6fa5dd61",
+    "TRACEBACK_TAIL": "nov. 14 13:25:09 fhc2 python[22759]: ##### SECTION RESULTS FOR ASSISTANT ###### nov. 14 13:25:09 fhc2 python[22759]: MEDIA_FLOW_WORKER=BLOCKED nov. 14 13:25:09 fhc2 python[22759]: ERROR=Short worker failed: ##### SECTION",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "b5d98efca0f4d7505e0b44f95a26289d6fa5dd61",
+  "step_id": "V81-MEDIA-FLOW-RUN-004-DIAG-001"
+}
