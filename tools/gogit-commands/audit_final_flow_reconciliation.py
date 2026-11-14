@@ -29,24 +29,28 @@ PATTERNS = (
 
 
 def run_pattern(pattern: str) -> tuple[int, int, int, bool]:
-    proc = subprocess.run(
-        [
-            sys.executable,
-            "-m",
-            "unittest",
-            "discover",
-            "-s",
-            "tests",
-            "-p",
-            pattern,
-            "-v",
-        ],
-        cwd=ROOT,
-        text=True,
-        capture_output=True,
-        check=False,
-        timeout=240,
-    )
+    try:
+        proc = subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "unittest",
+                "discover",
+                "-s",
+                "tests",
+                "-p",
+                pattern,
+                "-v",
+            ],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+            timeout=240,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return 0, 0, 1, False
+
     output = (proc.stdout or "") + "\n" + (proc.stderr or "")
     match = re.search(r"Ran\s+([0-9]+)\s+tests?", output)
     total = int(match.group(1)) if match else 0
