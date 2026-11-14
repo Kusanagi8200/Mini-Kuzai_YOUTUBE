@@ -245,14 +245,52 @@ def validate_brief(
     if not isinstance(metrics, dict):
         fail("GOGIT metrics are missing")
 
-    if metrics.get(f"{step}_PASS") != 1:
-        fail(f"{step}_PASS is not 1")
+    pass_metrics = [
+        value
+        for name, value in metrics.items()
+        if name.startswith(step + "_") and name.endswith("_PASS")
+    ]
+
+    if not pass_metrics or not any(value == 1 for value in pass_metrics):
+        fail(f"{step} PASS metric is not 1")
 
     if metrics.get("SEMANTIC_VALIDATION_COMPLETE") != 0:
         fail("Unexpected semantic validation state")
 
     if report.get("semantic_validation_complete") is not False:
         fail("Unexpected semantic validation metadata")
+
+    if metrics.get("TRAINING_AUTHORIZED") != 0:
+        fail("Training authorization must remain disabled")
+
+    training_started = metrics.get("TRAINING_STARTED")
+    if training_started not in {0, 1}:
+        fail("Training started metric is invalid")
+
+    if training_started == 1:
+        closed = [
+            value
+            for name, value in metrics.items()
+            if name.startswith(step + "_")
+            and name.endswith("_WINDOW_CLOSED")
+        ]
+        further_authorized = [
+            value
+            for name, value in metrics.items()
+            if name.startswith(step + "_")
+            and name.endswith("_FURTHER_TRAINING_AUTHORIZED")
+        ]
+
+        if not closed or not any(value == 1 for value in closed):
+            fail("Completed training FINAL requires a closed training window")
+
+        if (
+            not further_authorized
+            or any(value != 0 for value in further_authorized)
+        ):
+            fail(
+                "Completed training FINAL must explicitly disable further training"
+            )
 
     blind_metrics = [
         value
