@@ -273,8 +273,21 @@ def remote_preflight(
     command = (
         "set -eu; "
         f"cd {shlex.quote(remote_root)}; "
+        "test \"$(git branch --show-current)\" = main; "
+        "test -z \"$(git status --porcelain)\"; "
+        "git fetch --no-tags origin main >/dev/null 2>&1; "
         "LOCAL=$(git rev-parse HEAD); "
-        "REMOTE=$(git ls-remote origin refs/heads/main | cut -f1); "
+        "REMOTE=$(git rev-parse origin/main); "
+        "SYNC=UNCHANGED; "
+        "BACKUP=NONE; "
+        "if [ \"$LOCAL\" != \"$REMOTE\" ]; then "
+        "git merge-base --is-ancestor \"$LOCAL\" \"$REMOTE\"; "
+        "BACKUP=backup/auto-media-pre-sync-$LOCAL; "
+        "git show-ref --verify --quiet refs/heads/$BACKUP || git branch \"$BACKUP\" \"$LOCAL\"; "
+        "git merge --ff-only \"$REMOTE\" >/dev/null; "
+        "SYNC=FAST_FORWARD; "
+        "fi; "
+        "LOCAL=$(git rev-parse HEAD); "
         "test \"$LOCAL\" = \"$REMOTE\"; "
         "test -z \"$(git status --porcelain)\"; "
         "test -x .venv/bin/python; "
@@ -282,11 +295,13 @@ def remote_preflight(
         "test -f /var/lib/kuz-din/linkedin-video-publications.json; "
         "test \"$(stat -c %a /var/lib/kuz-din/linkedin-video-publications.json)\" = 600; "
         "printf 'REMOTE_PREFLIGHT=PASS\\n'; "
+        "printf 'REMOTE_SYNC=%s\\n' \"$SYNC\"; "
+        "printf 'REMOTE_BACKUP=%s\\n' \"$BACKUP\"; "
         "printf 'REMOTE_HEAD=%s\\n' \"$LOCAL\""
     )
     result = run(
         [*ssh_base(host, key), command],
-        timeout=60,
+        timeout=90,
     )
     if result.returncode != 0:
         fail("KUZ-DIN remote preflight failed")
@@ -294,6 +309,8 @@ def remote_preflight(
     values = parse_results(result.stdout)
     if values.get("REMOTE_PREFLIGHT") != "PASS":
         fail("KUZ-DIN remote preflight did not report PASS")
+    if values.get("REMOTE_SYNC") not in {"UNCHANGED", "FAST_FORWARD"}:
+        fail("KUZ-DIN remote synchronization state invalid")
     return values
 
 
@@ -518,6 +535,8 @@ def main() -> int:
     print(f"STEP={args.step}")
     print(f"LOCAL_HEAD={head}")
     print(f"REMOTE_HEAD={remote.get('REMOTE_HEAD', '')}")
+    print(f"REMOTE_SYNC={remote.get('REMOTE_SYNC', '')}")
+    print(f"REMOTE_BACKUP={remote.get('REMOTE_BACKUP', '')}")
     print(f"PUBLICATION_ID={state['publication_id']}")
     print(f"VIDEO_SHA256={state['video_sha256']}")
     print(f"YOUTUBE_VIDEO_ID={state['youtube_video_id']}")
