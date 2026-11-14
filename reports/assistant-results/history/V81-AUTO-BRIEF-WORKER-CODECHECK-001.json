@@ -1,0 +1,16 @@
+{
+  "generated_at_utc": "2026-11-14T10:57:18.971303+00:00",
+  "results": {
+    "AUTO_BRIEF_MIN_VERSION": "81",
+    "HEAD": "bae27d83b597737bc8a91684779706741b2036ab",
+    "ORIGIN_MAIN": "bae27d83b597737bc8a91684779706741b2036ab",
+    "PUBLICATION_PERFORMED": "0",
+    "PY_COMPILE": "PASS",
+    "TEST_RC": "0",
+    "UNIT_TESTS": "PASS",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "bae27d83b597737bc8a91684779706741b2036ab",
+  "step_id": "V81-AUTO-BRIEF-WORKER-CODECHECK-001"
+}
