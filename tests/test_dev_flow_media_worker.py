@@ -31,7 +31,7 @@ class DevFlowMediaWorkerTests(unittest.TestCase):
             encoding="utf-8",
         )
 
-    def test_downstream_candidates_only_v81_plus_without_receipt(self):
+    def test_downstream_candidates_only_published_without_receipt(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             journal = root / "journal.json"
@@ -60,132 +60,123 @@ class DevFlowMediaWorkerTests(unittest.TestCase):
                 ["V81"],
             )
 
-    def test_short_worker_brief_stage_stops_loop(self):
-        with patch.object(
-            module,
-            "run_short_worker",
-            return_value={
-                "WORKER": "BRIEF_GENERATED",
-                "PROCESSED": "0",
-            },
-        ), patch.object(
-            module,
-            "downstream_candidates",
-        ) as downstream:
-            with patch(
-                "sys.argv",
-                ["dev_flow_media_worker.py"],
-            ):
-                rc = module.main()
-
-        self.assertEqual(rc, 0)
-        downstream.assert_not_called()
-
-    def test_short_worker_youtube_stage_stops_loop(self):
-        with patch.object(
-            module,
-            "run_short_worker",
-            return_value={
-                "WORKER": "PASS",
-                "PROCESSED": "1",
-            },
-        ), patch.object(
-            module,
-            "downstream_candidates",
-        ) as downstream:
-            with patch(
-                "sys.argv",
-                ["dev_flow_media_worker.py"],
-            ):
-                rc = module.main()
-
-        self.assertEqual(rc, 0)
-        downstream.assert_not_called()
-
-    def test_cross_channel_default_is_preflight(self):
+    def test_auto_closure_starts_at_v83(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            journal = root / "journal.json"
             receipts = root / "receipts"
+            history = root / "history"
+            receipts.mkdir()
+            history.mkdir()
+            self.write_json(receipts / "V82-final.json", {"schema_version": 1})
+            self.write_json(receipts / "V83-final.json", {"schema_version": 1})
+
+            with patch.object(module, "closure_verified", return_value=False):
+                self.assertEqual(
+                    module.closure_candidates(receipts, history),
+                    ["V83"],
+                )
+
+    def test_existing_valid_closure_gogit_is_accepted(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            history = Path(tmp)
+            step = "V83"
             self.write_json(
-                journal,
+                module.closure_report_path(step, history),
                 {
                     "schema_version": 1,
-                    "steps": {
-                        "V81": {"status": "PUBLIC_PUBLISHED"},
+                    "step_id": module.closure_step_id(step),
+                    "results": {
+                        "FINAL_FLOW": "PASS",
+                        "MEDIA_RECEIPT": "PASS",
                     },
                 },
             )
-            receipts.mkdir()
+            self.assertTrue(module.closure_verified(step, history))
 
-            with patch.object(
-                module,
-                "run_downstream",
-                return_value={
-                    "MEDIA_ORCHESTRATOR": "DRY_RUN_PASS",
-                },
-            ) as downstream, patch.dict(
-                os.environ,
-                {},
-                clear=True,
-            ), patch(
-                "sys.argv",
-                [
-                    "dev_flow_media_worker.py",
-                    "--skip-short-worker",
-                    "--journal",
-                    str(journal),
-                    "--receipt-dir",
-                    str(receipts),
-                ],
-            ):
-                rc = module.main()
+    def test_v83_reconciles_all_stages_in_one_invocation(self):
+        short_states = [
+            {"WORKER": "BRIEF_GENERATED", "PROCESSED": "0"},
+            {"WORKER": "PASS", "PROCESSED": "1"},
+            {"WORKER": "IDLE", "PROCESSED": "0"},
+            {"WORKER": "IDLE", "PROCESSED": "0"},
+            {"WORKER": "IDLE", "PROCESSED": "0"},
+        ]
 
-        self.assertEqual(rc, 0)
-        self.assertFalse(downstream.call_args.kwargs["publish"])
-
-    def test_cross_channel_live_requires_explicit_environment(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            journal = root / "journal.json"
-            receipts = root / "receipts"
-            self.write_json(
-                journal,
-                {
-                    "schema_version": 1,
-                    "steps": {
-                        "V81": {"status": "PUBLIC_PUBLISHED"},
-                    },
-                },
-            )
-            receipts.mkdir()
-
-            with patch.object(
-                module,
-                "run_downstream",
-                return_value={
-                    "MEDIA_ORCHESTRATOR": "PASS",
-                    "RECEIPT_COMMIT": "a" * 40,
-                },
-            ) as downstream, patch.dict(
-                os.environ,
-                {"KUZAI_CROSS_CHANNEL_MEDIA_ENABLED": "YES"},
-                clear=True,
-            ), patch(
-                "sys.argv",
-                [
-                    "dev_flow_media_worker.py",
-                    "--skip-short-worker",
-                    "--journal",
-                    str(journal),
-                    "--receipt-dir",
-                    str(receipts),
-                ],
-            ):
-                rc = module.main()
+        with patch.object(
+            module,
+            "run_short_worker",
+            side_effect=short_states,
+        ), patch.object(
+            module,
+            "downstream_candidates",
+            side_effect=[["V83"], [], []],
+        ), patch.object(
+            module,
+            "run_downstream",
+            return_value={
+                "MEDIA_ORCHESTRATOR": "PASS",
+                "RECEIPT_COMMITTED": "1",
+                "RECEIPT_COMMIT": "a" * 40,
+            },
+        ) as downstream, patch.object(
+            module,
+            "closure_candidates",
+            side_effect=[["V83"], []],
+        ), patch.object(
+            module,
+            "run_closure_gogit",
+            return_value={
+                "STATE": "PUBLISHED",
+                "GOGIT_COMMIT": "b" * 40,
+            },
+        ) as closure, patch.object(
+            module,
+            "closure_verified",
+            return_value=True,
+        ), patch.dict(
+            os.environ,
+            {"KUZAI_CROSS_CHANNEL_MEDIA_ENABLED": "YES"},
+            clear=True,
+        ), patch(
+            "sys.argv",
+            ["dev_flow_media_worker.py"],
+        ):
+            rc = module.main()
 
         self.assertEqual(rc, 0)
         self.assertTrue(downstream.call_args.kwargs["publish"])
+        closure.assert_called_once()
+        self.assertEqual(closure.call_args.args[0], "V83")
+
+    def test_cross_channel_default_remains_preflight_only(self):
+        with patch.object(
+            module,
+            "run_short_worker",
+            return_value={"WORKER": "IDLE", "PROCESSED": "0"},
+        ), patch.object(
+            module,
+            "downstream_candidates",
+            return_value=["V83"],
+        ), patch.object(
+            module,
+            "run_downstream",
+            return_value={"MEDIA_ORCHESTRATOR": "DRY_RUN_PASS"},
+        ) as downstream, patch.object(
+            module,
+            "run_closure_gogit",
+        ) as closure, patch.dict(
+            os.environ,
+            {},
+            clear=True,
+        ), patch(
+            "sys.argv",
+            ["dev_flow_media_worker.py"],
+        ):
+            rc = module.main()
+
+        self.assertEqual(rc, 0)
+        self.assertFalse(downstream.call_args.kwargs["publish"])
+        closure.assert_not_called()
 
 
 if __name__ == "__main__":
