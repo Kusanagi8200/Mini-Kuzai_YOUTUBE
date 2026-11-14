@@ -1,13 +1,12 @@
 {
-  "generated_at_utc": "2026-11-14T13:45:03.087884+00:00",
+  "generated_at_utc": "2026-11-14T14:01:54.993426+00:00",
   "results": {
-    "COMPILE_RC": "0",
-    "DEFAULT_TIMEOUT_SEC": "300",
-    "HEAD": "d9b5df80c830606a749f62f38839f7358c1c14c1",
-    "V82_TIMEOUT_SEC": "600",
+    "HEAD": "688161758d733827807f1fb3121dd2b84d615b22",
+    "SERVICE_RC": "0",
+    "SERVICE_RESULT": "success",
     "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "c8cba7f0521126c97b23d658bd13e808e8ce18e4",
-  "step_id": "V82-GOGIT-TIMEOUT-VERIFY-001"
+  "source_commit": "1f4ba97da4f3703e2e34d10e3a141bb81b2c42a3",
+  "step_id": "V82-FINAL-DEV-FLOW-DISPATCH-001"
 }
