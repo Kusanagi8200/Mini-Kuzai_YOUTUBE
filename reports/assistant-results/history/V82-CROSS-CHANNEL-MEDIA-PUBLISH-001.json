@@ -1,0 +1,19 @@
+{
+  "generated_at_utc": "2026-11-14T15:07:22.803078+00:00",
+  "results": {
+    "GITHUB_MEDIA_URL": "https://github.com/Kusanagi8200/Mini-Kuzai/discussions/14#discussioncomment-19614290",
+    "LINKEDIN_POST_URN": "urn:li:ugcPost:7527384513589481472",
+    "LINKEDIN_STATUS": "PUBLISHED",
+    "LINKEDIN_VIDEO_URN": "urn:li:video:D4E10AQHlGGjXpoeprA",
+    "MEDIA_RECEIPT": "PRESENT",
+    "REMOTE_POST_URN": "urn:li:ugcPost:7527384513589481472",
+    "REMOTE_VIDEO_EXISTS": "1",
+    "REMOTE_VIDEO_URN": "urn:li:video:D4E10AQHlGGjXpoeprA",
+    "SERVICE_RC": "0",
+    "SERVICE_RESULT": "success",
+    "YOUTUBE_VIDEO_ID": "JZJzBawTxAw"
+  },
+  "schema_version": 1,
+  "source_commit": "d2ab436310b18806dcf6895b1ca89722a324f2f6",
+  "step_id": "V82-CROSS-CHANNEL-MEDIA-PUBLISH-001"
+}
