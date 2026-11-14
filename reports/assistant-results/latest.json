@@ -1,14 +1,18 @@
 {
-  "generated_at_utc": "2026-11-14T15:33:40.795893+00:00",
+  "generated_at_utc": "2026-11-14T15:37:28.681856+00:00",
   "results": {
-    "DEPLOY_SHA_MATCH": "PASS",
-    "SERVICE_LOAD_STATE": "loaded",
-    "SYSTEMD_VERIFY_RC": "0",
-    "TIMEOUT_START_USEC": "30min",
+    "EXEC_STATUS": "0",
+    "FINAL_FLOW_CLOSED": "0",
+    "MEDIA_FLOW_STAGE": "IDLE",
+    "MEDIA_FLOW_WORKER": "PASS",
+    "PUBLICATION_PERFORMED": "0",
+    "RECONCILE_PASSES": "1",
+    "SERVICE_RC": "0",
+    "SERVICE_RESULT": "success",
     "TIMER_ACTIVE": "active",
     "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "de787c144437364936cc358f15c34320b1f3b92a",
-  "step_id": "FINAL-FLOW-RUNTIME-SYSTEMD-DEPLOY-001"
+  "source_commit": "130d28473c81557b55cf2386eb76c260a430dc4c",
+  "step_id": "FINAL-FLOW-RUNTIME-SMOKE-001"
 }
