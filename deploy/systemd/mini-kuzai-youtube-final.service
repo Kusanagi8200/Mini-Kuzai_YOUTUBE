@@ -9,5 +9,6 @@ WorkingDirectory=/root/GitHub-Mini-Kuzai/Mini-Kuzai_YOUTUBE
 ExecStart=/root/GitHub-Mini-Kuzai/Mini-Kuzai_YOUTUBE/.venv/bin/python /root/GitHub-Mini-Kuzai/Mini-Kuzai_YOUTUBE/tools/dev_flow_media_worker.py
 Environment=KUZAI_CROSS_CHANNEL_MEDIA_ENABLED=YES HOME=/root
 UMask=0077
+TimeoutStartSec=30min
 StandardOutput=journal
 StandardError=journal
