@@ -153,6 +153,47 @@ class FinalTrainingReportTests(unittest.TestCase):
         self.assertIn("training window is now closed", narration)
         self.assertIn("new protocol and explicit approval", narration)
 
+    def test_diagnostic_final_narration_is_extended_for_voice_window(self):
+        report = {
+            "source": "Mini-Kuzai V82 post-continuation context-order replication control",
+            "step_id": (
+                "PHASE03-SMOLTALK-V82-POST-CONTINUATION-"
+                "CONTEXT-ORDER-REPLICATION-001"
+            ),
+            "metrics": {
+                "SEMANTIC_VALIDATION_COMPLETE": 0,
+                "TRAINING_AUTHORIZED": 0,
+                "TRAINING_STARTED": 0,
+                "V82_PASS": 1,
+                "V82_BLIND_ACCESS": 0,
+                "V82_BASELINE_PRED_CHANGED": 5,
+                "V82_FINAL_PRED_CHANGED": 38,
+                "V82_BASELINE_SIGN_CHANGED": 5,
+            },
+        }
+        receipt = {"status": "PUBLISHED"}
+        request = {
+            "report": (
+                "reports/assistant-results/history/"
+                + report["step_id"]
+                + ".json"
+            )
+        }
+
+        brief = module.build_brief(
+            "V82",
+            receipt,
+            request,
+            report,
+            "a" * 40,
+        )
+
+        narration = brief["narration"]
+        self.assertGreaterEqual(len(narration), 650)
+        self.assertIn("read-only control", narration)
+        self.assertIn("controlled numerical observation", narration)
+        self.assertIn("not a semantic evaluation", narration)
+
     def test_selected_metrics_excludes_pass_metric(self):
         metrics = {
             "V81_FINAL_PASS": 1,
