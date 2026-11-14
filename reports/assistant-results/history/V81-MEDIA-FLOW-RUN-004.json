@@ -1,0 +1,21 @@
+{
+  "generated_at_utc": "2026-11-14T12:25:10.592117+00:00",
+  "results": {
+    "ERROR_SUMMARY": "Command failed: python -- Traceback (most recent call last):",
+    "FINAL_VIDEO_PATH": "",
+    "HEAD": "29b10df31338cfb8baf8656b3a31d2aeddb5e48c",
+    "MEDIA_STAGE": "",
+    "MEDIA_WORKER": "BLOCKED",
+    "PROCESSED": "",
+    "PUBLICATION_PERFORMED": "",
+    "SERVICE_RC": "1",
+    "SHORT_STEP": "",
+    "SHORT_WORKER": "",
+    "WORKER_STATE": "",
+    "WORKTREE": "CLEAN",
+    "YOUTUBE_VIDEO_ID": ""
+  },
+  "schema_version": 1,
+  "source_commit": "29b10df31338cfb8baf8656b3a31d2aeddb5e48c",
+  "step_id": "V81-MEDIA-FLOW-RUN-004"
+}
