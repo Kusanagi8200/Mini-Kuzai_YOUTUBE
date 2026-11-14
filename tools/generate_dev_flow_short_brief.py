@@ -458,6 +458,7 @@ def build_brief(
         narration_metrics = "the immutable aggregate verification passed"
 
     training_context = ""
+    diagnostic_context = ""
     if report["metrics"].get("TRAINING_STARTED") == 1:
         training_context = (
             "The bounded training continuation resumed from its frozen "
@@ -466,12 +467,21 @@ def build_brief(
             "recorded, and no additional cycle or continuation is authorized "
             "without a new protocol and explicit approval. "
         )
+    else:
+        diagnostic_context = (
+            "For this read-only control, the same frozen validation positions "
+            "and the same diagnostic coordinate were reused after the previous "
+            "validated stage. The comparison asks only whether the observed "
+            "effect changed in scale. The result is a controlled numerical "
+            "observation, not a semantic evaluation of the model. "
+        )
 
     narration = (
         f"Mini-Kuzai {step} has completed the {subject}. "
         "The FINAL DEV-FLOW receipt is published and the immutable GOGIT "
         f"report passed. Key measurements include {narration_metrics}. "
         f"{training_context}"
+        f"{diagnostic_context}"
         "This media summary does not authorize new training, does not open "
         "BLIND evaluation, and does not claim semantic competence or reasoning."
     )
