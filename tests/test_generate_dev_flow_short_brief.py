@@ -132,6 +132,27 @@ class FinalTrainingReportTests(unittest.TestCase):
         with self.assertRaises(module.BriefGeneratorError):
             module.validate_provenance("V81", repo)
 
+    def test_training_final_narration_is_extended_for_voice_window(self):
+        temporary, repo = self.fixture(closed=True)
+        self.addCleanup(temporary.cleanup)
+
+        receipt, request, report, source_commit = module.validate_provenance(
+            "V81",
+            repo,
+        )
+        brief = module.build_brief(
+            "V81",
+            receipt,
+            request,
+            report,
+            source_commit,
+        )
+
+        narration = brief["narration"]
+        self.assertGreaterEqual(len(narration), 600)
+        self.assertIn("training window is now closed", narration)
+        self.assertIn("new protocol and explicit approval", narration)
+
     def test_selected_metrics_excludes_pass_metric(self):
         metrics = {
             "V81_FINAL_PASS": 1,
