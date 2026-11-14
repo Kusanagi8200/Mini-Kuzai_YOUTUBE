@@ -1,18 +1,14 @@
 {
-  "generated_at_utc": "2026-11-14T14:24:10.830847+00:00",
+  "generated_at_utc": "2026-11-14T14:31:14.084515+00:00",
   "results": {
-    "EXEC_STATUS": "1",
-    "HEAD": "bc9dcbd593be409aafc1573e3936f4456d0ebb77",
-    "JOURNAL_V82": "0",
-    "MEDIA_RECEIPT": "ABSENT",
-    "PYTHON_ERROR": "RuntimeError: Narration duration is outside the allowed automatic timing range: 24.944s requires atempo=0.498883. Allowed range is 0.90 to 1.10.",
-    "SERVICE_RESULT": "exit-code",
-    "V82_STATUS": "ABSENT",
-    "V82_YOUTUBE_ID": "ABSENT",
-    "WORKER_TRACE": "MEDIA_FLOW_WORKER=BLOCKED;WORKER=BLOCKED;MEDIA_FLOW_WORKER=START;MEDIA_FLOW_WORKER=BLOCKED;WORKER=BLOCKED;MEDIA_FLOW_WORKER=START;MEDIA_FLOW_WORKER=BLOCKED;WORKER=BLOCKED;",
+    "CANONICAL_45_55S": "FAIL",
+    "DURATION_SECONDS": "43.096508",
+    "HEAD": "0a7c3811e0684e6e8c2f39001067b2c9a3029016",
+    "NARRATION_RC": "0",
+    "UNIT_TEST_RC": "0",
     "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "bc9dcbd593be409aafc1573e3936f4456d0ebb77",
-  "step_id": "V82-MEDIA-STATE-DIAG-004"
+  "source_commit": "0a7c3811e0684e6e8c2f39001067b2c9a3029016",
+  "step_id": "V82-NARRATION-TIMING-FIX-VERIFY-001"
 }
