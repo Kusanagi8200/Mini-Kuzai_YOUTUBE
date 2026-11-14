@@ -18,13 +18,23 @@ import json
 import re
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MINI_KUZAI = Path("/root/GitHub-Mini-Kuzai/Mini-Kuzai")
 BRIEF_DIR = ROOT / "automation" / "dev-flow" / "short-briefs"
 VALIDATOR = ROOT / "tools" / "validate_dev_flow_short_brief.py"
+NARRATOR = ROOT / "app" / "generate_narration.py"
 PYTHON = ROOT / ".venv" / "bin" / "python"
+VOICE_SOURCE_MIN_SECONDS = 45.0
+VOICE_SOURCE_MAX_SECONDS = 55.0
+NARRATION_MAX_CHARS = 900
+NARRATION_EXTENSION_SENTENCES = (
+    " The check remains bounded to the published aggregate evidence.",
+    " No additional model behavior is inferred beyond these recorded measurements.",
+    " The comparison remains inside the same frozen evaluation boundary.",
+)
 
 sys.path.insert(0, str(ROOT / "app"))
 from youtube_upload import normalize_description  # noqa: E402
@@ -534,6 +544,87 @@ def build_brief(
     }
 
 
+def parse_results(output: str) -> dict[str, str]:
+    values: dict[str, str] = {}
+    for line in output.splitlines():
+        if "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        if re.fullmatch(r"[A-Z][A-Z0-9_]*", key):
+            values[key] = value.strip()
+    return values
+
+
+def measure_narration_seconds(text: str) -> float:
+    if not PYTHON.is_file() or not NARRATOR.is_file():
+        fail("Narration timing dependency unavailable")
+
+    with tempfile.TemporaryDirectory(prefix="brief-narration-") as tmp:
+        root = Path(tmp)
+        text_path = root / "narration.txt"
+        wav_path = root / "narration.wav"
+        text_path.write_text(text.strip() + "\n", encoding="utf-8")
+
+        result = run(
+            [
+                str(PYTHON),
+                str(NARRATOR),
+                "--text-file",
+                str(text_path),
+                "--output",
+                str(wav_path),
+            ],
+            cwd=ROOT,
+            timeout=180,
+        )
+
+    if result.returncode != 0:
+        fail("Piper narration timing check failed")
+
+    values = parse_results(result.stdout)
+    raw = values.get("DURATION_SECONDS", "")
+    try:
+        duration = float(raw)
+    except ValueError as exc:
+        raise BriefGeneratorError(
+            "Piper narration timing result is invalid"
+        ) from exc
+
+    if duration <= 0:
+        fail("Piper narration timing result is invalid")
+    return duration
+
+
+def fit_narration_to_voice_window(brief: dict) -> float:
+    narration = brief.get("narration")
+    if not isinstance(narration, str) or not narration.strip():
+        fail("Generated narration is missing")
+
+    duration = measure_narration_seconds(narration)
+    if VOICE_SOURCE_MIN_SECONDS <= duration <= VOICE_SOURCE_MAX_SECONDS:
+        return duration
+    if duration > VOICE_SOURCE_MAX_SECONDS:
+        fail(
+            "Generated narration exceeds the canonical voice timing window"
+        )
+
+    for sentence in NARRATION_EXTENSION_SENTENCES:
+        candidate = narration.rstrip() + sentence
+        if len(candidate) > NARRATION_MAX_CHARS:
+            break
+        narration = candidate
+        brief["narration"] = narration
+        duration = measure_narration_seconds(narration)
+        if VOICE_SOURCE_MIN_SECONDS <= duration <= VOICE_SOURCE_MAX_SECONDS:
+            return duration
+        if duration > VOICE_SOURCE_MAX_SECONDS:
+            fail(
+                "Automatic narration extension exceeded the voice timing window"
+            )
+
+    fail("Unable to fit generated narration into the canonical voice timing window")
+
+
 def write_brief(path: Path, brief: dict) -> None:
     if path.exists() or path.is_symlink():
         fail(f"Output already exists: {path}")
@@ -623,6 +714,7 @@ def main() -> int:
         report,
         source_commit,
     )
+    narration_seconds = fit_narration_to_voice_window(brief)
 
     output = (
         args.output.resolve()
@@ -646,6 +738,8 @@ def main() -> int:
     print(f"REPORT_STEP_ID={report['step_id']}")
     print("SEGMENT_COUNT=5")
     print("TIMELINE_SECONDS=60")
+    print(f"NARRATION_SOURCE_SECONDS={narration_seconds:.3f}")
+    print("NARRATION_TIMING=PASS")
     print("TRAINING_ALLOWED=0")
     print("BLIND_ACCESS=0")
     print("PUBLICATION_PERFORMED=0")
