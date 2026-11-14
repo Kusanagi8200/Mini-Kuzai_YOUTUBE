@@ -1,15 +1,22 @@
 {
-  "generated_at_utc": "2026-11-14T16:16:36.672484+00:00",
+  "generated_at_utc": "2026-11-14T16:24:53.803434+00:00",
   "results": {
-    "BACKUP_BRANCH": "backup/pre-maj-sync-kuzai-chat-20261114T161634Z",
-    "FF_SYNC": "PASS",
-    "NEW_HEAD": "31c3a44f4d8c19411bb10aa5919f6c390f47044d",
-    "OLD_HEAD": "177d64e0c6279f127837c8e56d852dabc6822545",
-    "ORIGIN_HEAD": "31c3a44f4d8c19411bb10aa5919f6c390f47044d",
-    "RUNTIME_DEPLOY_REQUIRED": "NO",
-    "WORKTREE": "CLEAN"
+    "FINAL_CODE_AUDIT": "PASS",
+    "KUZAICHAT_SYNC": "PASS",
+    "KUZAICHAT_WORKTREE": "CLEAN",
+    "KUZAIORG_SYNC": "PASS",
+    "KUZDIN_SYNC": "PASS",
+    "MEDIA_TIMEOUT": "30min",
+    "MEDIA_TIMER": "active",
+    "MINI_SYNC": "PASS",
+    "MINI_WORKTREE": "CLEAN",
+    "PUBLIC_HTTP": "200",
+    "PUBLIC_V82": "PASS",
+    "PUBLIC_V83": "PASS",
+    "YOUTUBE_SYNC": "PASS",
+    "YOUTUBE_WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "60cd1457247ed267b1ab788aaffcbde5c5709db4",
-  "step_id": "MAJ-THEKUZNETWORK-KUZAICHAT-SYNC-001"
+  "source_commit": "b095e7fb6b1e92d4cf0241e5a33168283301328d",
+  "step_id": "MAJ-THEKUZNETWORK-FINAL-AUDIT-001"
 }
