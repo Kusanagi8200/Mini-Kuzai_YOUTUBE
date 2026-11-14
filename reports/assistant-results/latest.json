@@ -1,22 +1,21 @@
 {
-  "generated_at_utc": "2026-11-14T12:30:35.361940+00:00",
+  "generated_at_utc": "2026-11-14T12:32:06.546314+00:00",
   "results": {
-    "DOWNSTREAM_STEP": "",
-    "ERROR_SUMMARY": "NONE",
-    "FINAL_VIDEO_PATH": "",
-    "HEAD": "aecef68f9fab91eb16de589c32f6b62d8420eac4",
-    "MEDIA_STAGE": "YOUTUBE_PUBLISHED",
-    "MEDIA_WORKER": "PASS",
-    "PROCESSED": "",
-    "PUBLICATION_PERFORMED": "1",
-    "SERVICE_RC": "0",
-    "SHORT_STEP": "",
-    "SHORT_WORKER": "PASS",
-    "WORKER_STATE": "",
+    "ERROR_SUMMARY": "Unable to verify GitHub CLI identity",
+    "GITHUB_MEDIA_COMMENT_URL": "NONE",
+    "HEAD": "a26ac0b11ad763dacf37abb0b0be836d248d5c39",
+    "LINKEDIN_POST_URN": "NONE",
+    "LINKEDIN_VIDEO_URN": "NONE",
+    "MEDIA_STAGE": "",
+    "MEDIA_WORKER": "BLOCKED",
+    "PUBLICATION_PERFORMED": "",
+    "RECEIPT_COMMIT": "NONE",
+    "RECEIPT_PRESENT": "NO",
+    "SERVICE_RC": "1",
     "WORKTREE": "CLEAN",
-    "YOUTUBE_VIDEO_ID": ""
+    "YOUTUBE_VIDEO_ID": "NONE"
   },
   "schema_version": 1,
-  "source_commit": "aecef68f9fab91eb16de589c32f6b62d8420eac4",
-  "step_id": "V81-MEDIA-FLOW-RUN-005"
+  "source_commit": "a26ac0b11ad763dacf37abb0b0be836d248d5c39",
+  "step_id": "V81-MEDIA-FLOW-RUN-006"
 }
