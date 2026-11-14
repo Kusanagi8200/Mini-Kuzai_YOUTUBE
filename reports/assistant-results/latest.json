@@ -1,16 +1,18 @@
 {
-  "generated_at_utc": "2026-11-14T10:57:18.971303+00:00",
+  "generated_at_utc": "2026-11-14T10:59:17.553942+00:00",
   "results": {
-    "AUTO_BRIEF_MIN_VERSION": "81",
-    "HEAD": "bae27d83b597737bc8a91684779706741b2036ab",
-    "ORIGIN_MAIN": "bae27d83b597737bc8a91684779706741b2036ab",
+    "BLIND_ACCESS": "0",
+    "KUZDIN_GH_PRESENT": "1",
+    "KUZDIN_SYSTEM_PYTHON": "1",
+    "KUZDIN_TRANSFER_DIR_WRITABLE": "1",
+    "KUZDIN_VENV_PYTHON": "1",
+    "KUZDIN_VIDEO_RUNNER": "1",
     "PUBLICATION_PERFORMED": "0",
-    "PY_COMPILE": "PASS",
-    "TEST_RC": "0",
-    "UNIT_TESTS": "PASS",
-    "WORKTREE": "CLEAN"
+    "SCIENTIFIC_V81_STARTED": "0",
+    "STEP_STATUS": "PASS",
+    "TRAINING_ALLOWED": "0"
   },
   "schema_version": 1,
-  "source_commit": "bae27d83b597737bc8a91684779706741b2036ab",
-  "step_id": "V81-AUTO-BRIEF-WORKER-CODECHECK-001"
+  "source_commit": "5f0d79139cef4896d446ac950b818979dc8d7225",
+  "step_id": "V81-CROSS-CHANNEL-KUZDIN-RUNTIME-AUDIT-001"
 }
