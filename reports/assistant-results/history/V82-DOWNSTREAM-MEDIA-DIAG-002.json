@@ -1,0 +1,18 @@
+{
+  "generated_at_utc": "2026-11-14T14:48:14.328218+00:00",
+  "results": {
+    "DOWNSTREAM_LIVE": "NONE",
+    "DOWNSTREAM_STEP": "NONE",
+    "EXEC_STATUS": "1",
+    "LAST_ERROR": "KUZ-DIN remote preflight failed",
+    "LINKEDIN_VIDEO_EXISTS": "0",
+    "MEDIA_RECEIPT": "ABSENT",
+    "MEDIA_STAGE": "YOUTUBE_PUBLISHED",
+    "MEDIA_WORKER": "BLOCKED",
+    "SERVICE_RESULT": "exit-code",
+    "SHORT_WORKER": "IDLE"
+  },
+  "schema_version": 1,
+  "source_commit": "999a926015b2643a50b8e0d1d0380fa661c7b2ec",
+  "step_id": "V82-DOWNSTREAM-MEDIA-DIAG-002"
+}

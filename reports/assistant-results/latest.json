@@ -1,14 +1,18 @@
 {
-  "generated_at_utc": "2026-11-14T14:40:32.982616+00:00",
+  "generated_at_utc": "2026-11-14T14:48:14.328218+00:00",
   "results": {
-    "SERVICE_RC": "1",
+    "DOWNSTREAM_LIVE": "NONE",
+    "DOWNSTREAM_STEP": "NONE",
+    "EXEC_STATUS": "1",
+    "LAST_ERROR": "KUZ-DIN remote preflight failed",
+    "LINKEDIN_VIDEO_EXISTS": "0",
+    "MEDIA_RECEIPT": "ABSENT",
+    "MEDIA_STAGE": "YOUTUBE_PUBLISHED",
+    "MEDIA_WORKER": "BLOCKED",
     "SERVICE_RESULT": "exit-code",
-    "V82_PRIVACY": "public",
-    "V82_STATUS": "PUBLIC_PUBLISHED",
-    "V82_VIDEO_SHA256": "3d8c145f1e399cb5d84337238cb53d8dba259d48d965353e35f320897891440e",
-    "V82_YOUTUBE_ID": "JZJzBawTxAw"
+    "SHORT_WORKER": "IDLE"
   },
   "schema_version": 1,
-  "source_commit": "7f23fe30a082ec96b6516cfb00cbfd8657f1d3b6",
-  "step_id": "V82-MEDIA-FLOW-RUN-003"
+  "source_commit": "999a926015b2643a50b8e0d1d0380fa661c7b2ec",
+  "step_id": "V82-DOWNSTREAM-MEDIA-DIAG-002"
 }
