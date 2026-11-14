@@ -58,7 +58,7 @@ Permanent project addresses are displayed inside the rendered video instead of t
 
 ## `Current status`
 
-**STEP-07 --> COMPLETED / FLOW-PRESENTATION-001 TRI-CHANNEL VALIDATED / V81 ORCHESTRATION NEXT**
+**STEP-07 --> COMPLETED / V81+ AUTOMATIC CROSS-CHANNEL MEDIA ORCHESTRATION ACTIVE**
 
 Completed:
 
@@ -101,9 +101,13 @@ Current action:
 - presentation YouTube video ID --> `vhQmddUuMcg`
 - LinkedIn native-video post URN --> `urn:li:ugcPost:7526340708715327488`
 - GitHub media publication --> Mini-Kuzai Discussion #12
-- next engineering task --> automatic orchestration from a future genuine V81 FINAL receipt
-- keep YouTube as an independent publication sink
-- never let YouTube failure invalidate the scientific FINAL
+- automatic V81+ orchestration --> INSTALLED AND ACTIVE
+- runtime wrapper --> `tools/dev_flow_media_worker.py`
+- FINAL receipt --> deterministic brief --> audited Short --> YouTube --> LinkedIn native video --> GitHub fallback --> committed media receipt
+- current runtime state --> IDLE until a genuine V81+ FINAL receipt exists
+- next project action --> resume Mini-Kuzai scientific V81 protocol and authorization work
+- keep media publication independent from scientific validity
+- never let a media failure invalidate the scientific FINAL
 
 ## `Pre-V81 cross-channel publication validation`
 
@@ -173,28 +177,28 @@ Complete setup procedure:
 ## `Target pipeline`
 
 ```text
-validated Mini-Kuzai FINAL step
+validated Mini-Kuzai FINAL receipt
       |
       v
-structured Short brief
-      |
-      +--> canonical 1080x1920 renderer
-      +--> Anta overlays
-      +--> Piper sentence-chunked narration
-      +--> background music
+deterministic committed Short brief
       |
       v
-60-second validated MP4
+canonical 60-second audited MP4
       |
       v
-target-channel verification
+YouTube public publication
       |
       v
-controlled YouTube publication
+LinkedIn native video through KUZ-DIN
       |
       v
-journal + idempotence evidence
+GitHub media fallback on canonical FINAL Discussion
+      |
+      v
+committed cross-channel media receipt
 ```
+
+The production worker performs one bounded transaction per invocation. Brief generation, YouTube publication and downstream cross-channel publication are therefore isolated and independently auditable.
 
 YouTube publication failure never invalidates the underlying Mini-Kuzai scientific result.
 
@@ -222,7 +226,7 @@ YouTube publication failure never invalidates the underlying Mini-Kuzai scientif
 | STEP-04 | Piper narration and audio mix | **COMPLETED - V6 CANONICAL** |
 | STEP-05 | YouTube Data API and OAuth | **COMPLETED** |
 | STEP-06 | Channel introduction pilot | **COMPLETED** |
-| STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | **COMPLETED - V80 + TRI-CHANNEL MEDIA VALIDATED** |
+| STEP-07 | Mini-Kuzai FINAL-DEV-FLOW integration | **COMPLETED - V81+ AUTOMATIC CROSS-CHANNEL ORCHESTRATION ACTIVE** |
 
 ## `Operating principles`
 
