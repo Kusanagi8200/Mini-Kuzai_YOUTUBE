@@ -277,6 +277,7 @@ def child(
     tool: Path,
     step: str,
     *,
+    journal_path: Path,
     publish: bool,
     gate_name: str | None = None,
     timeout: int = 360,
@@ -286,7 +287,14 @@ def child(
     if PYTHON.is_symlink() or not PYTHON.is_file():
         fail("Project Python unavailable")
 
-    args = [str(PYTHON), str(tool), "--step", step]
+    args = [
+        str(PYTHON),
+        str(tool),
+        "--step",
+        step,
+        "--journal",
+        str(journal_path),
+    ]
     if publish:
         args.append("--publish")
 
@@ -525,6 +533,7 @@ def main() -> int:
     linkedin_preflight = child(
         LINKEDIN,
         args.step,
+        journal_path=args.journal,
         publish=False,
     )
     require_linkedin(linkedin_preflight, publish=False)
@@ -532,6 +541,7 @@ def main() -> int:
     github_preflight = child(
         GITHUB_MEDIA,
         args.step,
+        journal_path=args.journal,
         publish=False,
     )
     github_ready = require_github(
@@ -562,6 +572,7 @@ def main() -> int:
     linkedin_live = child(
         LINKEDIN,
         args.step,
+        journal_path=args.journal,
         publish=True,
         gate_name="KUZAI_LINKEDIN_HANDOFF_ENABLED",
         timeout=420,
@@ -574,6 +585,7 @@ def main() -> int:
     github_live = child(
         GITHUB_MEDIA,
         args.step,
+        journal_path=args.journal,
         publish=True,
         gate_name="KUZAI_GITHUB_MEDIA_PUBLISHER_ENABLED",
         timeout=180,
