@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import importlib.util
 import json
 import os
@@ -50,6 +51,18 @@ class WorkerTests(unittest.TestCase):
         journal = root / "state" / "journal.json"
         pipeline = root / "fake_pipeline.py"
 
+        module.WORK_DIR.mkdir(parents=True, exist_ok=True)
+        fd, video_name = tempfile.mkstemp(
+            prefix="test-worker-",
+            suffix=".mp4",
+            dir=module.WORK_DIR,
+        )
+        os.close(fd)
+        video = Path(video_name)
+        video.write_bytes(b"12345678")
+        self.addCleanup(lambda: video.unlink(missing_ok=True))
+        video_sha256 = hashlib.sha256(video.read_bytes()).hexdigest()
+
         mini.mkdir(parents=True)
 
         self.git(mini, "init", "-b", "main")
@@ -94,14 +107,15 @@ class WorkerTests(unittest.TestCase):
         )
 
         pipeline.write_text(
-            """#!/usr/bin/env python3
+            f"""#!/usr/bin/env python3
 print("##### SECTION RESULTS FOR ASSISTANT ######")
 print("PIPELINE_ORCHESTRATOR=PASS")
 print("UPLOAD_PERFORMED=1")
 print("UPLOAD_PRIVACY=public")
 print("PUBLICATION=PUBLIC")
 print("YOUTUBE_VIDEO_ID=AbCdEf12345")
-print("VIDEO_SHA256=" + "a" * 64)
+print("FINAL_VIDEO={video}")
+print("VIDEO_SHA256={video_sha256}")
 """,
             encoding="utf-8",
         )
@@ -140,6 +154,7 @@ print("VIDEO_SHA256=" + "a" * 64)
 
         self.assertEqual(result["state"], "PUBLIC_PUBLISHED")
         self.assertEqual(result["processed"], "1")
+        self.assertTrue(result["final_video_path"].startswith("work/"))
 
         result2 = module.process_candidate(
             briefs / "V80-final.json",
