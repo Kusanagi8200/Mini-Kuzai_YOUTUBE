@@ -1,0 +1,16 @@
+{
+  "generated_at_utc": "2026-11-14T12:36:27.050603+00:00",
+  "results": {
+    "GH_ACTOR": "Kusanagi8200",
+    "GH_BIN": "/usr/bin/gh",
+    "GH_ERROR": "NONE",
+    "GH_QUERY_RC": "0",
+    "HEAD": "6e7d2b56c2305108a2dce41c108693f14cd2a399",
+    "SERVICE_ENV": "KUZAI_CROSS_CHANNEL_MEDIA_ENABLED=YES",
+    "SERVICE_USER": "",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "6e7d2b56c2305108a2dce41c108693f14cd2a399",
+  "step_id": "V81-GITHUB-CLI-IDENTITY-DIAG-001"
+}
