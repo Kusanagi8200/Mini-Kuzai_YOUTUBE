@@ -433,12 +433,31 @@ def generate_and_commit_brief(
             target.unlink()
         fail("Unexpected staged paths for automatic brief")
 
-    git(
-        ROOT,
-        "commit",
-        "-m",
-        f"media-flow: generate {step} FINAL brief",
+    commit_result = run(
+        [
+            "git",
+            "commit",
+            "-m",
+            f"media-flow: generate {step} FINAL brief",
+        ],
+        cwd=ROOT,
+        timeout=60,
     )
+    if commit_result.returncode != 0:
+        detail = (
+            commit_result.stderr.strip()
+            or commit_result.stdout.strip()
+        )
+        run(
+            ["git", "reset", "--hard", source_head],
+            cwd=ROOT,
+            timeout=60,
+        )
+        raise WorkerError(
+            "Automatic brief commit failed"
+            + (f": {detail}" if detail else "")
+        )
+
     commit = git(ROOT, "rev-parse", "HEAD")
 
     pushed = run(

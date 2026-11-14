@@ -77,6 +77,10 @@ Rules:
 
 This repository publishes communication assets. It does not authorize Mini-Kuzai training, BLIND access, checkpoint changes or scientific experiments.
 
+## `Network-wide maintenance command`
+
+`MAJ-THEKUZNETWORK` is the cross-repository maintenance command. Every invocation must inspect Mini-Kuzai_YOUTUBE, Mini-Kuzai, KUZAI.ORG-VS2, KUZ-DIN and KUZAI-CHAT, then update current README/documentation only where verified state has changed. Historical frozen evidence must remain immutable. The operator must be warned before any future `START-DEV-FLOW` is required.
+
 ## `Cross-channel media publication`
 
 A scientific FINAL and a media publication are separate transactions.
@@ -106,7 +110,10 @@ Rules:
 - each invocation performs at most one bounded state transition
 - cross-channel publication runs only after YouTube state is `PUBLIC_PUBLISHED`
 - a media receipt is committed only after LinkedIn and GitHub publication are verified
-- absence of a V81+ FINAL receipt keeps the worker idle
+- absence of a pending eligible V81+ FINAL keeps the worker idle
+- the production systemd environment must expose `HOME=/root` so GitHub CLI can resolve the root account authentication
+- the production systemd entry point is `tools/dev_flow_media_worker.py`
+- V81 completed the complete automatic chain and produced a committed cross-channel receipt
 
 ---
 

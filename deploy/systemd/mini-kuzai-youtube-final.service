@@ -1,12 +1,13 @@
 [Unit]
-Description=Mini-Kuzai YouTube FINAL Short worker
+Description=Mini-Kuzai FINAL cross-channel media worker
 Wants=network-online.target
 After=network-online.target
 
 [Service]
 Type=oneshot
 WorkingDirectory=/root/GitHub-Mini-Kuzai/Mini-Kuzai_YOUTUBE
-ExecStart=/root/GitHub-Mini-Kuzai/Mini-Kuzai_YOUTUBE/.venv/bin/python /root/GitHub-Mini-Kuzai/Mini-Kuzai_YOUTUBE/tools/dev_flow_short_worker.py
+ExecStart=/root/GitHub-Mini-Kuzai/Mini-Kuzai_YOUTUBE/.venv/bin/python /root/GitHub-Mini-Kuzai/Mini-Kuzai_YOUTUBE/tools/dev_flow_media_worker.py
+Environment=KUZAI_CROSS_CHANNEL_MEDIA_ENABLED=YES HOME=/root
 UMask=0077
 StandardOutput=journal
 StandardError=journal

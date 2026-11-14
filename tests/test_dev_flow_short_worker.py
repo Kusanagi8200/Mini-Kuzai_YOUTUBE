@@ -144,6 +144,15 @@ print("VIDEO_SHA256={video_sha256}")
             with self.assertRaises(module.WorkerError):
                 module.verify_python_runtime(link)
 
+    def test_auto_brief_commit_failure_cleanup_is_present(self):
+        source = WORKER.read_text(encoding="utf-8")
+        self.assertIn("commit_result = run(", source)
+        self.assertIn(
+            '["git", "reset", "--hard", source_head]',
+            source,
+        )
+        self.assertIn("Automatic brief commit failed", source)
+
     def test_pending_candidate(self):
         temporary, mini, briefs, journal, _ = self.fixture()
         self.addCleanup(temporary.cleanup)

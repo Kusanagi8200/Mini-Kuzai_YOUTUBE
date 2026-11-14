@@ -9,6 +9,7 @@ This directory contains project documentation independently from the source code
 - [Installation and development step index](steps/README.md)
 - [Google Cloud and YouTube OAuth setup](GOOGLE-YOUTUBE-OAUTH-PROCESS.md)
 - [GOGIT operating model](../tools/GOGIT.md)
+- [THE KUZ NETWORK maintenance command](../MAJ-THEKUZNETWORK.md)
 - [Overlay layout](OVERLAY-LAYOUT.md)
 - [Suno track usage policy](SUNO-RIGHTS.md)
 

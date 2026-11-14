@@ -25,10 +25,14 @@ The local worker journal remains outside Git under:
 **`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
 
 
-## `Current orchestration gap`
+## `Current orchestration state`
 
-The renderer, audit and YouTube publication path are validated.
+Automatic brief generation is active for V81+.
 
-For V81+, the remaining automation task is to create the canonical `Vxx-final.json` brief automatically from a genuine committed FINAL receipt + immutable scientific GOGIT evidence. Until that orchestration exists, brief authoring remains an explicit preparation step.
+The worker derives `Vxx-final.json` only from a genuine committed FINAL receipt plus immutable scientific GOGIT evidence, validates the generated brief, commits it, and stops before the next bounded media transaction.
 
-`FLOW-PRESENTATION-001` validated downstream media publication but is not a DEV-FLOW scientific brief.
+V81 verified this path in production. Its brief was generated automatically, validated, rendered into a 60-second Short, published to YouTube, handed to LinkedIn as native video, referenced from the canonical GitHub Discussion, and closed with a committed cross-channel receipt.
+
+A failed automatic brief commit must restore the repository to the pre-generation commit so the polling timer cannot remain wedged on a staged file.
+
+`FLOW-PRESENTATION-001` remains a historical non-scientific integration test and is not DEV-FLOW scientific evidence.
