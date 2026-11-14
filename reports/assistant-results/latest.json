@@ -1,15 +1,13 @@
 {
-  "generated_at_utc": "2026-11-14T13:40:10.172895+00:00",
+  "generated_at_utc": "2026-11-14T13:45:03.087884+00:00",
   "results": {
-    "CORE_RC": "0",
-    "ELAPSED_SEC": "332",
-    "ERROR_SUMMARY": "NONE",
-    "HEAD": "cc0774f32703a4c2b7ecb1a3dc01afca2c5cd3ea",
-    "METRIC_COUNT": "27",
-    "TIMEOUT_600": "NO",
+    "COMPILE_RC": "0",
+    "DEFAULT_TIMEOUT_SEC": "300",
+    "HEAD": "d9b5df80c830606a749f62f38839f7358c1c14c1",
+    "V82_TIMEOUT_SEC": "600",
     "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "6070ea01383fec02402fa5a1d4252cbbb1a58a47",
-  "step_id": "V82-GPU-RUNTIME-DIAG-001"
+  "source_commit": "c8cba7f0521126c97b23d658bd13e808e8ce18e4",
+  "step_id": "V82-GOGIT-TIMEOUT-VERIFY-001"
 }
