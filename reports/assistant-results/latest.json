@@ -1,13 +1,18 @@
 {
-  "generated_at_utc": "2026-11-14T10:53:54.715454+00:00",
+  "generated_at_utc": "2026-11-14T10:55:01.920912+00:00",
   "results": {
-    "BACKUP_BRANCH": "backup/pre-v81-media-brief-normalize-fix-20261114T105351Z",
-    "REMOTE_BACKUP_HEAD_MATCH": "1",
-    "SOURCE_HEAD": "6279b855bd158b53522e24e637c313dbf5aa9a57",
-    "STEP_STATUS": "PASS",
-    "WORKTREE": "CLEAN"
+    "BLIND_ACCESS": "0",
+    "BRIEF_GENERATOR": "PASS",
+    "OUTPUT": "/tmp/mini-kuzai-v80-generated-brief.json",
+    "PUBLICATION_PERFORMED": "0",
+    "REPORT_STEP_ID": "PHASE03-SMOLTALK-V80-DECISION-BOUNDARY-PROXIMITY-CONTROL-001",
+    "SEGMENT_COUNT": "5",
+    "SOURCE_COMMIT": "206ae3f6df4c688cf458270b98164b260b6172dc",
+    "STEP": "V80",
+    "TIMELINE_SECONDS": "60",
+    "TRAINING_ALLOWED": "0"
   },
   "schema_version": 1,
-  "source_commit": "6279b855bd158b53522e24e637c313dbf5aa9a57",
-  "step_id": "V81-MEDIA-BRIEF-NORMALIZE-BACKUP-001"
+  "source_commit": "a6729d10777303d8eaa6442c605fcd7e57b397c3",
+  "step_id": "V81-MEDIA-BRIEF-GENERATOR-V80-REGRESSION-001"
 }
