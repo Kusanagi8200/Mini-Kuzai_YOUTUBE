@@ -1,0 +1,38 @@
+{
+  "github": {
+    "comment_url": "https://github.com/Kusanagi8200/Mini-Kuzai/discussions/15#discussioncomment-19617184",
+    "discussion_url": "https://github.com/Kusanagi8200/Mini-Kuzai/discussions/15",
+    "media_mode": "YOUTUBE_PUBLIC_LINK_FALLBACK",
+    "status": "PUBLISHED"
+  },
+  "linkedin": {
+    "post_urn": "urn:li:ugcPost:7527431180539867136",
+    "status": "PUBLISHED",
+    "video_urn": "urn:li:video:D4E10AQHOFgNRwxHSAA"
+  },
+  "media": {
+    "duration_ms": 60000,
+    "sha256": "bf34438dc28ece71d32fd75939d4e6500b8c3607c0953c62ef595bb9d89aac60"
+  },
+  "publication_id": "MINI-KUZAI-V83-FINAL",
+  "published_at_utc": "2026-11-14T18:04:11.474443+00:00",
+  "purpose": "SCIENTIFIC_FINAL_DOWNSTREAM_MEDIA_PUBLICATION",
+  "schema_version": 1,
+  "scientific_boundary": {
+    "blind_access_authorized": false,
+    "media_is_scientific_evidence": false,
+    "training_authorized": false
+  },
+  "source": {
+    "scientific_final_receipt": "automation/dev-flow/receipts/V83-final.json",
+    "scientific_gogit_report": "reports/assistant-results/history/PHASE03-SMOLTALK-V83-POST-V81-REFITTED-COORDINATE-CONTEXT-ORDER-001.json",
+    "scientific_source_commit": "dd74b37f2336ce18c8178a61d04ed596036ca2e1",
+    "short_brief": "automation/dev-flow/short-briefs/V83-final.json",
+    "short_brief_sha256": "2c7e791d1ae4d6fa361f7e2bee00846268b45358543104e22162fc30c6bff2b3"
+  },
+  "step": "V83",
+  "youtube": {
+    "status": "PUBLIC",
+    "video_id": "iNYNmxaNKbQ"
+  }
+}
