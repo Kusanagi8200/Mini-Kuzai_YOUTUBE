@@ -1,22 +1,20 @@
 {
-  "generated_at_utc": "2026-11-14T16:24:53.803434+00:00",
+  "generated_at_utc": "2026-11-14T18:04:20.536200+00:00",
   "results": {
-    "FINAL_CODE_AUDIT": "PASS",
-    "KUZAICHAT_SYNC": "PASS",
-    "KUZAICHAT_WORKTREE": "CLEAN",
-    "KUZAIORG_SYNC": "PASS",
-    "KUZDIN_SYNC": "PASS",
-    "MEDIA_TIMEOUT": "30min",
-    "MEDIA_TIMER": "active",
-    "MINI_SYNC": "PASS",
-    "MINI_WORKTREE": "CLEAN",
-    "PUBLIC_HTTP": "200",
-    "PUBLIC_V82": "PASS",
-    "PUBLIC_V83": "PASS",
-    "YOUTUBE_SYNC": "PASS",
-    "YOUTUBE_WORKTREE": "CLEAN"
+    "BLIND_ACCESS": "0",
+    "FINAL_FLOW": "PASS",
+    "GITHUB": "PASS",
+    "LINKEDIN": "PASS",
+    "MEDIA_RECEIPT": "PASS",
+    "MEDIA_SHA256": "bf34438dc28ece71d32fd75939d4e6500b8c3607c0953c62ef595bb9d89aac60",
+    "PUBLICATION_PERFORMED": "0",
+    "SCIENTIFIC_FINAL": "PASS",
+    "STEP": "V83",
+    "TRAINING_ALLOWED": "0",
+    "YOUTUBE": "PASS",
+    "YOUTUBE_VIDEO_ID": "iNYNmxaNKbQ"
   },
   "schema_version": 1,
-  "source_commit": "b095e7fb6b1e92d4cf0241e5a33168283301328d",
-  "step_id": "MAJ-THEKUZNETWORK-FINAL-AUDIT-001"
+  "source_commit": "a5c456f513890b412fd837e80dd39bc4b70ee000",
+  "step_id": "V83-FINAL-DEV-FLOW-AUTO-VERIFY-001"
 }
