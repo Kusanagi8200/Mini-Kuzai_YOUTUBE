@@ -1,12 +1,15 @@
 {
-  "generated_at_utc": "2026-11-14T14:01:54.993426+00:00",
+  "generated_at_utc": "2026-11-14T14:14:15.903435+00:00",
   "results": {
-    "HEAD": "688161758d733827807f1fb3121dd2b84d615b22",
-    "SERVICE_RC": "0",
-    "SERVICE_RESULT": "success",
-    "WORKTREE": "CLEAN"
+    "LINKEDIN_POST_URN": "ABSENT",
+    "LINKEDIN_VIDEO_EXISTS": "0",
+    "LINKEDIN_VIDEO_URN": "ABSENT",
+    "MEDIA_RECEIPT": "ABSENT",
+    "VIDEO_SHA256": "ABSENT",
+    "YOUTUBE_STATUS": "ABSENT",
+    "YOUTUBE_VIDEO_ID": "ABSENT"
   },
   "schema_version": 1,
-  "source_commit": "1f4ba97da4f3703e2e34d10e3a141bb81b2c42a3",
-  "step_id": "V82-FINAL-DEV-FLOW-DISPATCH-001"
+  "source_commit": "e13588ee6063581f877a85f8fc7214fd047ee0b4",
+  "step_id": "V82-VIDEO-REPUBLICATION-PREFLIGHT-001"
 }
