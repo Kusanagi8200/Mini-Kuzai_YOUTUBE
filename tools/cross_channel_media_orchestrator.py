@@ -284,7 +284,7 @@ def child(
 ) -> dict[str, str]:
     if tool.is_symlink() or not tool.is_file():
         fail(f"Media child tool unavailable: {tool.name}")
-    if PYTHON.is_symlink() or not PYTHON.is_file():
+    if not PYTHON.is_file():
         fail("Project Python unavailable")
 
     args = [
