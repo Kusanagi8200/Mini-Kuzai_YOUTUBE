@@ -1,18 +1,15 @@
 {
-  "generated_at_utc": "2026-11-14T14:48:14.328218+00:00",
+  "generated_at_utc": "2026-11-14T14:49:45.892714+00:00",
   "results": {
-    "DOWNSTREAM_LIVE": "NONE",
-    "DOWNSTREAM_STEP": "NONE",
-    "EXEC_STATUS": "1",
-    "LAST_ERROR": "KUZ-DIN remote preflight failed",
-    "LINKEDIN_VIDEO_EXISTS": "0",
-    "MEDIA_RECEIPT": "ABSENT",
-    "MEDIA_STAGE": "YOUTUBE_PUBLISHED",
-    "MEDIA_WORKER": "BLOCKED",
-    "SERVICE_RESULT": "exit-code",
-    "SHORT_WORKER": "IDLE"
+    "KUZDIN_JOURNAL_MODE": "600",
+    "KUZDIN_LOCAL_HEAD": "d2219f3fa0b43dd5271e9cd73688a6ac15a30fc8",
+    "KUZDIN_ORIGIN_HEAD": "25d7b0445217dbc1c93303a6f39123d7ae6b5997",
+    "KUZDIN_PYTHON": "OK",
+    "KUZDIN_VIDEO_JOURNAL": "OK",
+    "KUZDIN_VIDEO_RUNNER": "OK",
+    "KUZDIN_WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "999a926015b2643a50b8e0d1d0380fa661c7b2ec",
-  "step_id": "V82-DOWNSTREAM-MEDIA-DIAG-002"
+  "source_commit": "2c9dca6a3a012302af3990af948cd791b1983c02",
+  "step_id": "V82-KUZDIN-REMOTE-PREFLIGHT-DIAG-001"
 }
