@@ -1,19 +1,20 @@
 {
-  "generated_at_utc": "2026-11-14T15:07:22.803078+00:00",
+  "generated_at_utc": "2026-11-14T15:21:28.961863+00:00",
   "results": {
-    "GITHUB_MEDIA_URL": "https://github.com/Kusanagi8200/Mini-Kuzai/discussions/14#discussioncomment-19614290",
-    "LINKEDIN_POST_URN": "urn:li:ugcPost:7527384513589481472",
-    "LINKEDIN_STATUS": "PUBLISHED",
-    "LINKEDIN_VIDEO_URN": "urn:li:video:D4E10AQHlGGjXpoeprA",
-    "MEDIA_RECEIPT": "PRESENT",
-    "REMOTE_POST_URN": "urn:li:ugcPost:7527384513589481472",
-    "REMOTE_VIDEO_EXISTS": "1",
-    "REMOTE_VIDEO_URN": "urn:li:video:D4E10AQHlGGjXpoeprA",
-    "SERVICE_RC": "0",
-    "SERVICE_RESULT": "success",
-    "YOUTUBE_VIDEO_ID": "JZJzBawTxAw"
+    "ADAPTIVE_VOICE_TIMING": "1",
+    "AUDIT_PASS": "1",
+    "AUTO_GOGIT_CLOSURE": "1",
+    "BOUNDED_RECONCILIATION": "1",
+    "COMPILE_PASS": "1",
+    "PUBLICATION_PERFORMED": "0",
+    "SAFE_KUZDIN_SYNC": "1",
+    "SYSTEMD_TIMEOUT_ALIGNED": "1",
+    "TESTS_RUN": "35",
+    "TEST_ERRORS": "0",
+    "TEST_FAILURES": "0",
+    "TEST_PASS": "1"
   },
   "schema_version": 1,
-  "source_commit": "d2ab436310b18806dcf6895b1ca89722a324f2f6",
-  "step_id": "V82-CROSS-CHANNEL-MEDIA-PUBLISH-001"
+  "source_commit": "7b918db179bf7e665389515ddf8f09e3ee90ca6a",
+  "step_id": "FINAL-FLOW-RECONCILIATION-CODE-AUDIT-001"
 }
