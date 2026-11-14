@@ -1,18 +1,14 @@
 {
-  "generated_at_utc": "2026-11-14T15:37:28.681856+00:00",
+  "generated_at_utc": "2026-11-14T15:56:56.789940+00:00",
   "results": {
-    "EXEC_STATUS": "0",
-    "FINAL_FLOW_CLOSED": "0",
-    "MEDIA_FLOW_STAGE": "IDLE",
-    "MEDIA_FLOW_WORKER": "PASS",
-    "PUBLICATION_PERFORMED": "0",
-    "RECONCILE_PASSES": "1",
-    "SERVICE_RC": "0",
-    "SERVICE_RESULT": "success",
-    "TIMER_ACTIVE": "active",
+    "BACKUP_BRANCH": "backup/pre-maj-sync-youtube-20261114T155655Z",
+    "FF_SYNC": "PASS",
+    "NEW_HEAD": "606de9f9f40d3a90c68ea48e9644ff25f50044f4",
+    "OLD_HEAD": "3be695ea221993d778233f1a94a826a5066869d6",
+    "ORIGIN_HEAD": "606de9f9f40d3a90c68ea48e9644ff25f50044f4",
     "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "130d28473c81557b55cf2386eb76c260a430dc4c",
-  "step_id": "FINAL-FLOW-RUNTIME-SMOKE-001"
+  "source_commit": "606de9f9f40d3a90c68ea48e9644ff25f50044f4",
+  "step_id": "MAJ-THEKUZNETWORK-YOUTUBE-SYNC-001"
 }
