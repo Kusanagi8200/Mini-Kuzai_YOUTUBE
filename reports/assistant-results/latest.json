@@ -1,20 +1,16 @@
 {
-  "generated_at_utc": "2026-11-14T10:39:54.798959+00:00",
+  "generated_at_utc": "2026-11-14T10:43:15.331201+00:00",
   "results": {
+    "BACKUP_BRANCH": "backup/pre-v81-media-orchestration-20261114T104312Z",
     "BLIND_ACCESS": "0",
-    "KUZDIN_REMOTE_HEAD_MATCH": "1",
-    "KUZDIN_VIDEO_GATE_PERSISTENT": "0",
-    "KUZDIN_VIDEO_JOURNAL_MODE_600": "1",
-    "KUZDIN_VIDEO_JOURNAL_PRESENT": "1",
-    "KUZDIN_VIDEO_RUNNER_PRESENT": "1",
-    "KUZDIN_WORKTREE_CLEAN": "1",
-    "LOCAL_SCP_PRESENT": "1",
-    "LOCAL_SSH_PRESENT": "1",
+    "REMOTE_BACKUP_HEAD_MATCH": "1",
     "SCIENTIFIC_V81_STARTED": "0",
+    "SOURCE_HEAD": "74cc7a0b36e55e067fde04d9aa227a49f7fa2c15",
     "STEP_STATUS": "PASS",
-    "TRAINING_ALLOWED": "0"
+    "TRAINING_ALLOWED": "0",
+    "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "cb4c67f18ae46bbabe1c21d5ce61d66a1d107b72",
-  "step_id": "V81-MEDIA-ORCHESTRATION-KUZDIN-PREFLIGHT-001"
+  "source_commit": "74cc7a0b36e55e067fde04d9aa227a49f7fa2c15",
+  "step_id": "V81-MEDIA-ORCHESTRATION-BACKUP-001"
 }
