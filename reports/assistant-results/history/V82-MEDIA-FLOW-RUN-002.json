@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-11-14T14:18:48.392491+00:00",
+  "results": {
+    "SERVICE_RC": "1",
+    "SERVICE_RESULT": "exit-code",
+    "V82_PRIVACY": "ABSENT",
+    "V82_STATUS": "ABSENT",
+    "V82_VIDEO_SHA256": "ABSENT",
+    "V82_YOUTUBE_ID": "ABSENT"
+  },
+  "schema_version": 1,
+  "source_commit": "a95e850089e02b2aa6809f87a260b5219a215148",
+  "step_id": "V82-MEDIA-FLOW-RUN-002"
+}
