@@ -5,6 +5,7 @@ Safety model:
 - separate from Mini-Kuzai DEV-FLOW worker
 - read-only access to Mini-Kuzai repository
 - requires both repositories clean and synchronized
+- creates one deterministic committed V81+ brief when a verified FINAL receipt has no brief
 - accepts only committed Vxx-final Short briefs
 - requires matching Mini-Kuzai FINAL receipt with PUBLISHED status
 - local idempotence journal outside Git
@@ -30,6 +31,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MINI_KUZAI = Path("/root/GitHub-Mini-Kuzai/Mini-Kuzai")
 BRIEF_DIR = ROOT / "automation" / "dev-flow" / "short-briefs"
 PIPELINE = ROOT / "tools" / "dev_flow_short_pipeline.py"
+GENERATOR = ROOT / "tools" / "generate_dev_flow_short_brief.py"
 PYTHON = ROOT / ".venv" / "bin" / "python"
 
 STATE_DIR = Path("/root/.local/state/mini-kuzai-youtube")
@@ -37,6 +39,7 @@ JOURNAL_FILE = STATE_DIR / "dev-flow-short-worker.json"
 LOCK_FILE = Path("/run/lock/mini-kuzai-youtube-dev-flow.lock")
 
 STEP_RE = re.compile(r"V([0-9]+)\Z")
+AUTO_BRIEF_MIN_VERSION = 81
 
 
 class WorkerError(RuntimeError):
@@ -273,6 +276,205 @@ def candidates(brief_dir: Path) -> list[Path]:
     ]
 
 
+def auto_brief_candidates(
+    mini_root: Path,
+    brief_dir: Path,
+) -> list[str]:
+    receipt_dir = (
+        mini_root
+        / "automation"
+        / "dev-flow"
+        / "receipts"
+    )
+
+    if receipt_dir.is_symlink() or not receipt_dir.is_dir():
+        fail("FINAL receipt directory missing or unsafe")
+
+    if brief_dir.is_symlink() or not brief_dir.is_dir():
+        fail("Short brief directory missing or unsafe")
+
+    found: list[tuple[int, str]] = []
+
+    for path in receipt_dir.glob("V*-final.json"):
+        match = re.fullmatch(r"V([0-9]+)-final\.json", path.name)
+
+        if match is None:
+            continue
+
+        version = int(match.group(1))
+        if version < AUTO_BRIEF_MIN_VERSION:
+            continue
+
+        step = f"V{version}"
+        target = brief_dir / f"{step}-final.json"
+
+        if target.exists() or target.is_symlink():
+            continue
+
+        found.append((version, step))
+
+    return [
+        step
+        for _, step in sorted(found, key=lambda item: item[0])
+    ]
+
+
+def generate_and_commit_brief(
+    step: str,
+    *,
+    mini_root: Path,
+    brief_dir: Path,
+    generator: Path,
+    python: Path,
+) -> dict[str, str]:
+    match = STEP_RE.fullmatch(step)
+    if match is None or int(match.group(1)) < AUTO_BRIEF_MIN_VERSION:
+        fail("Automatic brief generation is limited to V81+")
+
+    if generator.is_symlink() or not generator.is_file():
+        fail("Short brief generator unavailable")
+
+    if python.is_symlink() or not python.is_file():
+        fail("Project Python unavailable")
+
+    target = brief_dir / f"{step}-final.json"
+    if target.exists() or target.is_symlink():
+        fail(f"Automatic Short brief already exists for {step}")
+
+    source_head = git(ROOT, "rev-parse", "HEAD")
+    remote_before = git(
+        ROOT,
+        "ls-remote",
+        "origin",
+        "refs/heads/main",
+    ).split()
+
+    if len(remote_before) != 2 or remote_before[0] != source_head:
+        fail("Remote main changed before automatic brief generation")
+
+    result = run(
+        [
+            str(python),
+            str(generator),
+            "--step",
+            step,
+            "--mini-kuzai-root",
+            str(mini_root),
+            "--output",
+            str(target),
+        ],
+        cwd=ROOT,
+        timeout=180,
+    )
+
+    if result.returncode != 0:
+        detail = result.stderr.strip() or result.stdout.strip()
+        raise WorkerError(
+            "Automatic Short brief generation failed"
+            + (f": {detail}" if detail else "")
+        )
+
+    values = parse_results(result.stdout)
+
+    if values.get("BRIEF_GENERATOR") != "PASS":
+        fail("Automatic brief generator did not report PASS")
+    if values.get("STEP") != step:
+        fail("Automatic brief generator returned wrong step")
+    if values.get("PUBLICATION_PERFORMED") != "0":
+        fail("Automatic brief generator performed an external publication")
+
+    try:
+        relative = target.relative_to(ROOT).as_posix()
+    except ValueError as exc:
+        if target.exists():
+            target.unlink()
+        raise WorkerError("Generated brief is outside repository") from exc
+
+    status = git(
+        ROOT,
+        "status",
+        "--porcelain",
+        "--untracked-files=all",
+    ).splitlines()
+    expected = f"?? {relative}"
+
+    if status != [expected]:
+        if target.exists():
+            target.unlink()
+        fail("Unexpected worktree changes after automatic brief generation")
+
+    remote_now = git(
+        ROOT,
+        "ls-remote",
+        "origin",
+        "refs/heads/main",
+    ).split()
+
+    if len(remote_now) != 2 or remote_now[0] != source_head:
+        target.unlink()
+        fail("Remote main changed during automatic brief generation")
+
+    git(ROOT, "add", "--", relative)
+
+    staged = git(
+        ROOT,
+        "diff",
+        "--cached",
+        "--name-only",
+    ).splitlines()
+    if staged != [relative]:
+        run(["git", "reset"], cwd=ROOT, timeout=60)
+        if target.exists():
+            target.unlink()
+        fail("Unexpected staged paths for automatic brief")
+
+    git(
+        ROOT,
+        "commit",
+        "-m",
+        f"media-flow: generate {step} FINAL brief",
+    )
+    commit = git(ROOT, "rev-parse", "HEAD")
+
+    pushed = run(
+        ["git", "push", "origin", "HEAD:main"],
+        cwd=ROOT,
+        timeout=90,
+    )
+
+    if pushed.returncode != 0:
+        run(
+            ["git", "reset", "--hard", source_head],
+            cwd=ROOT,
+            timeout=60,
+        )
+        run(
+            ["git", "fetch", "--no-tags", "origin", "main"],
+            cwd=ROOT,
+            timeout=90,
+        )
+        fail("Automatic brief push failed")
+
+    remote_after = git(
+        ROOT,
+        "ls-remote",
+        "origin",
+        "refs/heads/main",
+    ).split()
+
+    if len(remote_after) != 2 or remote_after[0] != commit:
+        fail("Automatic brief remote verification failed")
+
+    if git(ROOT, "status", "--porcelain"):
+        fail("Worktree not clean after automatic brief commit")
+
+    return {
+        "step": step,
+        "brief": relative,
+        "commit": commit,
+    }
+
+
 def inspect_candidate(
     path: Path,
     *,
@@ -444,6 +646,12 @@ def main() -> int:
     )
 
     parser.add_argument(
+        "--generator",
+        type=Path,
+        default=GENERATOR,
+    )
+
+    parser.add_argument(
         "--skip-repo-checks",
         action="store_true",
         help="Tests only.",
@@ -472,6 +680,31 @@ def main() -> int:
 
             print(f"YOUTUBE_HEAD={youtube_head}")
             print(f"MINI_KUZAI_HEAD={mini_head}")
+
+        if not args.skip_repo_checks and not args.allow_uncommitted_briefs:
+            auto_steps = auto_brief_candidates(
+                args.mini_kuzai_root,
+                args.brief_dir,
+            )
+            print(f"AUTO_BRIEF_CANDIDATES={len(auto_steps)}")
+
+            if auto_steps:
+                generated = generate_and_commit_brief(
+                    auto_steps[0],
+                    mini_root=args.mini_kuzai_root,
+                    brief_dir=args.brief_dir,
+                    generator=args.generator,
+                    python=args.python,
+                )
+                print("AUTO_BRIEF_GENERATED=1")
+                print(f"AUTO_BRIEF_STEP={generated['step']}")
+                print(f"AUTO_BRIEF_PATH={generated['brief']}")
+                print(f"AUTO_BRIEF_COMMIT={generated['commit']}")
+                print("PROCESSED=0")
+                print("WORKER=BRIEF_GENERATED")
+                return 0
+        else:
+            print("AUTO_BRIEF_CANDIDATES=0")
 
         items = candidates(args.brief_dir)
         print(f"BRIEF_CANDIDATES={len(items)}")
