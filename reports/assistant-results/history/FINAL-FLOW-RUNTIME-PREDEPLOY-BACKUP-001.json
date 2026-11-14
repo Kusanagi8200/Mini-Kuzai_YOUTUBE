@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-11-14T15:29:45.885123+00:00",
+  "results": {
+    "BACKUP": "/etc/systemd/system/mini-kuzai-youtube-final.service.20261114T152945Z.bak",
+    "BACKUP_EXISTS": "PASS",
+    "BACKUP_SHA256": "cda4bfce23052c9ee2faf8f02d0befabd6275d093f86cff00f55c1f968d40cf6",
+    "HEAD": "8b099012affba00810b9015d102cd461317dc2f0",
+    "SOURCE_SHA256": "cda4bfce23052c9ee2faf8f02d0befabd6275d093f86cff00f55c1f968d40cf6",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "8b099012affba00810b9015d102cd461317dc2f0",
+  "step_id": "FINAL-FLOW-RUNTIME-PREDEPLOY-BACKUP-001"
+}

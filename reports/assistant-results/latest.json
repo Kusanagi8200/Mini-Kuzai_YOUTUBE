@@ -1,20 +1,14 @@
 {
-  "generated_at_utc": "2026-11-14T15:21:28.961863+00:00",
+  "generated_at_utc": "2026-11-14T15:29:45.885123+00:00",
   "results": {
-    "ADAPTIVE_VOICE_TIMING": "1",
-    "AUDIT_PASS": "1",
-    "AUTO_GOGIT_CLOSURE": "1",
-    "BOUNDED_RECONCILIATION": "1",
-    "COMPILE_PASS": "1",
-    "PUBLICATION_PERFORMED": "0",
-    "SAFE_KUZDIN_SYNC": "1",
-    "SYSTEMD_TIMEOUT_ALIGNED": "1",
-    "TESTS_RUN": "35",
-    "TEST_ERRORS": "0",
-    "TEST_FAILURES": "0",
-    "TEST_PASS": "1"
+    "BACKUP": "/etc/systemd/system/mini-kuzai-youtube-final.service.20261114T152945Z.bak",
+    "BACKUP_EXISTS": "PASS",
+    "BACKUP_SHA256": "cda4bfce23052c9ee2faf8f02d0befabd6275d093f86cff00f55c1f968d40cf6",
+    "HEAD": "8b099012affba00810b9015d102cd461317dc2f0",
+    "SOURCE_SHA256": "cda4bfce23052c9ee2faf8f02d0befabd6275d093f86cff00f55c1f968d40cf6",
+    "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "7b918db179bf7e665389515ddf8f09e3ee90ca6a",
-  "step_id": "FINAL-FLOW-RECONCILIATION-CODE-AUDIT-001"
+  "source_commit": "8b099012affba00810b9015d102cd461317dc2f0",
+  "step_id": "FINAL-FLOW-RUNTIME-PREDEPLOY-BACKUP-001"
 }
