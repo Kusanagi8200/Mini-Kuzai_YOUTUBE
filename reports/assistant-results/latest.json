@@ -1,17 +1,12 @@
 {
-  "generated_at_utc": "2026-11-14T13:18:06.191653+00:00",
+  "generated_at_utc": "2026-11-14T13:22:51.354429+00:00",
   "results": {
-    "GPU_FREE_MIB": "7705",
-    "GPU_NAME": "NVIDIA GeForce RTX 5060 Laptop GPU",
-    "GPU_TOTAL_MIB": "8151",
-    "GPU_USED_MIB": "2",
-    "GPU_UTIL_PERCENT": "25",
-    "LLAMA_SERVER_A": "inactive",
-    "MINI_HEAD": "b6b4d44583f12b7bf27b0ae4a3e19e69a03f030e",
-    "ORIGIN_MAIN": "b6b4d44583f12b7bf27b0ae4a3e19e69a03f030e",
+    "CORE_RC": "1",
+    "ERROR_SUMMARY": "V62 cycle-2 stop gate failed",
+    "HEAD": "b6b4d44583f12b7bf27b0ae4a3e19e69a03f030e",
     "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "ef167b2b6767b28f298bd112705952697369f91e",
-  "step_id": "V82-GPU-AVAILABILITY-CHECK-001"
+  "source_commit": "92f06d5d9e5b3022744aad9c3f270b5c4fd17bfb",
+  "step_id": "V82-GPU-RUN-FAILURE-DIAG-001"
 }

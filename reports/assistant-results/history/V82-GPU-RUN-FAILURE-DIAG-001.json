@@ -1,0 +1,12 @@
+{
+  "generated_at_utc": "2026-11-14T13:22:51.354429+00:00",
+  "results": {
+    "CORE_RC": "1",
+    "ERROR_SUMMARY": "V62 cycle-2 stop gate failed",
+    "HEAD": "b6b4d44583f12b7bf27b0ae4a3e19e69a03f030e",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "92f06d5d9e5b3022744aad9c3f270b5c4fd17bfb",
+  "step_id": "V82-GPU-RUN-FAILURE-DIAG-001"
+}
