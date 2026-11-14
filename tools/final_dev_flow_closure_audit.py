@@ -192,7 +192,7 @@ def main() -> int:
     print("MEDIA_RECEIPT=PASS")
     print(f"MEDIA_SHA256={state['video_sha256']}")
     print("PUBLICATION_PERFORMED=0")
-    print("TRAINING_AUTHORIZED=0")
+    print("TRAINING_ALLOWED=0")
     print("BLIND_ACCESS=0")
     return 0
 
