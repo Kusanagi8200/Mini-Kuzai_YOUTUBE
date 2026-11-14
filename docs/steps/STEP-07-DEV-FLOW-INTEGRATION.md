@@ -1,6 +1,6 @@
 # `STEP-07 - Mini-Kuzai DEV-FLOW integration`
 
-Status --> COMPLETED - V80 PUBLIC FINAL + PRE-V81 TRI-CHANNEL MEDIA VALIDATED
+Status --> COMPLETED - V81+ AUTOMATIC CROSS-CHANNEL MEDIA ORCHESTRATION ACTIVE
 
 ## `Objective`
 
@@ -24,19 +24,26 @@ Validated and active:
 - Piper narration and audio mix
 - final media audit
 - YouTube API preflight
-- independent FINAL receipt worker
+- deterministic FINAL receipt --> Short brief generator
+- bounded media worker --> `tools/dev_flow_media_worker.py`
 - local idempotence journal
+- cross-channel orchestrator --> `tools/cross_channel_media_orchestrator.py`
+- KUZ-DIN LinkedIn native-video handoff
+- GitHub verified public YouTube fallback publisher
+- committed cross-channel media receipts
 - systemd oneshot service
 - systemd polling timer enabled and active
 
 Current runtime state:
 
-- worker mode --> PUBLIC_UPLOAD
-- publication --> PUBLIC
-- uploader requires explicit --execute from the validated FINAL pipeline
-- target privacy --> public
-- YouTube failure cannot invalidate Mini-Kuzai scientific FINAL
-- START-DEV-FLOW does not trigger YouTube
+- systemd ExecStart --> `tools/dev_flow_media_worker.py`
+- one bounded transaction per invocation
+- cycle 1 --> generate and commit one missing V81+ brief
+- cycle 2 --> build, audit and publish one public YouTube Short
+- cycle 3 --> LinkedIn native video + GitHub fallback + committed media receipt
+- cross-channel live gate --> enabled only in the dedicated media service environment
+- START-DEV-FLOW does not trigger media generation
+- all media failures remain independent from Mini-Kuzai scientific FINAL
 
 Production state validated:
 
@@ -58,7 +65,9 @@ The worker still requires the committed FINAL receipt, matching immutable scient
 
 ## `Exit criteria`
 
-STEP-07 production activation is complete. V80 generated and published exactly one verified public Short through the controlled pipeline.
+STEP-07 production activation is complete.
+
+V80 validated the public YouTube FINAL path. `FLOW-PRESENTATION-001` validated the three-channel media primitives. The V81+ production runtime now automatically chains genuine committed FINAL evidence into brief generation, audited media, YouTube publication, LinkedIn native video, GitHub media fallback and a committed cross-channel receipt.
 
 ---
 
@@ -91,14 +100,15 @@ STEP-07 exit criterion is satisfied.
 
 V80 validated automatic public YouTube publication after FINAL.
 
-The next extension adds synchronized media publication:
+The V81+ extension is now implemented and active:
 
+- FINAL receipt --> automatic deterministic brief
 - YouTube --> public Short
 - LinkedIn --> native video post through KUZ-DIN
-- GitHub --> media publication attached to or linked from the canonical FINAL Discussion
-- documentation --> updated after all channel receipts are verified
+- GitHub --> verified public YouTube fallback on the canonical FINAL Discussion
+- publication evidence --> committed cross-channel media receipt
 
-Before V81, `FLOW-PRESENTATION-001` validated this architecture as a non-scientific publication.
+Before V81, `FLOW-PRESENTATION-001` validated these media primitives as a non-scientific publication.
 
 See [FLOW-PRESENTATION-001](../FLOW-PRESENTATION-001.md).
 
@@ -112,4 +122,4 @@ Cross-channel validation result --> PASS
 - media SHA256 --> `c34b3dc19788e6770e4edb9dffc2331df2438b23c6663858b7d5299ad5731034`
 - narration window --> 5-55 seconds
 
-The remaining V81 task is orchestration, not media capability validation.
+Media orchestration is complete. No genuine V81 FINAL receipt exists yet, so the installed runtime is currently idle and has performed no V81 publication. The next required project action is scientific V81 protocol preparation and authorization review.
