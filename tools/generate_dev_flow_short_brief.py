@@ -473,7 +473,8 @@ def build_brief(
             "and the same diagnostic coordinate were reused after the previous "
             "validated stage. The comparison asks only whether the observed "
             "effect changed in scale. The result is a controlled numerical "
-            "observation, not a semantic evaluation of the model. "
+            "observation, not a semantic evaluation of the model. This keeps "
+            "the comparison anchored to the same frozen experimental frame. "
         )
 
     narration = (
