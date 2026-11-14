@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-11-14T11:01:37.420869+00:00",
+  "results": {
+    "FINAL_VIDEO_PATH_JOURNAL": "1",
+    "FINAL_VIDEO_SHA256_CHECK": "1",
+    "HEAD": "7a1bc12b721cc2dd3d1f6dd00ea89b0e17f1c11a",
+    "ORIGIN_MAIN": "7a1bc12b721cc2dd3d1f6dd00ea89b0e17f1c11a",
+    "PUBLICATION_PERFORMED": "0",
+    "PY_COMPILE": "PASS",
+    "TEST_RC": "0",
+    "UNIT_TESTS": "PASS",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "7a1bc12b721cc2dd3d1f6dd00ea89b0e17f1c11a",
+  "step_id": "V81-MEDIA-HANDOFF-PATH-CODECHECK-001"
+}
