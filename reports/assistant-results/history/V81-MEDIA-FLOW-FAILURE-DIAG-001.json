@@ -1,0 +1,13 @@
+{
+  "generated_at_utc": "2026-11-14T12:10:39.197800+00:00",
+  "results": {
+    "DIAG": "PASS",
+    "ERROR_SUMMARY": "V81_PASS is not 1",
+    "HEAD": "9993d96629d907c838a0fc60c4250206ade7a7cc",
+    "SERVICE_STATE": "activating",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "9993d96629d907c838a0fc60c4250206ade7a7cc",
+  "step_id": "V81-MEDIA-FLOW-FAILURE-DIAG-001"
+}
