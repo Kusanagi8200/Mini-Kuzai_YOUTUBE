@@ -1,0 +1,13 @@
+{
+  "generated_at_utc": "2026-11-14T14:22:42.498221+00:00",
+  "results": {
+    "ERROR_SUMMARY": "Command failed: python -- Traceback (most recent call last):",
+    "EXEC_STATUS": "0",
+    "HEAD": "2e68b5e2b8349117d889c2ba2bb588426907f5b4",
+    "SERVICE_RESULT": "success",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "2e68b5e2b8349117d889c2ba2bb588426907f5b4",
+  "step_id": "V82-MEDIA-FLOW-FAILURE-DIAG-003"
+}
