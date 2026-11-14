@@ -30,6 +30,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MINI_KUZAI = Path("/root/GitHub-Mini-Kuzai/Mini-Kuzai")
 BRIEF_DIR = ROOT / "automation" / "dev-flow" / "short-briefs"
+WORK_DIR = ROOT / "work"
 PIPELINE = ROOT / "tools" / "dev_flow_short_pipeline.py"
 GENERATOR = ROOT / "tools" / "generate_dev_flow_short_brief.py"
 PYTHON = ROOT / ".venv" / "bin" / "python"
@@ -591,11 +592,36 @@ def process_candidate(
     if not re.fullmatch(r"[a-f0-9]{64}", video_sha256):
         fail("Pipeline returned invalid video SHA256")
 
+    final_video_value = values.get("FINAL_VIDEO", "")
+    if not final_video_value:
+        fail("Pipeline returned no FINAL_VIDEO path")
+
+    final_video = Path(final_video_value).resolve()
+    work_root = WORK_DIR.resolve()
+
+    if final_video.is_symlink() or not final_video.is_file():
+        fail("Pipeline FINAL_VIDEO is missing or unsafe")
+
+    if final_video.suffix.lower() != ".mp4":
+        fail("Pipeline FINAL_VIDEO is not an MP4")
+
+    try:
+        final_video.relative_to(work_root)
+    except ValueError as exc:
+        raise WorkerError("Pipeline FINAL_VIDEO is outside work directory") from exc
+
+    final_video_sha256 = sha256_file(final_video)
+    if final_video_sha256 != video_sha256:
+        fail("Pipeline FINAL_VIDEO SHA256 does not match publication SHA256")
+
+    final_video_relative = final_video.relative_to(ROOT).as_posix()
+
     journal["steps"][step] = {
         "status": "PUBLIC_PUBLISHED",
         "brief_path": relative,
         "brief_sha256": digest,
         "video_sha256": video_sha256,
+        "final_video_path": final_video_relative,
         "youtube_video_id": youtube_video_id,
         "privacy_status": "public",
         "published_at_utc": datetime.now(timezone.utc).isoformat(),
@@ -608,6 +634,7 @@ def process_candidate(
         "state": "PUBLIC_PUBLISHED",
         "processed": "1",
         "video_sha256": video_sha256,
+        "final_video_path": final_video_relative,
         "youtube_video_id": youtube_video_id,
     }
 
@@ -752,6 +779,8 @@ def main() -> int:
             print(f"VIDEO_SHA256={result['video_sha256']}")
         if "youtube_video_id" in result:
             print(f"YOUTUBE_VIDEO_ID={result['youtube_video_id']}")
+        if "final_video_path" in result:
+            print(f"FINAL_VIDEO_PATH={result['final_video_path']}")
 
         print("WORKER=PASS")
         return 0
