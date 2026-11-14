@@ -77,26 +77,20 @@ Rules:
 
 This repository publishes communication assets. It does not authorize Mini-Kuzai training, BLIND access, checkpoint changes or scientific experiments.
 
----
-
-**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
-
-
 ## `Cross-channel media publication`
 
 A scientific FINAL and a media publication are separate transactions.
 
-For V81+ the intended sequence is:
+For V81+ the active production sequence is:
 
 ```text
 scientific FINAL receipt
-  -> media build
-  -> media audit
+  -> deterministic committed Short brief
+  -> media build + audit
   -> YouTube public publication
-  -> LinkedIn native video publication
-  -> GitHub media publication
-  -> verify channel receipts
-  -> update documentation
+  -> LinkedIn native video publication through KUZ-DIN
+  -> GitHub verified public YouTube fallback
+  -> committed cross-channel media receipt
 ```
 
 Rules:
@@ -108,4 +102,12 @@ Rules:
 - LinkedIn native video publication must use a separate live gate
 - GitHub Discussion MP4 attachment automation must be independently validated before enabling it
 - a verified public YouTube URL is the GitHub fallback when native Discussion attachment automation is unavailable
+- `tools/dev_flow_media_worker.py` is the production systemd entry point
+- each invocation performs at most one bounded state transition
+- cross-channel publication runs only after YouTube state is `PUBLIC_PUBLISHED`
+- a media receipt is committed only after LinkedIn and GitHub publication are verified
+- absence of a V81+ FINAL receipt keeps the worker idle
 
+---
+
+**`THE KUZ NETWORK - KUSANAGI8200 - @2026`**
