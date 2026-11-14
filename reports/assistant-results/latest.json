@@ -1,16 +1,15 @@
 {
-  "generated_at_utc": "2026-11-14T12:36:27.050603+00:00",
+  "generated_at_utc": "2026-11-14T12:37:32.083669+00:00",
   "results": {
-    "GH_ACTOR": "Kusanagi8200",
-    "GH_BIN": "/usr/bin/gh",
-    "GH_ERROR": "NONE",
-    "GH_QUERY_RC": "0",
-    "HEAD": "6e7d2b56c2305108a2dce41c108693f14cd2a399",
-    "SERVICE_ENV": "KUZAI_CROSS_CHANNEL_MEDIA_ENABLED=YES",
-    "SERVICE_USER": "",
+    "HEAD": "3ee7bb1d79ab94c8e7d8056e792e81c3be534033",
+    "WITHOUT_HOME_ACTOR": "NONE",
+    "WITHOUT_HOME_ERROR": "To get started with GitHub CLI, please run:  gh auth loginAlternatively, populate the GH_TOKEN environment variable with a GitHub API authentication token.",
+    "WITHOUT_HOME_RC": "4",
+    "WITH_HOME_ACTOR": "Kusanagi8200",
+    "WITH_HOME_RC": "0",
     "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "6e7d2b56c2305108a2dce41c108693f14cd2a399",
-  "step_id": "V81-GITHUB-CLI-IDENTITY-DIAG-001"
+  "source_commit": "3ee7bb1d79ab94c8e7d8056e792e81c3be534033",
+  "step_id": "V81-GITHUB-SYSTEMD-HOME-DIAG-001"
 }
