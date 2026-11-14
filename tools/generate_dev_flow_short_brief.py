@@ -26,6 +26,9 @@ BRIEF_DIR = ROOT / "automation" / "dev-flow" / "short-briefs"
 VALIDATOR = ROOT / "tools" / "validate_dev_flow_short_brief.py"
 PYTHON = ROOT / ".venv" / "bin" / "python"
 
+sys.path.insert(0, str(ROOT / "app"))
+from youtube_upload import normalize_description  # noqa: E402
+
 STEP_RE = re.compile(r"V([0-9]+)\Z")
 REPORT_RE = re.compile(
     r"reports/assistant-results/history/"
@@ -446,6 +449,7 @@ def build_brief(
         "This publication does not claim semantic competence.\n\n"
         "BUILD LOCAL. KEEP CONTROL. OWN THE STACK."
     )
+    description = normalize_description(description)
 
     return {
         "schema_version": 1,
