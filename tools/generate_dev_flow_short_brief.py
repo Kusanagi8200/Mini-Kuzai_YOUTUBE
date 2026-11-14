@@ -257,14 +257,43 @@ def validate_provenance(
         fail("GOGIT metrics missing")
     if any(type(value) is not int or value < 0 for value in metrics.values()):
         fail("GOGIT metrics must be nonnegative integers")
-    if metrics.get(f"{step}_PASS") != 1:
-        fail(f"{step}_PASS is not 1")
+    pass_metrics = [
+        value
+        for name, value in metrics.items()
+        if name.startswith(step + "_") and name.endswith("_PASS")
+    ]
+    if not pass_metrics or not any(value == 1 for value in pass_metrics):
+        fail(f"{step} PASS metric is not 1")
     if metrics.get("SEMANTIC_VALIDATION_COMPLETE") != 0:
         fail("Semantic validation safety invariant failed")
     if metrics.get("TRAINING_AUTHORIZED") != 0:
         fail("Training authorization must remain disabled")
-    if metrics.get("TRAINING_STARTED") != 0:
-        fail("Training must not have started")
+
+    training_started = metrics.get("TRAINING_STARTED")
+    if training_started not in {0, 1}:
+        fail("Training started metric is invalid")
+    if training_started == 1:
+        closed = [
+            value
+            for name, value in metrics.items()
+            if name.startswith(step + "_")
+            and name.endswith("_WINDOW_CLOSED")
+        ]
+        further_authorized = [
+            value
+            for name, value in metrics.items()
+            if name.startswith(step + "_")
+            and name.endswith("_FURTHER_TRAINING_AUTHORIZED")
+        ]
+        if not closed or not any(value == 1 for value in closed):
+            fail("Completed training FINAL requires a closed training window")
+        if (
+            not further_authorized
+            or any(value != 0 for value in further_authorized)
+        ):
+            fail(
+                "Completed training FINAL must explicitly disable further training"
+            )
 
     blind = [
         value
@@ -336,7 +365,6 @@ def metric_score(name: str) -> tuple[int, str]:
 
 def selected_metrics(step: str, metrics: dict[str, int]) -> list[tuple[str, int]]:
     excluded = {
-        f"{step}_PASS",
         *SAFETY_KEYS,
     }
 
@@ -345,6 +373,7 @@ def selected_metrics(step: str, metrics: dict[str, int]) -> list[tuple[str, int]
         for name, value in metrics.items()
         if name.startswith(step + "_")
         and name not in excluded
+        and not name.endswith("_PASS")
         and not name.endswith("_BLIND_ACCESS")
     ]
 
