@@ -1,16 +1,13 @@
 {
-  "generated_at_utc": "2026-11-14T10:43:15.331201+00:00",
+  "generated_at_utc": "2026-11-14T10:53:54.715454+00:00",
   "results": {
-    "BACKUP_BRANCH": "backup/pre-v81-media-orchestration-20261114T104312Z",
-    "BLIND_ACCESS": "0",
+    "BACKUP_BRANCH": "backup/pre-v81-media-brief-normalize-fix-20261114T105351Z",
     "REMOTE_BACKUP_HEAD_MATCH": "1",
-    "SCIENTIFIC_V81_STARTED": "0",
-    "SOURCE_HEAD": "74cc7a0b36e55e067fde04d9aa227a49f7fa2c15",
+    "SOURCE_HEAD": "6279b855bd158b53522e24e637c313dbf5aa9a57",
     "STEP_STATUS": "PASS",
-    "TRAINING_ALLOWED": "0",
     "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "74cc7a0b36e55e067fde04d9aa227a49f7fa2c15",
-  "step_id": "V81-MEDIA-ORCHESTRATION-BACKUP-001"
+  "source_commit": "6279b855bd158b53522e24e637c313dbf5aa9a57",
+  "step_id": "V81-MEDIA-BRIEF-NORMALIZE-BACKUP-001"
 }

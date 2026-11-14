@@ -1,0 +1,13 @@
+{
+  "generated_at_utc": "2026-11-14T10:53:54.715454+00:00",
+  "results": {
+    "BACKUP_BRANCH": "backup/pre-v81-media-brief-normalize-fix-20261114T105351Z",
+    "REMOTE_BACKUP_HEAD_MATCH": "1",
+    "SOURCE_HEAD": "6279b855bd158b53522e24e637c313dbf5aa9a57",
+    "STEP_STATUS": "PASS",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "6279b855bd158b53522e24e637c313dbf5aa9a57",
+  "step_id": "V81-MEDIA-BRIEF-NORMALIZE-BACKUP-001"
+}
