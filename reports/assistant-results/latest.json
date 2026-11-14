@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-11-14T15:56:56.789940+00:00",
+  "generated_at_utc": "2026-11-14T16:00:41.186173+00:00",
   "results": {
-    "BACKUP_BRANCH": "backup/pre-maj-sync-youtube-20261114T155655Z",
+    "BACKUP_BRANCH": "backup/pre-maj-sync-mini-kuzai-20261114T160039Z",
     "FF_SYNC": "PASS",
-    "NEW_HEAD": "606de9f9f40d3a90c68ea48e9644ff25f50044f4",
-    "OLD_HEAD": "3be695ea221993d778233f1a94a826a5066869d6",
-    "ORIGIN_HEAD": "606de9f9f40d3a90c68ea48e9644ff25f50044f4",
+    "NEW_HEAD": "eae7df51391e62b4efa6800eb99fa88e75aa98f5",
+    "OLD_HEAD": "eae7df51391e62b4efa6800eb99fa88e75aa98f5",
+    "ORIGIN_HEAD": "eae7df51391e62b4efa6800eb99fa88e75aa98f5",
     "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "606de9f9f40d3a90c68ea48e9644ff25f50044f4",
-  "step_id": "MAJ-THEKUZNETWORK-YOUTUBE-SYNC-001"
+  "source_commit": "732bdc973181531f341ac5a8ec95164f1aabdc2f",
+  "step_id": "MAJ-THEKUZNETWORK-MINI-SYNC-001"
 }
