@@ -1,0 +1,38 @@
+{
+  "github": {
+    "comment_url": "https://github.com/Kusanagi8200/Mini-Kuzai/discussions/14#discussioncomment-19614290",
+    "discussion_url": "https://github.com/Kusanagi8200/Mini-Kuzai/discussions/14",
+    "media_mode": "YOUTUBE_PUBLIC_LINK_FALLBACK",
+    "status": "PUBLISHED"
+  },
+  "linkedin": {
+    "post_urn": "urn:li:ugcPost:7527384513589481472",
+    "status": "PUBLISHED",
+    "video_urn": "urn:li:video:D4E10AQHlGGjXpoeprA"
+  },
+  "media": {
+    "duration_ms": 60000,
+    "sha256": "3d8c145f1e399cb5d84337238cb53d8dba259d48d965353e35f320897891440e"
+  },
+  "publication_id": "MINI-KUZAI-V82-FINAL",
+  "published_at_utc": "2026-11-14T14:58:45.078444+00:00",
+  "purpose": "SCIENTIFIC_FINAL_DOWNSTREAM_MEDIA_PUBLICATION",
+  "schema_version": 1,
+  "scientific_boundary": {
+    "blind_access_authorized": false,
+    "media_is_scientific_evidence": false,
+    "training_authorized": false
+  },
+  "source": {
+    "scientific_final_receipt": "automation/dev-flow/receipts/V82-final.json",
+    "scientific_gogit_report": "reports/assistant-results/history/PHASE03-SMOLTALK-V82-POST-CONTINUATION-CONTEXT-ORDER-REPLICATION-001.json",
+    "scientific_source_commit": "b98f7c3f0f4934e973bc9e40f5e1a62987a450c9",
+    "short_brief": "automation/dev-flow/short-briefs/V82-final.json",
+    "short_brief_sha256": "da0a315da5aee2611e6039d7b63da3fb56711bb430e186e61382c021efe74f02"
+  },
+  "step": "V82",
+  "youtube": {
+    "status": "PUBLIC",
+    "video_id": "JZJzBawTxAw"
+  }
+}
