@@ -135,6 +135,36 @@ class LinkedInVideoHandoffTests(unittest.TestCase):
             with self.assertRaises(module.HandoffError):
                 module.validate_local_state("V81", journal)
 
+    def test_remote_preflight_can_safe_fast_forward_with_backup(self):
+        fake = type(
+            "R",
+            (),
+            {
+                "returncode": 0,
+                "stdout": (
+                    "REMOTE_PREFLIGHT=PASS\n"
+                    "REMOTE_SYNC=FAST_FORWARD\n"
+                    "REMOTE_BACKUP=backup/auto-media-pre-sync-deadbeef\n"
+                    "REMOTE_HEAD=" + "a" * 40 + "\n"
+                ),
+                "stderr": "",
+            },
+        )()
+
+        with patch.object(module, "run", return_value=fake) as mocked:
+            result = module.remote_preflight(
+                "83.228.192.116",
+                Path("/root/.ssh/id_ed25519_kuzdin"),
+                "/opt/kuz-din",
+            )
+
+        command = mocked.call_args.args[0][-1]
+        self.assertIn("git fetch --no-tags origin main", command)
+        self.assertIn("git merge-base --is-ancestor", command)
+        self.assertIn("backup/auto-media-pre-sync-", command)
+        self.assertIn("git merge --ff-only", command)
+        self.assertEqual(result["REMOTE_SYNC"], "FAST_FORWARD")
+
     def test_live_gate_blocks_by_default(self):
         state = {
             "publication_id": "MINI-KUZAI-V81-FINAL",
