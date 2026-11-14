@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "step": "V83",
+  "video_id": "VIDEO-V83-FINAL",
+  "source": {
+    "final_receipt": "automation/dev-flow/receipts/V83-final.json",
+    "gogit_report": "reports/assistant-results/history/PHASE03-SMOLTALK-V83-POST-V81-REFITTED-COORDINATE-CONTEXT-ORDER-001.json",
+    "source_commit": "dd74b37f2336ce18c8178a61d04ed596036ca2e1",
+    "final_status": "PUBLISHED"
+  },
+  "timeline": {
+    "duration_seconds": 60,
+    "segments": [
+      {
+        "duration_seconds": 12,
+        "badge": "V83",
+        "headline": "FINAL VERIFIED",
+        "body": "POST-V81 REFITTED-COORDINATE CONTEXT-ORDER CONTROL"
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "V83",
+        "headline": "OLD PRED CHANGED",
+        "body": "MEASURED VALUE: 38"
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "V83",
+        "headline": "REFIT PRED CHANGED",
+        "body": "MEASURED VALUE: 34"
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "V83",
+        "headline": "OLD SIGN CHANGED",
+        "body": "MEASURED VALUE: 38"
+      },
+      {
+        "duration_seconds": 12,
+        "badge": "V83",
+        "headline": "SAFETY BOUNDARY",
+        "body": "NO NEW TRAINING / BLIND CLOSED / NO SEMANTIC CLAIM"
+      }
+    ]
+  },
+  "narration": "Mini-Kuzai V83 has completed the post-V81 refitted-coordinate context-order control. The FINAL DEV-FLOW receipt is published and the immutable GOGIT report passed. Key measurements include old pred changed 38; refit pred changed 34; old sign changed 38. For this read-only control, the same frozen validation positions and the same diagnostic coordinate were reused after the previous validated stage. The comparison asks only whether the observed effect changed in scale. The result is a controlled numerical observation, not a semantic evaluation of the model. This keeps the comparison anchored to the same frozen experimental frame. This media summary does not authorize new training, does not open BLIND evaluation, and does not claim semantic competence or reasoning.",
+  "youtube": {
+    "title": "MINI-KUZAI V83 // POST-V81 REFITTED-COORDINATE CONTEXT-ORDER CONTROL",
+    "description": "Mini-Kuzai V83 FINAL media summary for post-V81 refitted-coordinate context-order control.\n\nVerified immutable report → PHASE03-SMOLTALK-V83-POST-V81-REFITTED-COORDINATE-CONTEXT-ORDER-001\nNo new training. BLIND evaluation remains closed. This publication does not claim semantic competence.\n\nBUILD LOCAL. KEEP CONTROL. OWN THE STACK.",
+    "tags": [
+      "Mini-Kuzai",
+      "THE KUZ NETWORK",
+      "LLM From Scratch",
+      "Local AI",
+      "V83"
+    ],
+    "publication_mode": "public"
+  }
+}
