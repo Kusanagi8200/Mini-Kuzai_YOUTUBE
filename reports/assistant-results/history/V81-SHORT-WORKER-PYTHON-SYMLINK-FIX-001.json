@@ -1,0 +1,13 @@
+{
+  "generated_at_utc": "2026-11-14T12:08:33.651552+00:00",
+  "results": {
+    "ERROR_SUMMARY": "NONE",
+    "HEAD": "ea48e104bc53925f7f05396ef4fb964baf41ac05",
+    "TESTS": "PASS",
+    "TEST_RC": "0",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "ea48e104bc53925f7f05396ef4fb964baf41ac05",
+  "step_id": "V81-SHORT-WORKER-PYTHON-SYMLINK-FIX-001"
+}
