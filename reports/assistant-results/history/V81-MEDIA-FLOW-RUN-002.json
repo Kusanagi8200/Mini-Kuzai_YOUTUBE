@@ -1,0 +1,18 @@
+{
+  "generated_at_utc": "2026-11-14T12:15:30.443689+00:00",
+  "results": {
+    "BRIEF_GENERATED": "",
+    "BRIEF_STEP": "",
+    "ERROR_SUMMARY": "V81_PASS is not 1",
+    "HEAD": "40292355503c981521ff2031ad84078378cebde5",
+    "MEDIA_STAGE": "",
+    "MEDIA_WORKER": "BLOCKED",
+    "PUBLICATION_PERFORMED": "",
+    "SERVICE_RC": "1",
+    "SHORT_WORKER": "",
+    "WORKTREE": "CLEAN"
+  },
+  "schema_version": 1,
+  "source_commit": "40292355503c981521ff2031ad84078378cebde5",
+  "step_id": "V81-MEDIA-FLOW-RUN-002"
+}
