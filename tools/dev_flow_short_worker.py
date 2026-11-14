@@ -320,6 +320,11 @@ def auto_brief_candidates(
     ]
 
 
+def verify_python_runtime(python: Path) -> None:
+    if not python.is_file() or not os.access(python, os.X_OK):
+        fail("Project Python unavailable")
+
+
 def generate_and_commit_brief(
     step: str,
     *,
@@ -335,8 +340,7 @@ def generate_and_commit_brief(
     if generator.is_symlink() or not generator.is_file():
         fail("Short brief generator unavailable")
 
-    if python.is_symlink() or not python.is_file():
-        fail("Project Python unavailable")
+    verify_python_runtime(python)
 
     target = brief_dir / f"{step}-final.json"
     if target.exists() or target.is_symlink():
