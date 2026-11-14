@@ -1,14 +1,18 @@
 {
-  "generated_at_utc": "2026-11-14T16:04:00.396213+00:00",
+  "generated_at_utc": "2026-11-14T16:12:10.593049+00:00",
   "results": {
-    "BACKUP_BRANCH": "backup/pre-maj-sync-kuzdin-20261114T160358Z",
+    "BACKUP_BRANCH": "backup/pre-maj-sync-kuzai-org-20261114T161209Z",
     "FF_SYNC": "PASS",
-    "NEW_HEAD": "a2cf268ab055015499213181c4c5fe860cd42498",
-    "OLD_HEAD": "7690bfb321bfbab912698d68334bcdad94c7e7ef",
-    "ORIGIN_HEAD": "a2cf268ab055015499213181c4c5fe860cd42498",
+    "HTTP_STATUS": "200",
+    "NEW_HEAD": "cce130779f606ee30add104585a41f0bb78381f2",
+    "OLD_HEAD": "4b4d9f84b656745a3b0e7621b203bc55d2b0d537",
+    "ORIGIN_HEAD": "cce130779f606ee30add104585a41f0bb78381f2",
+    "PHP_LINT": "PASS",
+    "PUBLIC_V82": "PASS",
+    "PUBLIC_V83": "PASS",
     "WORKTREE": "CLEAN"
   },
   "schema_version": 1,
-  "source_commit": "b83bf1fdd4a712bc97b69c15a48cae07b8a8cc97",
-  "step_id": "MAJ-THEKUZNETWORK-KUZDIN-SYNC-001"
+  "source_commit": "a6f87d7d81554087dfee1617c8c8dd675163e8b7",
+  "step_id": "MAJ-THEKUZNETWORK-KUZAIORG-DEPLOY-001"
 }
